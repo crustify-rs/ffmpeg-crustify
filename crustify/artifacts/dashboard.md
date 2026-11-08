@@ -5,8 +5,9 @@ Copy this template into the campaign checkout, then fill it as work lands.
 ## Campaign
 
 - **target repo** — `ffmpeg` @ `1019f8f036602a8464185baa4857654337eeca14`
-- **target** — `whole public API of libavutil, libswresample, libswscale, libavcodec, libavformat, libavfilter, libavdevice, excluding deprecated items`
-- **campaign objective** — `wrap`
+- **target** — `libavutil`, whole, excluding deprecated items, from 2026-11-08: the pilot of a port under the media-ingest profile; the whole public API of libavutil, libswresample, libswscale, libavcodec, libavformat, libavfilter and libavdevice before
+- **campaign objective** — `port` from 2026-11-08, `wrap` before
+- **target-config** — the media-ingest profile from 2026-11-08 (`--disable-everything` plus the profile's components, libavdevice off; `crustify/CRUSTIFY.md`); the full default configuration before
 - **`impl_files`** — `3181 files: the built TUs and reachable private headers of the 7 libraries (crustify/wavefront/configs/wavefront-config.json)`
 - **`api_headers`** — `122 installed headers, excluding the platform/vendor hwcontext_*.h backends, libavcodec/{d3d11va,dxva2,jni,mediacodec,qsv,vdpau,videotoolbox}.h and the generated avconfig.h/ffversion.h`
 - **agent backend** — `claude`; `codex` for `libavutil/crypto`
@@ -20,8 +21,8 @@ Copy this template into the campaign checkout, then fill it as work lands.
 - **assistant parallelism** — `assistant's choice` from 2026-11-03; up to `32` concurrent batch processes in the annotation pass (wave `671`); `16` from `libavutil/options`; `10` before
 - **branch** — `crustify/main`, tip `<sha>`
 - **deps** — crustify `12b8cab` (`main`, plus an uncommitted `translator.md` edit), ffibox `196c5fb` (`main`)
-- **build version** — `5` from 2026-11-03, when the FATE samples moved with the checkout to `/target`; `4` from the move of the C to `c/`; `3` before
-- **C test baseline** — `5437/5437, 0 skipped, and no disabled tests`
+- **build version** — `8` from 2026-11-08, the media-ingest profile; `5` from 2026-11-03, when the FATE samples moved with the checkout to `/target`; `4` from the move of the C to `c/`; `3` before
+- **C test baseline** — `1025/1025` FATE tests the profile enables, 0 skipped, no disabled tests, from 2026-11-08; `5437/5437` under the full configuration before
 
 ## Review pass
 
@@ -2485,3 +2486,15 @@ consumer: `AVProfile` (codec_desc.c), `AVClass` (opt.c), `AVFilterGraph` (avfilt
 the current single file, whose `modules` replace the 160 per-module configurations. `modules.json`'s
 `depends_on` became flat arrays. One record pair was corrected, `avfiltergraph.c` and
 `avfilter.c` (report `avfiltergraph-record-execute-callback`).
+
+### Settings: a libavutil pilot under a media-ingest profile (2026-11-08)
+
+The campaign is now a port, piloted on libavutil, whole. The target is configured down to a
+media-ingest production profile: H.264, HEVC and VP9 decoding, AAC, MP3 and Opus audio, JPEG
+and PNG images, MP4, Matroska/WebM, MPEG-TS, HLS and DASH, subtitles, the file and pipe
+protocols, and the filters the `ffmpeg` program inserts on its own; libavdevice is off.
+`build.json` version `8`: all five variants rebuilt, the CodeQL database traced again from
+`plain` and its tables extracted with wavefront `b3a737a`, and FATE's baseline is the 1,025
+tests the profile enables, all passing. A first run at version `7` failed 14 tests on
+components FATE does not declare (raw float output, HEIF grids), which version `8` adds.
+Planner run `9`, held, was superseded and not promoted.
