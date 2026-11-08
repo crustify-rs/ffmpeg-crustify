@@ -12,7 +12,7 @@ for campaign decisions that remain unresolved.
 
 2. **Should this campaign port the C implementation to Rust, or create safe
    Rust wrappers?** (`id: campaign`)
-   - Answer: `wrap`
+   - Answer: `port`
 
 3. **What should this campaign target: a named subset of modules, or a named
    subset of functions and types, or the whole target repo? You can define them
@@ -87,9 +87,16 @@ Unanswered optional questions use their defaults.
     - Answer: `concurrent`
     - By default: concurrent, within the scope and as many at once as the host allows.
 
+14. **At which points should the hybrid C-Rust program ship? Shipping advances `main` to
+    what the campaign has integrated, with your approval each time: the modules shipped
+    are translated, and the C still left is reached only through the wrappers on its
+    boundary.** (`id: ship`)
+    - Answer: `decide after planning`
+    - By default: after every integrated module.
+
 ## Commits
 
-14. **Which git identity should the campaign's commits carry: an author, and any
+15. **Which git identity should the campaign's commits carry: an author, and any
     co-authors? By default, Crustify's own, `crustify <crustify@berkeley.edu>` (the
     GitHub account `crustify-ai`), as the author, with no co-author.** (`id: identity`)
     - Answer: `author: Marius Momeu <marius.momeu@berkeley.edu>, co-authors: crustify
@@ -99,20 +106,20 @@ Unanswered optional questions use their defaults.
 
 Answer these approval-gate questions only if question 6 is answered `no`.
 
-15. **Should I wait for your approval before starting the setup phase?** (`id: gates.setup`)
+16. **Should I wait for your approval before starting the setup phase?** (`id: gates.setup`)
     - Answer: `no`
-16. **Should I wait for your approval before starting the translation phase?**
+17. **Should I wait for your approval before starting the translation phase?**
     (`id: gates.translation`)
     - Answer: `yes`
-17. **Should I wait for your approval before integrating each module into the working
+18. **Should I wait for your approval before integrating each module into the working
     branch?** (`id: gates.module`)
     - Answer: `no`
-18. **Should I wait for your approval before starting review passes?** (`id: gates.review`)
+19. **Should I wait for your approval before starting review passes?** (`id: gates.review`)
     - Answer: `no`
 
 # Benchmark recording questions
 
-19. **Where and in what format should the dashboard be recorded?** (`id: dashboard`)
+20. **Where and in what format should the dashboard be recorded?** (`id: dashboard`)
     - Answer: `<repo-checkout>/crustify/artifacts/dashboard.md`, `standard` template
 
 # Additional instructions
