@@ -1,0 +1,10 @@
+{
+  "backend": "claude",
+  "billing": "api",
+  "model_proxy": "openrouter",
+  "args": [
+    "--model",
+    "anthropic/claude-opus-5.5"
+  ],
+  "session_id": "eb8d46dd-e0c1-48b9-8c04-a9a9f23ba733"
+}

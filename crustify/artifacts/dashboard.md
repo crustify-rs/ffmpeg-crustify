@@ -711,7 +711,8 @@ the corrections it made to what earlier runs committed.
 | 6 | — | — | — (stopped after its first requests: its instructions misstated the re-plan's first wave; run 7 replaced it) | 0 | $0.21 | 0.1M | 0m11s |
 | 7 | 0 | 0 | — | 0 | $3.74 | 9.1M | 13m05s |
 | 8 | 2 | 0 | `configs/wavefront-config.json` (to the current schema: `closure`, 160 `modules`, `schedule_seeds`), `configs/<link-unit>/<index>/wavefront-config.json` (160 removed, folded into `modules`) | 1 | $7.35 | 20.1M | 30m44s |
-| **Σ** | **191** | **691** | | **20** | **$50.49** | **120.9M** | **230m56s** |
+| 9 | — | — | — (not promoted: superseded by the libavutil pilot's settings; its commit `52931cc1b80` stays on `crustify/planner/run-9`) | 2 | $10.30 | 29.5M | 29m37s |
+| **Σ** | **191** | **691** | | **22** | **$60.79** | **150.4M** | **260m33s** |
 
 ## Notes
 
