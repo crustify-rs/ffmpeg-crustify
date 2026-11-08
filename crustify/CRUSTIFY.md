@@ -18,7 +18,9 @@ for campaign decisions that remain unresolved.
    subset of functions and types, or the whole target repo? You can define them
    now or we can brainstorm them during the live session. You can also let the
    orchestrator decide.** (`id: scope`)
-   - Answer: the whole public API of the target, excluding deprecated items
+   - Answer: `libavutil`, whole: every translation unit of libavutil the configured build
+     compiles, deprecated items excluded. A pilot: libswresample and libswscale, then the
+     configured libavcodec and libavformat, follow.
 
 4. **Which model and billing should do the translation work?**
    (`id: translate-agent`)
@@ -76,18 +78,20 @@ Unanswered optional questions use their defaults.
 
 12. **How should the target be configured: which of its build features should be
     enabled or disabled?** (`id: target-config`)
-    - Answer: the configuration `crustify/artifacts/build.json` records: shared
-      libraries only, autodetection off, pthreads and zlib on, docs off, and the FATE
-      samples in `crustify/fate-suite`.
-    - By default: the target's default configuration, with deprecated features disabled.
+    - Answer: a media-ingest production profile, on top of the variants' shared
+      libraries, autodetection off, pthreads and zlib on, docs off and the FATE samples
+      in `crustify/fate-suite`: `--disable-everything --disable-avdevice`,
+      `--enable-decoder=h264,hevc,vp9,aac,mp3float,opus,mjpeg,png,subrip,webvtt`,
+      `--enable-encoder=aac,mjpeg,png,webvtt,subrip,rawvideo,pcm_s16le,wrapped_avframe`,
+      `--enable-parser=h264,hevc,vp9,aac,mpegaudio,opus,mjpeg,png`,
+      `--enable-bsf=h264_mp4toannexb,hevc_mp4toannexb,aac_adtstoasc,extract_extradata,vp9_superframe`,
+      `--enable-demuxer=mov,matroska,mp3,mpegts,aac,h264,hevc,ivf,image2,image_png_pipe,image_jpeg_pipe,srt,webvtt`,
+      `--enable-muxer=mp4,mov,matroska,webm,mpegts,hls,dash,segment,image2,adts,webvtt,srt,framecrc,framemd5,md5,crc,null`,
+      `--enable-protocol=file,pipe`, `--enable-filter=format,aformat,scale,aresample,null,anull`.
+      The `ffmpeg` and `ffprobe` programs stay built, as FATE's driver; x86 assembly
+      stays enabled.
 
-13. **Should modules that do not depend on each other run concurrently, each on its own
-    branch, or should their waves be merged and run one at a time?**
-    (`id: module-concurrency`)
-    - Answer: `concurrent`
-    - By default: concurrent, within the scope and as many at once as the host allows.
-
-14. **At which points should the hybrid C-Rust program ship? Shipping advances `main` to
+13. **At which points should the hybrid C-Rust program ship? Shipping advances `main` to
     what the campaign has integrated, with your approval each time: the modules shipped
     are translated, and the C still left is reached only through the wrappers on its
     boundary.** (`id: ship`)
@@ -96,7 +100,7 @@ Unanswered optional questions use their defaults.
 
 ## Commits
 
-15. **Which git identity should the campaign's commits carry: an author, and any
+14. **Which git identity should the campaign's commits carry: an author, and any
     co-authors? By default, Crustify's own, `crustify <crustify@berkeley.edu>` (the
     GitHub account `crustify-ai`), as the author, with no co-author.** (`id: identity`)
     - Answer: `author: Marius Momeu <marius.momeu@berkeley.edu>, co-authors: crustify
@@ -106,20 +110,20 @@ Unanswered optional questions use their defaults.
 
 Answer these approval-gate questions only if question 6 is answered `no`.
 
-16. **Should I wait for your approval before starting the setup phase?** (`id: gates.setup`)
+15. **Should I wait for your approval before starting the setup phase?** (`id: gates.setup`)
     - Answer: `no`
-17. **Should I wait for your approval before starting the translation phase?**
+16. **Should I wait for your approval before starting the translation phase?**
     (`id: gates.translation`)
     - Answer: `yes`
-18. **Should I wait for your approval before integrating each module into the working
+17. **Should I wait for your approval before integrating each module into the working
     branch?** (`id: gates.module`)
     - Answer: `no`
-19. **Should I wait for your approval before starting review passes?** (`id: gates.review`)
+18. **Should I wait for your approval before starting review passes?** (`id: gates.review`)
     - Answer: `no`
 
 # Benchmark recording questions
 
-20. **Where and in what format should the dashboard be recorded?** (`id: dashboard`)
+19. **Where and in what format should the dashboard be recorded?** (`id: dashboard`)
     - Answer: `<repo-checkout>/crustify/artifacts/dashboard.md`, `standard` template
 
 # Additional instructions
