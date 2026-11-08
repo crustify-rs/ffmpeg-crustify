@@ -82,14 +82,15 @@ Unanswered optional questions use their defaults.
       libraries, autodetection off, pthreads and zlib on, docs off and the FATE samples
       in `crustify/fate-suite`: `--disable-everything --disable-avdevice`,
       `--enable-decoder=h264,hevc,vp9,aac,mp3float,opus,mjpeg,png,subrip,webvtt`,
-      `--enable-encoder=aac,mjpeg,png,webvtt,subrip,rawvideo,pcm_s16le,wrapped_avframe`,
+      `--enable-encoder=aac,mjpeg,png,webvtt,subrip,rawvideo,pcm_s16le,pcm_f32le,wrapped_avframe`,
       `--enable-parser=h264,hevc,vp9,aac,mpegaudio,opus,mjpeg,png`,
       `--enable-bsf=h264_mp4toannexb,hevc_mp4toannexb,aac_adtstoasc,extract_extradata,vp9_superframe`,
       `--enable-demuxer=mov,matroska,mp3,mpegts,aac,h264,hevc,ivf,image2,image_png_pipe,image_jpeg_pipe,srt,webvtt`,
-      `--enable-muxer=mp4,mov,matroska,webm,mpegts,hls,dash,segment,image2,adts,webvtt,srt,framecrc,framemd5,md5,crc,null`,
-      `--enable-protocol=file,pipe`, `--enable-filter=format,aformat,scale,aresample,null,anull`.
-      The `ffmpeg` and `ffprobe` programs stay built, as FATE's driver; x86 assembly
-      stays enabled.
+      `--enable-muxer=mp4,mov,matroska,webm,mpegts,hls,dash,segment,image2,adts,webvtt,srt,pcm_f32le,framecrc,framemd5,md5,crc,null`,
+      `--enable-protocol=file,pipe`, `--enable-filter=format,aformat,scale,aresample,null,anull,trim,atrim,crop,transpose,hflip,vflip,rotate,xstack,overlay`.
+      The filters after `anull` are those the `ffmpeg` program inserts on its own: trimming,
+      cropping, auto-rotation, HEIF grids and overlays. The `ffmpeg` and `ffprobe` programs
+      stay built, as FATE's driver; x86 assembly stays enabled.
 
 13. **At which points should the hybrid C-Rust program ship? Shipping advances `main` to
     what the campaign has integrated, with your approval each time: the modules shipped
