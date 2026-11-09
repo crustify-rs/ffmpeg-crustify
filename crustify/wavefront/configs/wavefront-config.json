@@ -1,99 +1,854 @@
 {
   "_comment": [
-    "The campaign's wavefront configuration (crustify/specs/tools/wavefront/wavefront.md), at wavefront 71b2c15's schema.",
-    "closure: every module's files, impl_files the translation units and internal headers, api_headers the installed headers.",
+    "The campaign's wavefront configuration (crustify's specs/tools/wavefront), planner run 10, wavefront b3a737a.",
+    "closure: the configured build of build.json version 8 (the media-ingest profile): every compiled TU of libavutil, libswresample, libswscale, libavcodec, libavformat, libavfilter and fftools, with the internal headers and template .c files they include (impl_files), and the installed headers they include (api_headers). The C the libavutil pilot leaves out stays in the closure so that its layout uses, raw sites and references count.",
     "modules: one record per module of crustify/artifacts/modules.json, named <link-unit>/<name>, ' (foundational)' after a foundational module's name; each file entry's items keep only the entities that file is home to.",
-    "schedule_seeds: what planner run 8 scheduled, every module's files, less the deprecated public items (deprecated.json)."
+    "schedule_seeds: what planner run 10 schedules, every libavutil file, less the deprecated items (av_assert0_fpu, avpriv_slicethread_create, avpriv_slicethread_execute)."
   ],
   "state_dir": "../crustify/wavefront",
   "closure": {
     "impl_files": {
       "included": [
+        "compat/va_copy.h",
+        "fftools/cmdutils.c",
+        "fftools/cmdutils.h",
+        "fftools/ffmpeg.c",
+        "fftools/ffmpeg.h",
+        "fftools/ffmpeg_dec.c",
+        "fftools/ffmpeg_demux.c",
+        "fftools/ffmpeg_enc.c",
+        "fftools/ffmpeg_filter.c",
+        "fftools/ffmpeg_hw.c",
+        "fftools/ffmpeg_mux.c",
+        "fftools/ffmpeg_mux.h",
+        "fftools/ffmpeg_mux_init.c",
+        "fftools/ffmpeg_opt.c",
+        "fftools/ffmpeg_sched.c",
+        "fftools/ffmpeg_sched.h",
+        "fftools/ffmpeg_utils.h",
+        "fftools/ffprobe.c",
+        "fftools/fopen_utf8.h",
+        "fftools/graph/graphprint.c",
+        "fftools/graph/graphprint.h",
+        "fftools/opt_common.c",
+        "fftools/opt_common.h",
+        "fftools/resources/resman.c",
+        "fftools/resources/resman.h",
+        "fftools/sync_queue.c",
+        "fftools/sync_queue.h",
+        "fftools/textformat/avtextformat.c",
+        "fftools/textformat/avtextformat.h",
+        "fftools/textformat/avtextwriters.h",
+        "fftools/textformat/tf_compact.c",
+        "fftools/textformat/tf_default.c",
+        "fftools/textformat/tf_flat.c",
+        "fftools/textformat/tf_ini.c",
+        "fftools/textformat/tf_internal.h",
+        "fftools/textformat/tf_json.c",
+        "fftools/textformat/tf_mermaid.c",
+        "fftools/textformat/tf_mermaid.h",
+        "fftools/textformat/tf_xml.c",
+        "fftools/textformat/tw_avio.c",
+        "fftools/textformat/tw_buffer.c",
+        "fftools/textformat/tw_stdout.c",
+        "fftools/thread_queue.c",
+        "fftools/thread_queue.h",
+        "libavcodec/aac.h",
+        "libavcodec/aac/aacdec.c",
+        "libavcodec/aac/aacdec.h",
+        "libavcodec/aac/aacdec_ac.c",
+        "libavcodec/aac/aacdec_ac.h",
+        "libavcodec/aac/aacdec_dsp_template.c",
+        "libavcodec/aac/aacdec_float.c",
+        "libavcodec/aac/aacdec_float_coupling.h",
+        "libavcodec/aac/aacdec_float_prediction.h",
+        "libavcodec/aac/aacdec_lpd.c",
+        "libavcodec/aac/aacdec_lpd.h",
+        "libavcodec/aac/aacdec_proc_template.c",
+        "libavcodec/aac/aacdec_tab.c",
+        "libavcodec/aac/aacdec_tab.h",
+        "libavcodec/aac/aacdec_usac.c",
+        "libavcodec/aac/aacdec_usac.h",
+        "libavcodec/aac/aacdec_usac_mps212.c",
+        "libavcodec/aac/aacdec_usac_mps212.h",
+        "libavcodec/aac_ac3_parser.c",
+        "libavcodec/aac_ac3_parser.h",
+        "libavcodec/aac_defines.h",
+        "libavcodec/aac_parser.c",
+        "libavcodec/aaccoder.c",
+        "libavcodec/aaccoder_nmr.h",
+        "libavcodec/aaccoder_trellis.h",
+        "libavcodec/aaccoder_twoloop.h",
+        "libavcodec/aacenc.c",
+        "libavcodec/aacenc.h",
+        "libavcodec/aacenc_is.c",
+        "libavcodec/aacenc_is.h",
+        "libavcodec/aacenc_quantization.h",
+        "libavcodec/aacenc_quantization_misc.h",
+        "libavcodec/aacenc_tns.c",
+        "libavcodec/aacenc_tns.h",
+        "libavcodec/aacenc_utils.h",
+        "libavcodec/aacencdsp.c",
+        "libavcodec/aacencdsp.h",
+        "libavcodec/aacenctab.c",
+        "libavcodec/aacenctab.h",
+        "libavcodec/aacps.c",
+        "libavcodec/aacps.h",
+        "libavcodec/aacps_common.c",
+        "libavcodec/aacps_float.c",
+        "libavcodec/aacps_tablegen.h",
+        "libavcodec/aacpsdata.c",
+        "libavcodec/aacpsdsp.h",
+        "libavcodec/aacpsdsp_float.c",
+        "libavcodec/aacpsdsp_template.c",
+        "libavcodec/aacpsy.c",
+        "libavcodec/aacsbr.c",
+        "libavcodec/aacsbr.h",
+        "libavcodec/aacsbr_template.c",
+        "libavcodec/aacsbrdata.h",
+        "libavcodec/aactab.c",
+        "libavcodec/aactab.h",
+        "libavcodec/aandcttab.c",
+        "libavcodec/aandcttab.h",
+        "libavcodec/ac3_channel_layout_tab.c",
+        "libavcodec/ac3_channel_layout_tab.h",
         "libavcodec/ac3_parser.c",
         "libavcodec/ac3_parser_internal.h",
+        "libavcodec/ac3defs.h",
+        "libavcodec/ac3tab.c",
+        "libavcodec/ac3tab.h",
+        "libavcodec/adts_header.c",
+        "libavcodec/adts_header.h",
         "libavcodec/adts_parser.c",
         "libavcodec/allcodecs.c",
+        "libavcodec/aom_film_grain.c",
+        "libavcodec/aom_film_grain.h",
+        "libavcodec/aom_film_grain_template.c",
+        "libavcodec/apng.h",
+        "libavcodec/apv.h",
+        "libavcodec/ass.c",
+        "libavcodec/ass.h",
+        "libavcodec/ass_split.c",
+        "libavcodec/ass_split.h",
+        "libavcodec/atsc_a53.c",
+        "libavcodec/atsc_a53.h",
+        "libavcodec/audio_frame_queue.c",
+        "libavcodec/audio_frame_queue.h",
+        "libavcodec/av1.h",
+        "libavcodec/av1_parse.c",
+        "libavcodec/av1_parse.h",
         "libavcodec/avcodec.c",
         "libavcodec/avcodec_internal.h",
         "libavcodec/avdct.c",
+        "libavcodec/bit_depth_template.c",
+        "libavcodec/bitstream.c",
         "libavcodec/bitstream_filters.c",
         "libavcodec/bitstreamfilter.c",
+        "libavcodec/blockdsp.c",
+        "libavcodec/blockdsp.h",
         "libavcodec/bsf.c",
+        "libavcodec/bsf/aac_adtstoasc.c",
+        "libavcodec/bsf/extract_extradata.c",
         "libavcodec/bsf/filters.h",
+        "libavcodec/bsf/h264_mp4toannexb.c",
+        "libavcodec/bsf/hevc_mp4toannexb.c",
+        "libavcodec/bsf/packetsync.c",
+        "libavcodec/bsf/packetsync.h",
+        "libavcodec/bsf/pgs_frame_merge.c",
         "libavcodec/bsf/sink.c",
         "libavcodec/bsf/source.c",
+        "libavcodec/bsf/vp9_superframe.c",
+        "libavcodec/bsf/vp9_superframe_split.c",
+        "libavcodec/bsf/vvc_mp4toannexb.c",
         "libavcodec/bsf_internal.h",
         "libavcodec/bsfgraph.c",
+        "libavcodec/bswapdsp.c",
+        "libavcodec/bswapdsp.h",
+        "libavcodec/bytestream.h",
+        "libavcodec/cabac.c",
+        "libavcodec/cabac.h",
+        "libavcodec/cabac_functions.h",
+        "libavcodec/cbrt_data.c",
+        "libavcodec/cbrt_data.h",
+        "libavcodec/cbrt_tablegen.h",
+        "libavcodec/cbrt_tablegen_common.c",
+        "libavcodec/cbs.c",
+        "libavcodec/cbs.h",
+        "libavcodec/cbs_apv.c",
+        "libavcodec/cbs_apv.h",
+        "libavcodec/cbs_apv_syntax_template.c",
+        "libavcodec/cbs_av1.c",
+        "libavcodec/cbs_av1.h",
+        "libavcodec/cbs_av1_syntax_template.c",
+        "libavcodec/cbs_bsf.c",
+        "libavcodec/cbs_bsf.h",
+        "libavcodec/cbs_internal.h",
+        "libavcodec/cbs_vp9.c",
+        "libavcodec/cbs_vp9.h",
+        "libavcodec/cbs_vp9_syntax_template.c",
         "libavcodec/codec_desc.c",
+        "libavcodec/codec_internal.h",
         "libavcodec/codec_par.c",
+        "libavcodec/copy_block.h",
+        "libavcodec/d3d11va.c",
+        "libavcodec/dct.h",
+        "libavcodec/dct32.h",
+        "libavcodec/dct32_fixed.c",
+        "libavcodec/dct32_float.c",
+        "libavcodec/dct32_template.c",
+        "libavcodec/dctref.c",
         "libavcodec/decode.c",
         "libavcodec/decode.h",
         "libavcodec/dirac.c",
+        "libavcodec/dnxhddata.h",
+        "libavcodec/dovi_rpu.c",
+        "libavcodec/dovi_rpu.h",
+        "libavcodec/dovi_rpudec.c",
+        "libavcodec/dv.h",
         "libavcodec/dv_profile.c",
+        "libavcodec/dv_profile_internal.h",
+        "libavcodec/dynamic_hdr_vivid.c",
+        "libavcodec/dynamic_hdr_vivid.h",
         "libavcodec/encode.c",
         "libavcodec/encode.h",
+        "libavcodec/error_resilience.c",
+        "libavcodec/error_resilience.h",
+        "libavcodec/evc.h",
         "libavcodec/exif.c",
+        "libavcodec/exif_internal.h",
+        "libavcodec/faandct.c",
+        "libavcodec/faandct.h",
+        "libavcodec/faanidct.c",
+        "libavcodec/faanidct.h",
+        "libavcodec/fdctdsp.c",
+        "libavcodec/fdctdsp.h",
+        "libavcodec/flac.h",
+        "libavcodec/float_scalarproduct.c",
+        "libavcodec/frame_thread_encoder.c",
+        "libavcodec/frame_thread_encoder.h",
+        "libavcodec/get_bits.h",
         "libavcodec/get_buffer.c",
+        "libavcodec/gif.h",
+        "libavcodec/golomb.c",
+        "libavcodec/golomb.h",
+        "libavcodec/h261.h",
+        "libavcodec/h261enc.h",
+        "libavcodec/h263.h",
+        "libavcodec/h263data.h",
+        "libavcodec/h263dec.h",
+        "libavcodec/h263dsp.h",
+        "libavcodec/h263enc.h",
+        "libavcodec/h264.h",
+        "libavcodec/h2645_parse.c",
+        "libavcodec/h2645_parse.h",
+        "libavcodec/h2645_sei.c",
+        "libavcodec/h2645_sei.h",
+        "libavcodec/h2645_vui.c",
+        "libavcodec/h2645_vui.h",
+        "libavcodec/h2645data.c",
+        "libavcodec/h2645data.h",
+        "libavcodec/h264_cabac.c",
+        "libavcodec/h264_cavlc.c",
+        "libavcodec/h264_direct.c",
+        "libavcodec/h264_loopfilter.c",
+        "libavcodec/h264_mb.c",
+        "libavcodec/h264_mb_template.c",
+        "libavcodec/h264_mc_template.c",
+        "libavcodec/h264_mvpred.h",
+        "libavcodec/h264_parse.c",
+        "libavcodec/h264_parse.h",
+        "libavcodec/h264_parser.c",
+        "libavcodec/h264_picture.c",
+        "libavcodec/h264_ps.c",
+        "libavcodec/h264_ps.h",
+        "libavcodec/h264_refs.c",
+        "libavcodec/h264_sei.c",
+        "libavcodec/h264_sei.h",
+        "libavcodec/h264_slice.c",
+        "libavcodec/h264addpx_template.c",
+        "libavcodec/h264chroma.c",
+        "libavcodec/h264chroma.h",
+        "libavcodec/h264chroma_template.c",
+        "libavcodec/h264data.c",
+        "libavcodec/h264data.h",
+        "libavcodec/h264dec.c",
+        "libavcodec/h264dec.h",
+        "libavcodec/h264dsp.c",
+        "libavcodec/h264dsp.h",
+        "libavcodec/h264dsp_template.c",
+        "libavcodec/h264idct.c",
+        "libavcodec/h264idct.h",
+        "libavcodec/h264idct_template.c",
+        "libavcodec/h264pred.c",
+        "libavcodec/h264pred.h",
+        "libavcodec/h264pred_template.c",
+        "libavcodec/h264qpel.c",
+        "libavcodec/h264qpel.h",
+        "libavcodec/h264qpel_template.c",
+        "libavcodec/h26x/h2656_deblock_template.c",
+        "libavcodec/h26x/h2656_inter_template.c",
+        "libavcodec/h26x/h2656_sao_template.c",
+        "libavcodec/h274.c",
+        "libavcodec/h274.h",
+        "libavcodec/hevc/cabac.c",
+        "libavcodec/hevc/data.c",
+        "libavcodec/hevc/data.h",
+        "libavcodec/hevc/dsp.c",
+        "libavcodec/hevc/dsp.h",
+        "libavcodec/hevc/dsp_template.c",
+        "libavcodec/hevc/filter.c",
+        "libavcodec/hevc/hevc.h",
+        "libavcodec/hevc/hevcdec.c",
+        "libavcodec/hevc/hevcdec.h",
+        "libavcodec/hevc/mvs.c",
+        "libavcodec/hevc/parse.c",
+        "libavcodec/hevc/parse.h",
+        "libavcodec/hevc/parser.c",
+        "libavcodec/hevc/pred.c",
+        "libavcodec/hevc/pred.h",
+        "libavcodec/hevc/pred_template.c",
+        "libavcodec/hevc/ps.c",
+        "libavcodec/hevc/ps.h",
+        "libavcodec/hevc/refs.c",
+        "libavcodec/hevc/sei.c",
+        "libavcodec/hevc/sei.h",
+        "libavcodec/hpel_template.c",
+        "libavcodec/hpeldsp.c",
+        "libavcodec/hpeldsp.h",
+        "libavcodec/htmlsubtitles.c",
+        "libavcodec/htmlsubtitles.h",
+        "libavcodec/hwaccel_internal.h",
+        "libavcodec/hwaccels.h",
+        "libavcodec/hwconfig.h",
+        "libavcodec/idctdsp.c",
+        "libavcodec/idctdsp.h",
         "libavcodec/imgconvert.c",
         "libavcodec/internal.h",
+        "libavcodec/itut35.c",
+        "libavcodec/itut35.h",
+        "libavcodec/jfdctfst.c",
+        "libavcodec/jfdctint.c",
+        "libavcodec/jfdctint_template.c",
+        "libavcodec/jni.c",
+        "libavcodec/jpeglsdec.h",
+        "libavcodec/jpegtables.c",
+        "libavcodec/jpegtables.h",
+        "libavcodec/jpegtabs.h",
+        "libavcodec/jpegxl.h",
+        "libavcodec/jpegxl_parse.h",
+        "libavcodec/jrevdct.c",
+        "libavcodec/kbdwin.c",
+        "libavcodec/kbdwin.h",
+        "libavcodec/lcevc.h",
+        "libavcodec/lcevc_parse.h",
+        "libavcodec/lcevcdec.h",
+        "libavcodec/lcevctab.c",
+        "libavcodec/lcevctab.h",
+        "libavcodec/leb.h",
+        "libavcodec/log2_tab.c",
+        "libavcodec/lossless_videoencdsp.c",
+        "libavcodec/lossless_videoencdsp.h",
+        "libavcodec/lpc.c",
+        "libavcodec/lpc.h",
+        "libavcodec/lpc_functions.h",
+        "libavcodec/mathops.h",
+        "libavcodec/mathtables.c",
+        "libavcodec/me_cmp.c",
+        "libavcodec/me_cmp.h",
+        "libavcodec/mediacodec.c",
+        "libavcodec/mjpeg.h",
+        "libavcodec/mjpeg_parser.c",
+        "libavcodec/mjpegdec.c",
+        "libavcodec/mjpegdec.h",
+        "libavcodec/mjpegdec_common.c",
+        "libavcodec/mjpegenc.c",
+        "libavcodec/mjpegenc.h",
+        "libavcodec/mjpegenc_common.c",
+        "libavcodec/mjpegenc_common.h",
+        "libavcodec/mjpegenc_huffman.c",
+        "libavcodec/mjpegenc_huffman.h",
+        "libavcodec/mlp_parse.h",
+        "libavcodec/motion_est.c",
+        "libavcodec/motion_est.h",
+        "libavcodec/motion_est_template.c",
+        "libavcodec/mpeg12.h",
+        "libavcodec/mpeg12data.c",
+        "libavcodec/mpeg12data.h",
+        "libavcodec/mpeg12enc.h",
+        "libavcodec/mpeg12framerate.c",
+        "libavcodec/mpeg12vlc.h",
+        "libavcodec/mpeg4audio.c",
+        "libavcodec/mpeg4audio.h",
+        "libavcodec/mpeg4audio_copy_pce.h",
+        "libavcodec/mpeg4audio_sample_rates.c",
+        "libavcodec/mpeg4audio_sample_rates.h",
+        "libavcodec/mpeg4video.h",
+        "libavcodec/mpeg4videodata.h",
+        "libavcodec/mpeg4videodec.h",
+        "libavcodec/mpeg4videodsp.h",
+        "libavcodec/mpeg4videoenc.h",
+        "libavcodec/mpeg_er.h",
+        "libavcodec/mpegaudio.c",
+        "libavcodec/mpegaudio.h",
+        "libavcodec/mpegaudio_parser.c",
+        "libavcodec/mpegaudio_tablegen.h",
+        "libavcodec/mpegaudiodata.c",
+        "libavcodec/mpegaudiodata.h",
+        "libavcodec/mpegaudiodec_common.c",
+        "libavcodec/mpegaudiodec_common_tablegen.h",
+        "libavcodec/mpegaudiodec_float.c",
+        "libavcodec/mpegaudiodec_template.c",
+        "libavcodec/mpegaudiodecheader.c",
+        "libavcodec/mpegaudiodecheader.h",
+        "libavcodec/mpegaudiodsp.c",
+        "libavcodec/mpegaudiodsp.h",
+        "libavcodec/mpegaudiodsp_data.c",
+        "libavcodec/mpegaudiodsp_fixed.c",
+        "libavcodec/mpegaudiodsp_float.c",
+        "libavcodec/mpegaudiodsp_template.c",
+        "libavcodec/mpegaudiotabs.c",
+        "libavcodec/mpegaudiotabs.h",
+        "libavcodec/mpegpicture.c",
+        "libavcodec/mpegpicture.h",
+        "libavcodec/mpegutils.h",
+        "libavcodec/mpegvideo.c",
+        "libavcodec/mpegvideo.h",
+        "libavcodec/mpegvideo_enc.c",
+        "libavcodec/mpegvideo_motion.c",
+        "libavcodec/mpegvideo_unquantize.c",
+        "libavcodec/mpegvideo_unquantize.h",
+        "libavcodec/mpegvideodata.c",
+        "libavcodec/mpegvideodata.h",
+        "libavcodec/mpegvideoenc.h",
+        "libavcodec/mpegvideoencdsp.c",
+        "libavcodec/mpegvideoencdsp.h",
+        "libavcodec/msmpeg4enc.h",
         "libavcodec/options.c",
+        "libavcodec/options_table.h",
+        "libavcodec/opus/celt.c",
+        "libavcodec/opus/celt.h",
+        "libavcodec/opus/dec.c",
+        "libavcodec/opus/dec_celt.c",
+        "libavcodec/opus/dsp.c",
+        "libavcodec/opus/dsp.h",
+        "libavcodec/opus/frame_duration_tab.c",
+        "libavcodec/opus/opus.h",
+        "libavcodec/opus/parse.c",
+        "libavcodec/opus/parse.h",
+        "libavcodec/opus/parser.c",
+        "libavcodec/opus/pvq.c",
+        "libavcodec/opus/pvq.h",
+        "libavcodec/opus/rc.c",
+        "libavcodec/opus/rc.h",
+        "libavcodec/opus/silk.c",
+        "libavcodec/opus/silk.h",
+        "libavcodec/opus/tab.c",
+        "libavcodec/opus/tab.h",
         "libavcodec/packet.c",
+        "libavcodec/packet_internal.h",
         "libavcodec/parser.c",
         "libavcodec/parser.h",
         "libavcodec/parser_internal.h",
         "libavcodec/parsers.c",
+        "libavcodec/pcm.c",
+        "libavcodec/pcm_tablegen.h",
+        "libavcodec/pel_template.c",
+        "libavcodec/pixblockdsp.c",
+        "libavcodec/pixblockdsp.h",
+        "libavcodec/pixels.h",
+        "libavcodec/png.c",
+        "libavcodec/png.h",
+        "libavcodec/png_parser.c",
+        "libavcodec/pngdec.c",
+        "libavcodec/pngdsp.c",
+        "libavcodec/pngdsp.h",
+        "libavcodec/pngenc.c",
+        "libavcodec/profiles.c",
+        "libavcodec/profiles.h",
+        "libavcodec/progressframe.h",
+        "libavcodec/psymodel.c",
+        "libavcodec/psymodel.h",
+        "libavcodec/pthread.c",
+        "libavcodec/pthread_frame.c",
+        "libavcodec/pthread_internal.h",
+        "libavcodec/pthread_slice.c",
+        "libavcodec/put_bits.h",
+        "libavcodec/qpeldsp.h",
+        "libavcodec/qsv_api.c",
+        "libavcodec/ratecontrol.c",
+        "libavcodec/ratecontrol.h",
         "libavcodec/raw.c",
         "libavcodec/raw.h",
-        "libavcodec/smpte_436m.c",
+        "libavcodec/raw_pix_fmt_tags.h",
+        "libavcodec/rawenc.c",
+        "libavcodec/rectangle.h",
+        "libavcodec/reverse.c",
+        "libavcodec/rl.c",
+        "libavcodec/rl.h",
+        "libavcodec/rnd_avg.h",
+        "libavcodec/rv20enc.h",
+        "libavcodec/sbr.h",
+        "libavcodec/sbrdsp.c",
+        "libavcodec/sbrdsp.h",
+        "libavcodec/sbrdsp_template.c",
+        "libavcodec/sei.h",
+        "libavcodec/simple_idct.c",
+        "libavcodec/simple_idct.h",
+        "libavcodec/simple_idct_template.c",
+        "libavcodec/sinewin.c",
+        "libavcodec/sinewin.h",
+        "libavcodec/sinewin_tablegen.h",
+        "libavcodec/sp5x.h",
+        "libavcodec/speedhqenc.h",
+        "libavcodec/srtdec.c",
+        "libavcodec/srtenc.c",
+        "libavcodec/startcode.c",
+        "libavcodec/startcode.h",
+        "libavcodec/thread.h",
+        "libavcodec/threadframe.h",
+        "libavcodec/threadprogress.c",
+        "libavcodec/threadprogress.h",
+        "libavcodec/tiff_common.c",
+        "libavcodec/tiff_common.h",
+        "libavcodec/timecode_internal.c",
+        "libavcodec/to_upper4.c",
+        "libavcodec/to_upper4.h",
+        "libavcodec/ttmlenc.h",
+        "libavcodec/unary.h",
         "libavcodec/utils.c",
+        "libavcodec/vbn.h",
+        "libavcodec/vc1_common.h",
         "libavcodec/version.c",
+        "libavcodec/videodsp.c",
+        "libavcodec/videodsp.h",
+        "libavcodec/videodsp_template.c",
+        "libavcodec/vlc.c",
+        "libavcodec/vlc.h",
+        "libavcodec/vorbis_data.c",
+        "libavcodec/vorbis_data.h",
         "libavcodec/vorbis_parser.c",
         "libavcodec/vorbis_parser_internal.h",
-        "libavdevice/alldevices.c",
-        "libavdevice/avdevice.c",
-        "libavdevice/version.c",
+        "libavcodec/vp89_rac.h",
+        "libavcodec/vp9.c",
+        "libavcodec/vp9.h",
+        "libavcodec/vp9_mc_template.c",
+        "libavcodec/vp9_parser.c",
+        "libavcodec/vp9block.c",
+        "libavcodec/vp9data.c",
+        "libavcodec/vp9data.h",
+        "libavcodec/vp9dec.h",
+        "libavcodec/vp9dsp.c",
+        "libavcodec/vp9dsp.h",
+        "libavcodec/vp9dsp_10bpp.c",
+        "libavcodec/vp9dsp_12bpp.c",
+        "libavcodec/vp9dsp_8bpp.c",
+        "libavcodec/vp9dsp_template.c",
+        "libavcodec/vp9lpf.c",
+        "libavcodec/vp9mvs.c",
+        "libavcodec/vp9prob.c",
+        "libavcodec/vp9recon.c",
+        "libavcodec/vp9shared.h",
+        "libavcodec/vpx_rac.c",
+        "libavcodec/vpx_rac.h",
+        "libavcodec/vvc.h",
+        "libavcodec/webvttdec.c",
+        "libavcodec/webvttenc.c",
+        "libavcodec/wmv2dec.h",
+        "libavcodec/wrapped_avframe.c",
+        "libavcodec/x86/aacencdsp_init.c",
+        "libavcodec/x86/aacpsdsp_init.c",
+        "libavcodec/x86/blockdsp_init.c",
+        "libavcodec/x86/bswapdsp_init.c",
+        "libavcodec/x86/cabac.h",
+        "libavcodec/x86/constants.c",
+        "libavcodec/x86/constants.h",
+        "libavcodec/x86/fdct.c",
+        "libavcodec/x86/fdct.h",
+        "libavcodec/x86/fdctdsp_init.c",
+        "libavcodec/x86/fpel.h",
+        "libavcodec/x86/h264_cabac.c",
+        "libavcodec/x86/h264_intrapred_init.c",
+        "libavcodec/x86/h264_qpel.c",
+        "libavcodec/x86/h264chroma_init.c",
+        "libavcodec/x86/h264dsp_init.c",
+        "libavcodec/x86/h26x/h2656dsp.c",
+        "libavcodec/x86/h26x/h2656dsp.h",
+        "libavcodec/x86/hevc/dsp.h",
+        "libavcodec/x86/hevc/dsp_init.c",
+        "libavcodec/x86/hpeldsp.h",
+        "libavcodec/x86/hpeldsp_init.c",
+        "libavcodec/x86/idctdsp.h",
+        "libavcodec/x86/idctdsp_init.c",
+        "libavcodec/x86/lossless_videoencdsp_init.c",
+        "libavcodec/x86/lpc_init.c",
+        "libavcodec/x86/mathops.h",
+        "libavcodec/x86/me_cmp_init.c",
+        "libavcodec/x86/mpegaudiodsp.c",
+        "libavcodec/x86/mpegvideo.c",
+        "libavcodec/x86/mpegvideoenc.c",
+        "libavcodec/x86/mpegvideoenc_template.c",
+        "libavcodec/x86/mpegvideoencdsp.h",
+        "libavcodec/x86/mpegvideoencdsp_init.c",
+        "libavcodec/x86/opusdsp_init.c",
+        "libavcodec/x86/pixblockdsp_init.c",
+        "libavcodec/x86/pngdsp_init.c",
+        "libavcodec/x86/qpel.h",
+        "libavcodec/x86/sbrdsp_init.c",
+        "libavcodec/x86/simple_idct.h",
+        "libavcodec/x86/videodsp.h",
+        "libavcodec/x86/videodsp_init.c",
+        "libavcodec/x86/vp9dsp_init.c",
+        "libavcodec/x86/vp9dsp_init.h",
+        "libavcodec/x86/vp9dsp_init_10bpp.c",
+        "libavcodec/x86/vp9dsp_init_12bpp.c",
+        "libavcodec/x86/vp9dsp_init_16bpp.c",
+        "libavcodec/x86/vp9dsp_init_16bpp_template.c",
+        "libavcodec/x86/vpx_arith.h",
+        "libavcodec/xiph.c",
+        "libavcodec/xiph.h",
+        "libavcodec/xvididct.h",
+        "libavcodec/xwd.h",
+        "libavcodec/zlib_wrapper.c",
+        "libavcodec/zlib_wrapper.h",
+        "libavdevice/avdevice.h",
+        "libavdevice/version.h",
+        "libavdevice/version_major.h",
+        "libavfilter/af_aformat.c",
+        "libavfilter/af_anull.c",
+        "libavfilter/af_aresample.c",
         "libavfilter/allfilters.c",
+        "libavfilter/audio.c",
+        "libavfilter/audio.h",
         "libavfilter/avfilter.c",
         "libavfilter/avfilter_internal.h",
         "libavfilter/avfiltergraph.c",
+        "libavfilter/bufferqueue.h",
         "libavfilter/buffersink.c",
         "libavfilter/buffersrc.c",
+        "libavfilter/ccfifo.c",
+        "libavfilter/ccfifo.h",
+        "libavfilter/colorspace.c",
+        "libavfilter/colorspace.h",
+        "libavfilter/drawutils.c",
+        "libavfilter/drawutils.h",
         "libavfilter/filters.h",
         "libavfilter/formats.c",
         "libavfilter/formats.h",
+        "libavfilter/framepool.c",
+        "libavfilter/framepool.h",
+        "libavfilter/framequeue.c",
+        "libavfilter/framequeue.h",
+        "libavfilter/framesync.c",
+        "libavfilter/framesync.h",
         "libavfilter/graphdump.c",
         "libavfilter/graphparser.c",
+        "libavfilter/hflip.h",
+        "libavfilter/log2_tab.c",
+        "libavfilter/pthread.c",
+        "libavfilter/scale_eval.c",
+        "libavfilter/scale_eval.h",
+        "libavfilter/transpose.h",
+        "libavfilter/trim.c",
         "libavfilter/version.c",
+        "libavfilter/vf_crop.c",
+        "libavfilter/vf_format.c",
+        "libavfilter/vf_hflip.c",
+        "libavfilter/vf_hflip_init.h",
+        "libavfilter/vf_null.c",
+        "libavfilter/vf_overlay.c",
+        "libavfilter/vf_overlay.h",
+        "libavfilter/vf_rotate.c",
+        "libavfilter/vf_scale.c",
+        "libavfilter/vf_stack.c",
+        "libavfilter/vf_transpose.c",
+        "libavfilter/vf_vflip.c",
+        "libavfilter/video.c",
+        "libavfilter/video.h",
+        "libavfilter/x86/vf_hflip_init.c",
+        "libavfilter/x86/vf_overlay_init.c",
+        "libavfilter/x86/vf_transpose_init.c",
+        "libavformat/aacdec.c",
+        "libavformat/ac3_channel_layout_tab.c",
+        "libavformat/adtsenc.c",
         "libavformat/allformats.c",
+        "libavformat/apetag.c",
+        "libavformat/apetag.h",
+        "libavformat/apv.c",
+        "libavformat/apv.h",
+        "libavformat/av1.c",
+        "libavformat/av1.h",
+        "libavformat/avc.c",
+        "libavformat/avc.h",
         "libavformat/avformat.c",
         "libavformat/avformat_internal.h",
         "libavformat/avio.c",
         "libavformat/avio_internal.h",
         "libavformat/aviobuf.c",
+        "libavformat/avlanguage.c",
+        "libavformat/avlanguage.h",
+        "libavformat/cbs.c",
+        "libavformat/cbs.h",
+        "libavformat/cbs_apv.c",
+        "libavformat/cbs_av1.c",
         "libavformat/codecstring.c",
+        "libavformat/crcenc.c",
+        "libavformat/dash.c",
+        "libavformat/dash.h",
+        "libavformat/dashenc.c",
         "libavformat/demux.c",
         "libavformat/demux.h",
         "libavformat/demux_utils.c",
+        "libavformat/dovi_isom.c",
+        "libavformat/dovi_isom.h",
         "libavformat/dump.c",
+        "libavformat/dv.c",
+        "libavformat/dv.h",
+        "libavformat/dvdclut.c",
+        "libavformat/dvdclut.h",
+        "libavformat/evc.c",
+        "libavformat/evc.h",
+        "libavformat/file.c",
+        "libavformat/flac_picture.c",
+        "libavformat/flac_picture.h",
+        "libavformat/flacenc.h",
+        "libavformat/flacenc_header.c",
         "libavformat/format.c",
+        "libavformat/framecrcenc.c",
+        "libavformat/framehash.c",
+        "libavformat/golomb_tab.c",
+        "libavformat/h2645_parse.c",
+        "libavformat/h264dec.c",
+        "libavformat/hashenc.c",
+        "libavformat/hevc.c",
+        "libavformat/hevc.h",
+        "libavformat/hevcdec.c",
+        "libavformat/hlsenc.c",
+        "libavformat/hlsplaylist.c",
+        "libavformat/hlsplaylist.h",
+        "libavformat/iamf.c",
+        "libavformat/iamf.h",
+        "libavformat/iamf_parse.c",
+        "libavformat/iamf_parse.h",
+        "libavformat/iamf_reader.c",
+        "libavformat/iamf_reader.h",
+        "libavformat/iamf_writer.c",
+        "libavformat/iamf_writer.h",
+        "libavformat/id3v1.c",
+        "libavformat/id3v1.h",
+        "libavformat/id3v2.c",
+        "libavformat/id3v2.h",
+        "libavformat/id3v2enc.c",
+        "libavformat/img2.c",
+        "libavformat/img2.h",
+        "libavformat/img2dec.c",
+        "libavformat/img2enc.c",
         "libavformat/internal.h",
+        "libavformat/isom.c",
+        "libavformat/isom.h",
         "libavformat/isom_tags.c",
+        "libavformat/ivfdec.c",
+        "libavformat/latmenc.c",
+        "libavformat/lcevc.c",
+        "libavformat/lcevc.h",
+        "libavformat/lcevctab.c",
+        "libavformat/log2_tab.c",
+        "libavformat/matroska.c",
+        "libavformat/matroska.h",
+        "libavformat/matroskadec.c",
+        "libavformat/matroskaenc.c",
+        "libavformat/metadata.c",
+        "libavformat/metadata.h",
+        "libavformat/mov.c",
+        "libavformat/mov_chan.c",
+        "libavformat/mov_chan.h",
+        "libavformat/mov_esds.c",
+        "libavformat/movenc.c",
+        "libavformat/movenc.h",
+        "libavformat/movenc_ttml.c",
+        "libavformat/movenc_ttml.h",
+        "libavformat/movenccenc.c",
+        "libavformat/movenccenc.h",
+        "libavformat/movenchint.c",
+        "libavformat/mp3dec.c",
+        "libavformat/mpeg.h",
+        "libavformat/mpeg4audio_sample_rates.c",
+        "libavformat/mpegaudiotabs.c",
+        "libavformat/mpegts.c",
+        "libavformat/mpegts.h",
+        "libavformat/mpegtsenc.c",
         "libavformat/mux.c",
         "libavformat/mux.h",
         "libavformat/mux_utils.c",
+        "libavformat/nal.c",
+        "libavformat/nal.h",
+        "libavformat/network.c",
+        "libavformat/network.h",
+        "libavformat/nullenc.c",
+        "libavformat/oggdec.h",
+        "libavformat/oggparsevorbis.c",
         "libavformat/options.c",
+        "libavformat/options_table.h",
+        "libavformat/opus_frame_duration_tab.c",
+        "libavformat/os_support.c",
+        "libavformat/os_support.h",
+        "libavformat/packet_internal.h",
+        "libavformat/packet_list.c",
+        "libavformat/pcmenc.c",
         "libavformat/protocols.c",
+        "libavformat/qtpalette.c",
+        "libavformat/qtpalette.h",
+        "libavformat/rawdec.c",
+        "libavformat/rawdec.h",
+        "libavformat/rawenc.c",
+        "libavformat/rawenc.h",
+        "libavformat/rawutils.c",
+        "libavformat/rawutils.h",
+        "libavformat/replaygain.c",
+        "libavformat/replaygain.h",
         "libavformat/riff.c",
         "libavformat/riff.h",
+        "libavformat/riffdec.c",
+        "libavformat/riffenc.c",
+        "libavformat/rmsipr.c",
+        "libavformat/rmsipr.h",
+        "libavformat/rtp.c",
+        "libavformat/rtp.h",
+        "libavformat/rtpenc.h",
+        "libavformat/rtpenc_chain.c",
+        "libavformat/rtpenc_chain.h",
         "libavformat/sdp.c",
         "libavformat/seek.c",
+        "libavformat/segment.c",
+        "libavformat/srtdec.c",
+        "libavformat/srtenc.c",
+        "libavformat/subtitles.c",
+        "libavformat/subtitles.h",
+        "libavformat/tls.h",
+        "libavformat/to_upper4.c",
+        "libavformat/ttmlenc.h",
+        "libavformat/url.c",
+        "libavformat/url.h",
+        "libavformat/urldecode.c",
+        "libavformat/urldecode.h",
         "libavformat/utils.c",
         "libavformat/version.c",
+        "libavformat/vorbiscomment.c",
+        "libavformat/vorbiscomment.h",
+        "libavformat/vpcc.c",
+        "libavformat/vpcc.h",
+        "libavformat/vvc.c",
+        "libavformat/vvc.h",
+        "libavformat/webvttdec.c",
+        "libavformat/webvttenc.c",
+        "libavformat/wv.c",
+        "libavformat/wv.h",
+        "libavutil/aarch64/cpu.h",
         "libavutil/adler32.c",
         "libavutil/aes.c",
         "libavutil/aes_ctr.c",
         "libavutil/aes_internal.h",
         "libavutil/ambient_viewing_environment.c",
+        "libavutil/attributes_internal.h",
         "libavutil/audio_fifo.c",
         "libavutil/avsscanf.c",
         "libavutil/avstring.c",
@@ -105,8 +860,10 @@
         "libavutil/camellia.c",
         "libavutil/cast5.c",
         "libavutil/channel_layout.c",
+        "libavutil/colorspace.h",
         "libavutil/container_fifo.c",
         "libavutil/cpu.c",
+        "libavutil/cpu_internal.h",
         "libavutil/crc.c",
         "libavutil/crc_internal.h",
         "libavutil/csp.c",
@@ -116,79 +873,204 @@
         "libavutil/display.c",
         "libavutil/dovi_meta.c",
         "libavutil/downmix_info.c",
+        "libavutil/dynarray.h",
+        "libavutil/emms.h",
         "libavutil/encryption_info.c",
         "libavutil/error.c",
         "libavutil/eval.c",
         "libavutil/executor.c",
+        "libavutil/ffmath.h",
         "libavutil/fifo.c",
         "libavutil/file.c",
+        "libavutil/file_open.c",
+        "libavutil/file_open.h",
         "libavutil/film_grain_params.c",
+        "libavutil/fixed_dsp.c",
+        "libavutil/fixed_dsp.h",
+        "libavutil/float_dsp.c",
+        "libavutil/float_dsp.h",
+        "libavutil/float_scalarproduct.c",
         "libavutil/frame.c",
+        "libavutil/getenv_utf8.h",
+        "libavutil/half2float.c",
+        "libavutil/half2float.h",
         "libavutil/hash.c",
         "libavutil/hdr_dynamic_metadata.c",
         "libavutil/hdr_dynamic_vivid_metadata.c",
         "libavutil/hmac.c",
         "libavutil/hwcontext.c",
         "libavutil/hwcontext_internal.h",
+        "libavutil/hwcontext_stub.c",
         "libavutil/iamf.c",
         "libavutil/imgutils.c",
+        "libavutil/imgutils_internal.h",
+        "libavutil/int128.h",
+        "libavutil/integer.c",
+        "libavutil/integer.h",
+        "libavutil/internal.h",
         "libavutil/intmath.c",
+        "libavutil/intmath.h",
         "libavutil/lfg.c",
+        "libavutil/libm.h",
+        "libavutil/lls.c",
+        "libavutil/lls.h",
         "libavutil/log.c",
+        "libavutil/log2_tab.c",
+        "libavutil/loongarch/cpu.h",
         "libavutil/lzo.c",
         "libavutil/mastering_display_metadata.c",
         "libavutil/mathematics.c",
         "libavutil/md5.c",
         "libavutil/mem.c",
+        "libavutil/mem_internal.h",
         "libavutil/murmur3.c",
         "libavutil/opt.c",
         "libavutil/parseutils.c",
         "libavutil/pixdesc.c",
         "libavutil/pixelutils.c",
+        "libavutil/ppc/cpu.h",
+        "libavutil/qsort.h",
         "libavutil/random_seed.c",
         "libavutil/rational.c",
         "libavutil/raw_color_params.c",
         "libavutil/rc4.c",
         "libavutil/refstruct.c",
+        "libavutil/reverse.c",
+        "libavutil/reverse.h",
         "libavutil/ripemd.c",
         "libavutil/samplefmt.c",
+        "libavutil/sfc64.h",
         "libavutil/sha.c",
         "libavutil/sha512.c",
         "libavutil/side_data.c",
+        "libavutil/side_data.h",
+        "libavutil/slicethread.c",
+        "libavutil/slicethread.h",
+        "libavutil/softfloat.h",
+        "libavutil/softfloat_tables.h",
         "libavutil/spherical.c",
         "libavutil/stereo3d.c",
         "libavutil/tdrdi.c",
         "libavutil/tea.c",
+        "libavutil/thread.h",
         "libavutil/threadmessage.c",
         "libavutil/time.c",
+        "libavutil/time_internal.h",
         "libavutil/timecode.c",
+        "libavutil/timecode_internal.c",
+        "libavutil/timecode_internal.h",
+        "libavutil/timer.h",
         "libavutil/timestamp.c",
         "libavutil/tree.c",
         "libavutil/twofish.c",
         "libavutil/tx.c",
+        "libavutil/tx_double.c",
+        "libavutil/tx_float.c",
+        "libavutil/tx_int32.c",
         "libavutil/tx_priv.h",
+        "libavutil/tx_template.c",
         "libavutil/utils.c",
         "libavutil/uuid.c",
         "libavutil/version.c",
         "libavutil/video_enc_params.c",
         "libavutil/video_hint.c",
+        "libavutil/x86/aes_init.c",
+        "libavutil/x86/asm.h",
+        "libavutil/x86/bswap.h",
+        "libavutil/x86/cpu.c",
+        "libavutil/x86/cpu.h",
         "libavutil/x86/crc.h",
-        "libavutil/x86/pixelutils.h",
+        "libavutil/x86/fixed_dsp_init.c",
+        "libavutil/x86/float_dsp_init.c",
+        "libavutil/x86/imgutils_init.c",
+        "libavutil/x86/intmath.h",
+        "libavutil/x86/intreadwrite.h",
+        "libavutil/x86/lls_init.c",
+        "libavutil/x86/timer.h",
+        "libavutil/x86/tx_float_init.c",
+        "libavutil/xga_font_data.c",
+        "libavutil/xga_font_data.h",
         "libavutil/xtea.c",
+        "libswresample/audioconvert.c",
+        "libswresample/audioconvert.h",
+        "libswresample/dither.c",
+        "libswresample/dither_template.c",
+        "libswresample/log2_tab.c",
+        "libswresample/noise_shaping_data.c",
         "libswresample/options.c",
         "libswresample/rematrix.c",
+        "libswresample/rematrix_template.c",
+        "libswresample/resample.c",
+        "libswresample/resample.h",
+        "libswresample/resample_dsp.c",
+        "libswresample/resample_template.c",
         "libswresample/swresample.c",
         "libswresample/swresample_frame.c",
         "libswresample/swresample_internal.h",
         "libswresample/version.c",
+        "libswresample/x86/audio_convert_init.c",
+        "libswresample/x86/rematrix_init.c",
+        "libswresample/x86/resample_init.c",
+        "libswscale/alphablend.c",
+        "libswscale/bayer_template.c",
+        "libswscale/cms.c",
+        "libswscale/cms.h",
+        "libswscale/csputils.c",
+        "libswscale/csputils.h",
+        "libswscale/filters.c",
+        "libswscale/filters.h",
         "libswscale/format.c",
         "libswscale/format.h",
+        "libswscale/framepool.c",
+        "libswscale/gamma.c",
+        "libswscale/graph.c",
+        "libswscale/graph.h",
+        "libswscale/half2float.c",
+        "libswscale/hscale.c",
+        "libswscale/hscale_fast_bilinear.c",
+        "libswscale/input.c",
+        "libswscale/jit.c",
+        "libswscale/jit.h",
+        "libswscale/log2_tab.c",
+        "libswscale/lut3d.c",
+        "libswscale/lut3d.h",
+        "libswscale/ops.c",
+        "libswscale/ops.h",
+        "libswscale/ops_chain.c",
+        "libswscale/ops_chain.h",
+        "libswscale/ops_dispatch.c",
+        "libswscale/ops_dispatch.h",
+        "libswscale/ops_internal.h",
+        "libswscale/ops_memcpy.c",
+        "libswscale/ops_optimizer.c",
         "libswscale/options.c",
+        "libswscale/output.c",
+        "libswscale/rational64.c",
+        "libswscale/rational64.h",
+        "libswscale/rgb2rgb.c",
+        "libswscale/rgb2rgb.h",
+        "libswscale/rgb2rgb_template.c",
+        "libswscale/slice.c",
         "libswscale/swscale.c",
         "libswscale/swscale_internal.h",
         "libswscale/swscale_unscaled.c",
+        "libswscale/uops.c",
+        "libswscale/uops.h",
+        "libswscale/uops_backend.c",
+        "libswscale/uops_list.h",
+        "libswscale/uops_macros.h",
+        "libswscale/uops_macros_gen.c",
+        "libswscale/uops_tmpl.c",
+        "libswscale/uops_tmpl.h",
         "libswscale/utils.c",
         "libswscale/version.c",
+        "libswscale/vscale.c",
+        "libswscale/x86/hscale_fast_bilinear_simd.c",
+        "libswscale/x86/ops.c",
+        "libswscale/x86/rgb2rgb.c",
+        "libswscale/x86/swscale.c",
+        "libswscale/x86/swscale_template.c",
+        "libswscale/x86/yuv2rgb.c",
         "libswscale/yuv2rgb.c"
       ]
     },
@@ -207,19 +1089,26 @@
         "libavcodec/dirac.h",
         "libavcodec/dv_profile.h",
         "libavcodec/exif.h",
+        "libavcodec/jni.h",
+        "libavcodec/mediacodec.h",
         "libavcodec/packet.h",
-        "libavcodec/smpte_436m.h",
+        "libavcodec/version.h",
+        "libavcodec/version_major.h",
         "libavcodec/vorbis_parser.h",
-        "libavdevice/avdevice.h",
         "libavfilter/avfilter.h",
         "libavfilter/buffersink.h",
         "libavfilter/buffersrc.h",
+        "libavfilter/version.h",
+        "libavfilter/version_major.h",
         "libavformat/avformat.h",
         "libavformat/avio.h",
+        "libavformat/version.h",
+        "libavformat/version_major.h",
         "libavutil/adler32.h",
         "libavutil/aes.h",
         "libavutil/aes_ctr.h",
         "libavutil/ambient_viewing_environment.h",
+        "libavutil/attributes.h",
         "libavutil/audio_fifo.h",
         "libavutil/avassert.h",
         "libavutil/avstring.h",
@@ -263,11 +1152,11 @@
         "libavutil/lfg.h",
         "libavutil/log.h",
         "libavutil/lzo.h",
+        "libavutil/macros.h",
         "libavutil/mastering_display_metadata.h",
         "libavutil/mathematics.h",
         "libavutil/md5.h",
         "libavutil/mem.h",
-        "libavutil/motion_vector.h",
         "libavutil/murmur3.h",
         "libavutil/opt.h",
         "libavutil/parseutils.h",
@@ -296,19 +1185,174 @@
         "libavutil/twofish.h",
         "libavutil/tx.h",
         "libavutil/uuid.h",
+        "libavutil/version.h",
         "libavutil/video_enc_params.h",
         "libavutil/video_hint.h",
         "libavutil/xtea.h",
         "libswresample/swresample.h",
-        "libswscale/swscale.h"
+        "libswresample/version.h",
+        "libswresample/version_major.h",
+        "libswscale/swscale.h",
+        "libswscale/version.h",
+        "libswscale/version_major.h"
       ]
     }
   },
   "modules": [
     {
+      "name": "libavcodec/libavcodec/packet.c",
+      "files": [
+        "libavcodec/packet.c",
+        "libavcodec/packet_internal.h",
+        {
+          "path": "libavcodec/defs.h",
+          "items": {
+            "included": [
+              {
+                "name": "AVProducerReferenceTime",
+                "kind": "type"
+              }
+            ]
+          }
+        },
+        "libavcodec/packet.h"
+      ]
+    },
+    {
+      "name": "libavcodec/libavcodec/get_bits.h",
+      "files": [
+        "libavcodec/get_bits.h"
+      ]
+    },
+    {
+      "name": "libavcodec/libavcodec/mathops.h",
+      "files": [
+        "libavcodec/mathops.h"
+      ]
+    },
+    {
+      "name": "libavcodec/libavcodec/put_bits.h",
+      "files": [
+        "libavcodec/put_bits.h"
+      ]
+    },
+    {
+      "name": "libavcodec/libavcodec/vlc.c",
+      "files": [
+        "libavcodec/vlc.c",
+        "libavcodec/vlc.h"
+      ]
+    },
+    {
       "name": "libavutil/libavutil/mem.c (foundational)",
       "files": [
-        "libavutil/mem.c",
+        {
+          "path": "libavutil/mem.c",
+          "items": {
+            "included": [
+              {
+                "name": "av_calloc",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_dynarray2_add",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_dynarray_add",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_dynarray_add_nofree",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_fast_malloc",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_fast_mallocz",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_fast_realloc",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_free",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_freep",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_malloc",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_malloc_array",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_mallocz",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_max_alloc",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_memdup",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_realloc",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_realloc_array",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_realloc_f",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_reallocp",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_reallocp_array",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_size_mult",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_strdup",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_strndup",
+                "kind": "symbol"
+              },
+              {
+                "name": "fast_malloc",
+                "kind": "symbol"
+              },
+              {
+                "name": "max_alloc_size",
+                "kind": "symbol"
+              },
+              {
+                "name": "size_mult",
+                "kind": "symbol"
+              }
+            ]
+          }
+        },
         "libavutil/mem.h"
       ]
     },
@@ -327,15 +1371,15 @@
           "items": {
             "included": [
               {
+                "name": "av_append_path_component",
+                "kind": "symbol"
+              },
+              {
                 "name": "av_asprintf",
                 "kind": "symbol"
               },
               {
                 "name": "av_get_token",
-                "kind": "symbol"
-              },
-              {
-                "name": "av_append_path_component",
                 "kind": "symbol"
               },
               {
@@ -383,15 +1427,15 @@
           "items": {
             "excluded": [
               {
+                "name": "av_append_path_component",
+                "kind": "symbol"
+              },
+              {
                 "name": "av_asprintf",
                 "kind": "symbol"
               },
               {
                 "name": "av_get_token",
-                "kind": "symbol"
-              },
-              {
-                "name": "av_append_path_component",
                 "kind": "symbol"
               },
               {
@@ -483,7 +1527,17 @@
     {
       "name": "libavutil/libavutil/common.h",
       "files": [
-        "libavutil/common.h"
+        {
+          "path": "libavutil/common.h",
+          "items": {
+            "excluded": [
+              {
+                "name": "av_ceil_log2_c",
+                "kind": "symbol"
+              }
+            ]
+          }
+        }
       ]
     },
     {
@@ -497,6 +1551,7 @@
       "name": "libavutil/libavutil/cpu.c",
       "files": [
         "libavutil/cpu.c",
+        "libavutil/cpu_internal.h",
         "libavutil/cpu.h"
       ]
     },
@@ -595,7 +1650,18 @@
     {
       "name": "libavutil/libavutil/intmath.c",
       "files": [
-        "libavutil/intmath.c"
+        "libavutil/intmath.c",
+        {
+          "path": "libavutil/common.h",
+          "items": {
+            "included": [
+              {
+                "name": "av_ceil_log2_c",
+                "kind": "symbol"
+              }
+            ]
+          }
+        }
       ]
     },
     {
@@ -644,48 +1710,13 @@
       "files": [
         "libavutil/pixdesc.c",
         "libavutil/pixdesc.h",
-        {
-          "path": "libavutil/pixfmt.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVAlphaMode",
-                "kind": "type"
-              },
-              {
-                "name": "AVChromaLocation",
-                "kind": "type"
-              },
-              {
-                "name": "AVColorPrimaries",
-                "kind": "type"
-              },
-              {
-                "name": "AVColorRange",
-                "kind": "type"
-              },
-              {
-                "name": "AVColorSpace",
-                "kind": "type"
-              },
-              {
-                "name": "AVColorTransferCharacteristic",
-                "kind": "type"
-              },
-              {
-                "name": "AVPixelFormat",
-                "kind": "type"
-              }
-            ]
-          }
-        }
+        "libavutil/pixfmt.h"
       ]
     },
     {
       "name": "libavutil/libavutil/pixelutils.c",
       "files": [
         "libavutil/pixelutils.c",
-        "libavutil/x86/pixelutils.h",
         "libavutil/pixelutils.h"
       ]
     },
@@ -714,6 +1745,7 @@
       "name": "libavutil/libavutil/imgutils.c",
       "files": [
         "libavutil/imgutils.c",
+        "libavutil/imgutils_internal.h",
         "libavutil/imgutils.h"
       ]
     },
@@ -841,6 +1873,7 @@
       "name": "libavutil/libavutil/utils.c",
       "files": [
         "libavutil/utils.c",
+        "libavutil/avassert.h",
         {
           "path": "libavutil/avutil.h",
           "items": {
@@ -947,12 +1980,6 @@
       ]
     },
     {
-      "name": "libavutil/libavutil/motion_vector.h",
-      "files": [
-        "libavutil/motion_vector.h"
-      ]
-    },
-    {
       "name": "libavutil/libavutil/raw_color_params.c",
       "files": [
         "libavutil/raw_color_params.c",
@@ -969,6 +1996,7 @@
       "name": "libavutil/libavutil/side_data.c",
       "files": [
         "libavutil/side_data.c",
+        "libavutil/side_data.h",
         {
           "path": "libavutil/frame.h",
           "items": {
@@ -1038,93 +2066,202 @@
       ]
     },
     {
-      "name": "libswresample/libswresample/swresample.c",
+      "name": "libavutil/libavutil/colorspace.h",
       "files": [
-        "libswresample/swresample.c",
-        "libswresample/swresample_internal.h",
-        "libswresample/swresample.h"
+        "libavutil/colorspace.h"
       ]
     },
     {
-      "name": "libswresample/libswresample/options.c",
+      "name": "libavutil/libavutil/emms.h",
       "files": [
-        "libswresample/options.c"
+        "libavutil/emms.h"
       ]
     },
     {
-      "name": "libswresample/libswresample/rematrix.c",
+      "name": "libavutil/libavutil/ffmath.h",
       "files": [
-        "libswresample/rematrix.c"
+        "libavutil/ffmath.h"
       ]
     },
     {
-      "name": "libswresample/libswresample/swresample_frame.c",
+      "name": "libavutil/libavutil/file_open.c",
       "files": [
-        "libswresample/swresample_frame.c"
+        "libavutil/file_open.c",
+        "libavutil/file_open.h"
       ]
     },
     {
-      "name": "libswresample/libswresample/version.c",
+      "name": "libavutil/libavutil/fixed_dsp.c",
       "files": [
-        "libswresample/version.c"
+        "libavutil/fixed_dsp.c",
+        "libavutil/fixed_dsp.h"
       ]
     },
     {
-      "name": "libswscale/libswscale/format.c",
+      "name": "libavutil/libavutil/float_dsp.c",
       "files": [
-        "libswscale/format.c",
-        "libswscale/format.h"
+        "libavutil/float_dsp.c",
+        "libavutil/float_dsp.h"
       ]
     },
     {
-      "name": "libswscale/libswscale/options.c",
+      "name": "libavutil/libavutil/float_scalarproduct.c",
       "files": [
-        "libswscale/options.c"
+        "libavutil/float_scalarproduct.c"
       ]
     },
     {
-      "name": "libswscale/libswscale/swscale.c",
+      "name": "libavutil/libavutil/getenv_utf8.h",
       "files": [
-        "libswscale/swscale.c",
-        "libswscale/swscale_internal.h",
+        "libavutil/getenv_utf8.h"
+      ]
+    },
+    {
+      "name": "libavutil/libavutil/half2float.c",
+      "files": [
+        "libavutil/half2float.c",
+        "libavutil/half2float.h"
+      ]
+    },
+    {
+      "name": "libavutil/libavutil/hwcontext_stub.c",
+      "files": [
+        "libavutil/hwcontext_stub.c"
+      ]
+    },
+    {
+      "name": "libavutil/libavutil/integer.c",
+      "files": [
+        "libavutil/integer.c",
+        "libavutil/integer.h"
+      ]
+    },
+    {
+      "name": "libavutil/libavutil/internal.h",
+      "files": [
+        "libavutil/internal.h"
+      ]
+    },
+    {
+      "name": "libavutil/libavutil/lls.c",
+      "files": [
+        "libavutil/lls.c",
+        "libavutil/lls.h"
+      ]
+    },
+    {
+      "name": "libavutil/libavutil/log2_tab.c",
+      "files": [
+        "libavutil/log2_tab.c",
+        "libavutil/intmath.h"
+      ]
+    },
+    {
+      "name": "libavutil/libavutil/mem.c",
+      "files": [
         {
-          "path": "libswscale/swscale.h",
+          "path": "libavutil/mem.c",
           "items": {
             "excluded": [
               {
-                "name": "SwsFilter",
-                "kind": "type"
+                "name": "av_calloc",
+                "kind": "symbol"
               },
               {
-                "name": "SwsVector",
-                "kind": "type"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "libswscale/libswscale/swscale_unscaled.c",
-      "files": [
-        "libswscale/swscale_unscaled.c"
-      ]
-    },
-    {
-      "name": "libswscale/libswscale/utils.c",
-      "files": [
-        "libswscale/utils.c",
-        {
-          "path": "libswscale/swscale.h",
-          "items": {
-            "included": [
-              {
-                "name": "SwsFilter",
-                "kind": "type"
+                "name": "av_dynarray2_add",
+                "kind": "symbol"
               },
               {
-                "name": "SwsVector",
-                "kind": "type"
+                "name": "av_dynarray_add",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_dynarray_add_nofree",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_fast_malloc",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_fast_mallocz",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_fast_realloc",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_free",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_freep",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_malloc",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_malloc_array",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_mallocz",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_max_alloc",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_memdup",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_realloc",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_realloc_array",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_realloc_f",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_reallocp",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_reallocp_array",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_size_mult",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_strdup",
+                "kind": "symbol"
+              },
+              {
+                "name": "av_strndup",
+                "kind": "symbol"
+              },
+              {
+                "name": "fast_malloc",
+                "kind": "symbol"
+              },
+              {
+                "name": "max_alloc_size",
+                "kind": "symbol"
+              },
+              {
+                "name": "size_mult",
+                "kind": "symbol"
               }
             ]
           }
@@ -1132,68 +2269,708 @@
       ]
     },
     {
-      "name": "libswscale/libswscale/version.c",
+      "name": "libavutil/libavutil/reverse.c",
       "files": [
-        "libswscale/version.c"
+        "libavutil/reverse.c",
+        "libavutil/reverse.h"
       ]
     },
     {
-      "name": "libswscale/libswscale/yuv2rgb.c",
+      "name": "libavutil/libavutil/sfc64.h",
       "files": [
-        "libswscale/yuv2rgb.c"
+        "libavutil/sfc64.h"
       ]
     },
     {
-      "name": "libavcodec/libavcodec/ac3_parser.c",
+      "name": "libavutil/libavutil/slicethread.c",
       "files": [
-        "libavcodec/ac3_parser.c",
-        "libavcodec/ac3_parser_internal.h",
-        "libavcodec/ac3_parser.h"
+        "libavutil/slicethread.c",
+        "libavutil/slicethread.h"
       ]
     },
     {
-      "name": "libavcodec/libavcodec/adts_parser.c",
+      "name": "libavutil/libavutil/softfloat.h",
       "files": [
-        "libavcodec/adts_parser.c",
-        "libavcodec/adts_parser.h"
+        "libavutil/softfloat.h",
+        "libavutil/softfloat_tables.h"
       ]
     },
     {
-      "name": "libavcodec/libavcodec/avdct.c",
+      "name": "libavutil/libavutil/thread.h",
       "files": [
-        "libavcodec/avdct.c",
-        "libavcodec/avdct.h"
+        "libavutil/thread.h"
       ]
     },
     {
-      "name": "libavcodec/libavcodec/codec_desc.c",
+      "name": "libavutil/libavutil/timecode_internal.c",
       "files": [
-        "libavcodec/codec_desc.c",
-        "libavcodec/codec_desc.h",
+        "libavutil/timecode_internal.c",
+        "libavutil/timecode_internal.h"
+      ]
+    },
+    {
+      "name": "libavutil/libavutil/tx_double.c",
+      "files": [
+        "libavutil/tx_double.c",
         {
-          "path": "libavcodec/codec_id.h",
+          "path": "libavutil/tx_template.c",
           "items": {
             "included": [
               {
-                "name": "AVCodecID",
-                "kind": "type"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/allcodecs.c",
-      "files": [
-        "libavcodec/allcodecs.c",
-        {
-          "path": "libavcodec/codec.h",
-          "items": {
-            "included": [
+                "name": "ff_tx_codelet_list_double_c",
+                "kind": "symbol"
+              },
               {
-                "name": "AVCodec",
-                "kind": "type"
+                "name": "ff_tx_dcstI_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctIII_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctIII_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctII_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctII_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctI_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctI_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dct_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dstI_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dstI_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft1024_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft1024_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft128_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft128_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft131072_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft131072_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft15_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft15_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16384_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16384_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2048_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2048_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft256_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft256_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32768_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32768_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft3_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft3_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft3_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4096_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4096_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft512_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft512_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft5_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft5_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft5_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft64_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft64_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft65536_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft65536_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft7_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft7_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft7_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8192_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8192_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft9_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft9_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft9_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_factor_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_init_naive_small_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_small_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_small_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_small_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_small_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_sr_codelet_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_sr_combine_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_1024_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_128_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_131072_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_16384_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_16_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_2048_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_256_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_32768_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_32_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_4096_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_512_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_53_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_64_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_65536_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_7_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_8192_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_8_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_9_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tabs_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_gen_exp_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_full_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_full_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_full_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_c2r_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_c2r_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2c_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2c_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_mod2_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_mod2_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_mod2_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_mod2_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_1024_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_128_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_131072_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_16384_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_16_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_2048_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_256_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_32768_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_32_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_4096_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_512_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_53_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_64_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_65536_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_7_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_8192_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_8_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_9_double",
+                "kind": "symbol"
               }
             ]
           }
@@ -1201,19 +2978,1324 @@
       ]
     },
     {
-      "name": "libavcodec/libavcodec/defs.h",
+      "name": "libavutil/libavutil/tx_float.c",
       "files": [
+        "libavutil/tx_float.c",
         {
-          "path": "libavcodec/defs.h",
+          "path": "libavutil/tx_template.c",
           "items": {
             "excluded": [
               {
-                "name": "AVCPBProperties",
-                "kind": "type"
+                "name": "ff_tx_codelet_list_double_c",
+                "kind": "symbol"
               },
               {
-                "name": "AVProducerReferenceTime",
-                "kind": "type"
+                "name": "ff_tx_codelet_list_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dcstI_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dcstI_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctIII_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctIII_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctIII_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctIII_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctII_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctII_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctII_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctII_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctI_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctI_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctI_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctI_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dct_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dct_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dstI_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dstI_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dstI_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dstI_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft1024_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft1024_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft1024_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft1024_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft128_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft128_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft128_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft128_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft131072_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft131072_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft131072_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft131072_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft15_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft15_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft15_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft15_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16384_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16384_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16384_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16384_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2048_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2048_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2048_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2048_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft256_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft256_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft256_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft256_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32768_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32768_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32768_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32768_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft3_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft3_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft3_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft3_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft3_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft3_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4096_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4096_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4096_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4096_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft512_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft512_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft512_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft512_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft5_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft5_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft5_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft5_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft5_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft5_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft64_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft64_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft64_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft64_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft65536_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft65536_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft65536_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft65536_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft7_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft7_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft7_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft7_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft7_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft7_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8192_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8192_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8192_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8192_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft9_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft9_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft9_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft9_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft9_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft9_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_factor_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_factor_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_init_naive_small_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_init_naive_small_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_small_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_small_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_small_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_small_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_small_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_small_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_small_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_small_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_ns_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_ns_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_sr_codelet_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_sr_codelet_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_sr_combine_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_sr_combine_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_1024_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_1024_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_128_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_128_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_131072_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_131072_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_16384_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_16384_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_16_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_16_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_2048_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_2048_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_256_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_256_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_32768_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_32768_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_32_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_32_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_4096_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_4096_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_512_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_512_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_53_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_53_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_64_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_64_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_65536_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_65536_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_7_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_7_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_8192_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_8192_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_8_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_8_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_9_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_9_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tabs_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tabs_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_gen_exp_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_gen_exp_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_full_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_full_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_full_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_full_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_full_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_full_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_fwd_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_fwd_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_inv_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_inv_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_c2r_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_c2r_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_c2r_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_c2r_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_init_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2c_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2c_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2c_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2c_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_mod2_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_mod2_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_mod2_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_mod2_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_mod2_def_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_mod2_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_mod2_double_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_mod2_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_1024_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_1024_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_128_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_128_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_131072_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_131072_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_16384_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_16384_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_16_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_16_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_2048_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_2048_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_256_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_256_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_32768_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_32768_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_32_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_32_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_4096_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_4096_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_512_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_512_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_53_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_53_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_64_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_64_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_65536_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_65536_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_7_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_7_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_8192_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_8192_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_8_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_8_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_9_double",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_9_int32",
+                "kind": "symbol"
               }
             ]
           }
@@ -1221,81 +4303,668 @@
       ]
     },
     {
-      "name": "libavcodec/libavcodec/dirac.c",
+      "name": "libavutil/libavutil/tx_int32.c",
       "files": [
-        "libavcodec/dirac.c",
-        "libavcodec/dirac.h"
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/dv_profile.c",
-      "files": [
-        "libavcodec/dv_profile.c",
-        "libavcodec/dv_profile.h"
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/exif.c",
-      "files": [
-        "libavcodec/exif.c",
-        "libavcodec/exif.h"
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/imgconvert.c",
-      "files": [
-        "libavcodec/imgconvert.c"
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/packet.c",
-      "files": [
-        "libavcodec/packet.c",
+        "libavutil/tx_int32.c",
         {
-          "path": "libavcodec/defs.h",
+          "path": "libavutil/tx_template.c",
           "items": {
             "included": [
               {
-                "name": "AVProducerReferenceTime",
-                "kind": "type"
-              }
-            ]
-          }
-        },
-        "libavcodec/packet.h"
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/avcodec.c",
-      "files": [
-        "libavcodec/avcodec.c",
-        "libavcodec/avcodec_internal.h",
-        {
-          "path": "libavcodec/internal.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVCodecInternal",
-                "kind": "type"
-              }
-            ]
-          }
-        },
-        {
-          "path": "libavcodec/avcodec.h",
-          "items": {
-            "excluded": [
-              {
-                "name": "AVCodecParser",
-                "kind": "type"
+                "name": "ff_tx_codelet_list_int32_c",
+                "kind": "symbol"
               },
               {
-                "name": "AVCodecParserContext",
-                "kind": "type"
+                "name": "ff_tx_dcstI_init_int32_c",
+                "kind": "symbol"
               },
               {
-                "name": "AVHWAccel",
-                "kind": "type"
+                "name": "ff_tx_dctIII_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctIII_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctII_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctII_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctI_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dctI_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dct_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dstI_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_dstI_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft1024_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft1024_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft128_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft128_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft131072_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft131072_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft15_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft15_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16384_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16384_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft16_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2048_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2048_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft256_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft256_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft2_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32768_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32768_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft32_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft3_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft3_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft3_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4096_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4096_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft4_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft512_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft512_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft5_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft5_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft5_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft64_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft64_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft65536_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft65536_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft7_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft7_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft7_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8192_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8192_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft8_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft9_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft9_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft9_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_factor_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_init_naive_small_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_small_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_inplace_small_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_small_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_naive_small_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_ns_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_pfa_ns_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_sr_codelet_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_fft_sr_combine_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_1024_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_128_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_131072_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_16384_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_16_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_2048_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_256_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_32768_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_32_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_4096_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_512_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_53_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_64_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_65536_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_7_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_8192_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_8_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tab_9_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_init_tabs_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_gen_exp_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_full_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_full_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_full_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_naive_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_15xM_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_3xM_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_5xM_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_7xM_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_fwd_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_fwd_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_inv_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_9xM_inv_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_mdct_pfa_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_c2r_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_c2r_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_init_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2c_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2c_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_mod2_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2i_mod2_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_mod2_def_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_rdft_r2r_mod2_int32_c",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_1024_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_128_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_131072_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_16384_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_16_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_2048_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_256_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_32768_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_32_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_4096_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_512_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_53_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_64_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_65536_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_7_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_8192_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_8_int32",
+                "kind": "symbol"
+              },
+              {
+                "name": "ff_tx_tab_9_int32",
+                "kind": "symbol"
               }
             ]
           }
@@ -1303,692 +4972,70 @@
       ]
     },
     {
-      "name": "libavcodec/libavcodec/codec_par.c",
+      "name": "libavutil/libavutil/x86/aes_init.c",
       "files": [
-        "libavcodec/codec_par.c",
-        "libavcodec/codec_par.h"
+        "libavutil/x86/aes_init.c"
       ]
     },
     {
-      "name": "libavcodec/libavcodec/bsf.c",
+      "name": "libavutil/libavutil/x86/asm.h",
       "files": [
-        "libavcodec/bsf.c",
-        "libavcodec/bsf_internal.h",
-        {
-          "path": "libavcodec/bsf.h",
-          "items": {
-            "excluded": [
-              {
-                "name": "AVBitStreamFilterContext",
-                "kind": "type"
-              },
-              {
-                "name": "AVBitStreamFilterGraph",
-                "kind": "type"
-              }
-            ]
-          }
-        }
+        "libavutil/x86/asm.h"
       ]
     },
     {
-      "name": "libavcodec/libavcodec/bitstream_filters.c",
+      "name": "libavutil/libavutil/x86/cpu.c",
       "files": [
-        "libavcodec/bitstream_filters.c"
+        "libavutil/x86/cpu.c",
+        "libavutil/x86/cpu.h"
       ]
     },
     {
-      "name": "libavcodec/libavcodec/bitstreamfilter.c",
+      "name": "libavutil/libavutil/x86/fixed_dsp_init.c",
       "files": [
-        "libavcodec/bitstreamfilter.c",
-        {
-          "path": "libavcodec/bsf/filters.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVBitStreamFilterLink",
-                "kind": "type"
-              },
-              {
-                "name": "AVBitStreamFilterPad",
-                "kind": "type"
-              }
-            ]
-          }
-        },
-        {
-          "path": "libavcodec/bsf.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVBitStreamFilterContext",
-                "kind": "type"
-              }
-            ]
-          }
-        }
+        "libavutil/x86/fixed_dsp_init.c"
       ]
     },
     {
-      "name": "libavcodec/libavcodec/bsf/sink.c",
+      "name": "libavutil/libavutil/x86/float_dsp_init.c",
       "files": [
-        "libavcodec/bsf/sink.c"
+        "libavutil/x86/float_dsp_init.c"
       ]
     },
     {
-      "name": "libavcodec/libavcodec/bsf/source.c",
+      "name": "libavutil/libavutil/x86/imgutils_init.c",
       "files": [
-        "libavcodec/bsf/source.c"
+        "libavutil/x86/imgutils_init.c"
       ]
     },
     {
-      "name": "libavcodec/libavcodec/bsfgraph.c",
+      "name": "libavutil/libavutil/x86/lls_init.c",
       "files": [
-        "libavcodec/bsfgraph.c",
-        {
-          "path": "libavcodec/bsf.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVBitStreamFilterGraph",
-                "kind": "type"
-              }
-            ]
-          }
-        }
+        "libavutil/x86/lls_init.c"
       ]
     },
     {
-      "name": "libavcodec/libavcodec/decode.c",
+      "name": "libavutil/libavutil/x86/timer.h",
       "files": [
-        "libavcodec/decode.c",
-        "libavcodec/decode.h",
-        {
-          "path": "libavcodec/avcodec.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVHWAccel",
-                "kind": "type"
-              }
-            ]
-          }
-        }
+        "libavutil/x86/timer.h"
       ]
     },
     {
-      "name": "libavcodec/libavcodec/encode.c",
+      "name": "libavutil/libavutil/x86/tx_float_init.c",
       "files": [
-        "libavcodec/encode.c",
-        "libavcodec/encode.h"
+        "libavutil/x86/tx_float_init.c"
       ]
     },
     {
-      "name": "libavcodec/libavcodec/get_buffer.c",
+      "name": "libavutil/libavutil/xga_font_data.c",
       "files": [
-        "libavcodec/get_buffer.c"
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/options.c",
-      "files": [
-        "libavcodec/options.c"
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/parser.c",
-      "files": [
-        "libavcodec/parser.c",
-        "libavcodec/parser.h",
-        "libavcodec/parser_internal.h",
-        {
-          "path": "libavcodec/avcodec.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVCodecParser",
-                "kind": "type"
-              },
-              {
-                "name": "AVCodecParserContext",
-                "kind": "type"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/parsers.c",
-      "files": [
-        "libavcodec/parsers.c"
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/raw.c",
-      "files": [
-        "libavcodec/raw.c",
-        "libavcodec/raw.h"
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/smpte_436m.c",
-      "files": [
-        "libavcodec/smpte_436m.c",
-        "libavcodec/smpte_436m.h"
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/utils.c",
-      "files": [
-        "libavcodec/utils.c",
-        {
-          "path": "libavcodec/codec.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVCodecHWConfig",
-                "kind": "type"
-              },
-              {
-                "name": "AVProfile",
-                "kind": "type"
-              }
-            ]
-          }
-        },
-        {
-          "path": "libavcodec/defs.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVCPBProperties",
-                "kind": "type"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/version.c",
-      "files": [
-        "libavcodec/version.c"
-      ]
-    },
-    {
-      "name": "libavcodec/libavcodec/vorbis_parser.c",
-      "files": [
-        "libavcodec/vorbis_parser.c",
-        "libavcodec/vorbis_parser_internal.h",
-        "libavcodec/vorbis_parser.h"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/avio.c",
-      "files": [
-        "libavformat/avio.c",
-        "libavformat/avio_internal.h",
-        "libavformat/avio.h"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/aviobuf.c",
-      "files": [
-        "libavformat/aviobuf.c"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/codecstring.c",
-      "files": [
-        "libavformat/codecstring.c"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/protocols.c",
-      "files": [
-        "libavformat/protocols.c"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/utils.c",
-      "files": [
-        "libavformat/utils.c",
-        {
-          "path": "libavformat/internal.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVCodecTag",
-                "kind": "type"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/avformat.c",
-      "files": [
-        "libavformat/avformat.c",
-        "libavformat/avformat_internal.h",
-        {
-          "path": "libavformat/avformat.h",
-          "items": {
-            "excluded": [
-              {
-                "name": "AVIndexEntry",
-                "kind": "type"
-              },
-              {
-                "name": "AVInputFormat",
-                "kind": "type"
-              },
-              {
-                "name": "AVOutputFormat",
-                "kind": "type"
-              },
-              {
-                "name": "AVProbeData",
-                "kind": "type"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/allformats.c",
-      "files": [
-        "libavformat/allformats.c"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/demux.c",
-      "files": [
-        "libavformat/demux.c",
-        "libavformat/demux.h"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/demux_utils.c",
-      "files": [
-        "libavformat/demux_utils.c"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/dump.c",
-      "files": [
-        "libavformat/dump.c"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/format.c",
-      "files": [
-        "libavformat/format.c",
-        {
-          "path": "libavformat/avformat.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVInputFormat",
-                "kind": "type"
-              },
-              {
-                "name": "AVOutputFormat",
-                "kind": "type"
-              },
-              {
-                "name": "AVProbeData",
-                "kind": "type"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/isom_tags.c",
-      "files": [
-        "libavformat/isom_tags.c"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/mux.c",
-      "files": [
-        "libavformat/mux.c",
-        "libavformat/mux.h"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/mux_utils.c",
-      "files": [
-        "libavformat/mux_utils.c"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/options.c",
-      "files": [
-        "libavformat/options.c"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/riff.c",
-      "files": [
-        "libavformat/riff.c",
-        "libavformat/riff.h"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/sdp.c",
-      "files": [
-        "libavformat/sdp.c"
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/seek.c",
-      "files": [
-        "libavformat/seek.c",
-        {
-          "path": "libavformat/avformat.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVIndexEntry",
-                "kind": "type"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "libavformat/libavformat/version.c",
-      "files": [
-        "libavformat/version.c"
-      ]
-    },
-    {
-      "name": "libavfilter/libavfilter/formats.c",
-      "files": [
-        "libavfilter/formats.c",
-        "libavfilter/formats.h"
-      ]
-    },
-    {
-      "name": "libavfilter/libavfilter/avfilter.c",
-      "files": [
-        "libavfilter/avfilter.c",
-        "libavfilter/avfilter_internal.h",
-        {
-          "path": "libavfilter/filters.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVFilterPad",
-                "kind": "type"
-              }
-            ]
-          }
-        },
-        {
-          "path": "libavfilter/avfilter.h",
-          "items": {
-            "excluded": [
-              {
-                "name": "AVFilterChain",
-                "kind": "type"
-              },
-              {
-                "name": "AVFilterGraph",
-                "kind": "type"
-              },
-              {
-                "name": "AVFilterGraphSegment",
-                "kind": "type"
-              },
-              {
-                "name": "AVFilterInOut",
-                "kind": "type"
-              },
-              {
-                "name": "AVFilterPadParams",
-                "kind": "type"
-              },
-              {
-                "name": "AVFilterParams",
-                "kind": "type"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "libavfilter/libavfilter/allfilters.c",
-      "files": [
-        "libavfilter/allfilters.c"
-      ]
-    },
-    {
-      "name": "libavfilter/libavfilter/avfiltergraph.c",
-      "files": [
-        "libavfilter/avfiltergraph.c",
-        {
-          "path": "libavfilter/avfilter.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVFilterGraph",
-                "kind": "type"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "libavfilter/libavfilter/buffersink.c",
-      "files": [
-        "libavfilter/buffersink.c",
-        "libavfilter/buffersink.h"
-      ]
-    },
-    {
-      "name": "libavfilter/libavfilter/buffersrc.c",
-      "files": [
-        "libavfilter/buffersrc.c",
-        "libavfilter/buffersrc.h"
-      ]
-    },
-    {
-      "name": "libavfilter/libavfilter/graphdump.c",
-      "files": [
-        "libavfilter/graphdump.c"
-      ]
-    },
-    {
-      "name": "libavfilter/libavfilter/graphparser.c",
-      "files": [
-        "libavfilter/graphparser.c",
-        {
-          "path": "libavfilter/avfilter.h",
-          "items": {
-            "included": [
-              {
-                "name": "AVFilterChain",
-                "kind": "type"
-              },
-              {
-                "name": "AVFilterGraphSegment",
-                "kind": "type"
-              },
-              {
-                "name": "AVFilterInOut",
-                "kind": "type"
-              },
-              {
-                "name": "AVFilterPadParams",
-                "kind": "type"
-              },
-              {
-                "name": "AVFilterParams",
-                "kind": "type"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "libavfilter/libavfilter/version.c",
-      "files": [
-        "libavfilter/version.c"
-      ]
-    },
-    {
-      "name": "libavdevice/libavdevice/alldevices.c",
-      "files": [
-        "libavdevice/alldevices.c"
-      ]
-    },
-    {
-      "name": "libavdevice/libavdevice/avdevice.c",
-      "files": [
-        "libavdevice/avdevice.c",
-        "libavdevice/avdevice.h"
-      ]
-    },
-    {
-      "name": "libavdevice/libavdevice/version.c",
-      "files": [
-        "libavdevice/version.c"
+        "libavutil/xga_font_data.c",
+        "libavutil/xga_font_data.h"
       ]
     }
   ],
   "schedule_seeds": [
-    "libavcodec/ac3_parser.c",
-    "libavcodec/ac3_parser.h",
-    "libavcodec/ac3_parser_internal.h",
-    "libavcodec/adts_parser.c",
-    "libavcodec/adts_parser.h",
-    "libavcodec/allcodecs.c",
-    "libavcodec/avcodec.c",
-    "libavcodec/avcodec.h",
-    "libavcodec/avcodec_internal.h",
-    "libavcodec/avdct.c",
-    "libavcodec/avdct.h",
-    "libavcodec/bitstream_filters.c",
-    "libavcodec/bitstreamfilter.c",
-    "libavcodec/bsf.c",
-    "libavcodec/bsf.h",
-    "libavcodec/bsf/filters.h",
-    "libavcodec/bsf/sink.c",
-    "libavcodec/bsf/source.c",
-    "libavcodec/bsf_internal.h",
-    "libavcodec/bsfgraph.c",
-    "libavcodec/codec.h",
-    "libavcodec/codec_desc.c",
-    "libavcodec/codec_desc.h",
-    "libavcodec/codec_id.h",
-    "libavcodec/codec_par.c",
-    "libavcodec/codec_par.h",
-    "libavcodec/decode.c",
-    "libavcodec/decode.h",
-    "libavcodec/defs.h",
-    "libavcodec/dirac.c",
-    "libavcodec/dirac.h",
-    "libavcodec/dv_profile.c",
-    "libavcodec/dv_profile.h",
-    "libavcodec/encode.c",
-    "libavcodec/encode.h",
-    "libavcodec/exif.c",
-    "libavcodec/exif.h",
-    "libavcodec/get_buffer.c",
-    "libavcodec/imgconvert.c",
-    "libavcodec/internal.h",
-    "libavcodec/options.c",
-    {
-      "path": "libavcodec/packet.c",
-      "items": {
-        "excluded": [
-          {
-            "name": "av_init_packet",
-            "kind": "symbol"
-          }
-        ]
-      }
-    },
-    {
-      "path": "libavcodec/packet.h",
-      "items": {
-        "excluded": [
-          {
-            "name": "av_init_packet",
-            "kind": "symbol"
-          }
-        ]
-      }
-    },
-    "libavcodec/parser.c",
-    "libavcodec/parser.h",
-    "libavcodec/parser_internal.h",
-    "libavcodec/parsers.c",
-    "libavcodec/raw.c",
-    "libavcodec/raw.h",
-    "libavcodec/smpte_436m.c",
-    "libavcodec/smpte_436m.h",
-    "libavcodec/utils.c",
-    "libavcodec/version.c",
-    "libavcodec/vorbis_parser.c",
-    "libavcodec/vorbis_parser.h",
-    "libavcodec/vorbis_parser_internal.h",
-    "libavdevice/alldevices.c",
-    "libavdevice/avdevice.c",
-    "libavdevice/avdevice.h",
-    "libavdevice/version.c",
-    "libavfilter/allfilters.c",
-    "libavfilter/avfilter.c",
-    "libavfilter/avfilter.h",
-    "libavfilter/avfilter_internal.h",
-    "libavfilter/avfiltergraph.c",
-    "libavfilter/buffersink.c",
-    "libavfilter/buffersink.h",
-    "libavfilter/buffersrc.c",
-    "libavfilter/buffersrc.h",
-    "libavfilter/filters.h",
-    "libavfilter/formats.c",
-    "libavfilter/formats.h",
-    "libavfilter/graphdump.c",
-    "libavfilter/graphparser.c",
-    "libavfilter/version.c",
-    "libavformat/allformats.c",
-    "libavformat/avformat.c",
-    "libavformat/avformat.h",
-    "libavformat/avformat_internal.h",
-    "libavformat/avio.c",
-    "libavformat/avio.h",
-    "libavformat/avio_internal.h",
-    "libavformat/aviobuf.c",
-    "libavformat/codecstring.c",
-    "libavformat/demux.c",
-    "libavformat/demux.h",
-    "libavformat/demux_utils.c",
-    "libavformat/dump.c",
-    "libavformat/format.c",
-    "libavformat/internal.h",
-    "libavformat/isom_tags.c",
-    "libavformat/mux.c",
-    "libavformat/mux.h",
-    "libavformat/mux_utils.c",
-    "libavformat/options.c",
-    "libavformat/protocols.c",
-    "libavformat/riff.c",
-    "libavformat/riff.h",
-    "libavformat/sdp.c",
-    "libavformat/seek.c",
-    "libavformat/utils.c",
-    "libavformat/version.c",
+    "libavutil/aarch64/cpu.h",
     "libavutil/adler32.c",
     "libavutil/adler32.h",
     "libavutil/aes.c",
@@ -1998,6 +5045,8 @@
     "libavutil/aes_internal.h",
     "libavutil/ambient_viewing_environment.c",
     "libavutil/ambient_viewing_environment.h",
+    "libavutil/attributes.h",
+    "libavutil/attributes_internal.h",
     "libavutil/audio_fifo.c",
     "libavutil/audio_fifo.h",
     {
@@ -2031,11 +5080,13 @@
     "libavutil/cast5.h",
     "libavutil/channel_layout.c",
     "libavutil/channel_layout.h",
+    "libavutil/colorspace.h",
     "libavutil/common.h",
     "libavutil/container_fifo.c",
     "libavutil/container_fifo.h",
     "libavutil/cpu.c",
     "libavutil/cpu.h",
+    "libavutil/cpu_internal.h",
     "libavutil/crc.c",
     "libavutil/crc.h",
     "libavutil/crc_internal.h",
@@ -2053,6 +5104,8 @@
     "libavutil/dovi_meta.h",
     "libavutil/downmix_info.c",
     "libavutil/downmix_info.h",
+    "libavutil/dynarray.h",
+    "libavutil/emms.h",
     "libavutil/encryption_info.c",
     "libavutil/encryption_info.h",
     "libavutil/error.c",
@@ -2061,14 +5114,25 @@
     "libavutil/eval.h",
     "libavutil/executor.c",
     "libavutil/executor.h",
+    "libavutil/ffmath.h",
     "libavutil/fifo.c",
     "libavutil/fifo.h",
     "libavutil/file.c",
     "libavutil/file.h",
+    "libavutil/file_open.c",
+    "libavutil/file_open.h",
     "libavutil/film_grain_params.c",
     "libavutil/film_grain_params.h",
+    "libavutil/fixed_dsp.c",
+    "libavutil/fixed_dsp.h",
+    "libavutil/float_dsp.c",
+    "libavutil/float_dsp.h",
+    "libavutil/float_scalarproduct.c",
     "libavutil/frame.c",
     "libavutil/frame.h",
+    "libavutil/getenv_utf8.h",
+    "libavutil/half2float.c",
+    "libavutil/half2float.h",
     "libavutil/hash.c",
     "libavutil/hash.h",
     "libavutil/hdr_dynamic_metadata.c",
@@ -2080,19 +5144,32 @@
     "libavutil/hwcontext.c",
     "libavutil/hwcontext.h",
     "libavutil/hwcontext_internal.h",
+    "libavutil/hwcontext_stub.c",
     "libavutil/iamf.c",
     "libavutil/iamf.h",
     "libavutil/imgutils.c",
     "libavutil/imgutils.h",
+    "libavutil/imgutils_internal.h",
+    "libavutil/int128.h",
+    "libavutil/integer.c",
+    "libavutil/integer.h",
+    "libavutil/internal.h",
     "libavutil/intfloat.h",
     "libavutil/intmath.c",
+    "libavutil/intmath.h",
     "libavutil/intreadwrite.h",
     "libavutil/lfg.c",
     "libavutil/lfg.h",
+    "libavutil/libm.h",
+    "libavutil/lls.c",
+    "libavutil/lls.h",
     "libavutil/log.c",
     "libavutil/log.h",
+    "libavutil/log2_tab.c",
+    "libavutil/loongarch/cpu.h",
     "libavutil/lzo.c",
     "libavutil/lzo.h",
+    "libavutil/macros.h",
     "libavutil/mastering_display_metadata.c",
     "libavutil/mastering_display_metadata.h",
     "libavutil/mathematics.c",
@@ -2101,7 +5178,7 @@
     "libavutil/md5.h",
     "libavutil/mem.c",
     "libavutil/mem.h",
-    "libavutil/motion_vector.h",
+    "libavutil/mem_internal.h",
     "libavutil/murmur3.c",
     "libavutil/murmur3.h",
     "libavutil/opt.c",
@@ -2113,6 +5190,8 @@
     "libavutil/pixelutils.c",
     "libavutil/pixelutils.h",
     "libavutil/pixfmt.h",
+    "libavutil/ppc/cpu.h",
+    "libavutil/qsort.h",
     "libavutil/random_seed.c",
     "libavutil/random_seed.h",
     "libavutil/rational.c",
@@ -2124,15 +5203,51 @@
     "libavutil/refstruct.c",
     "libavutil/refstruct.h",
     "libavutil/replaygain.h",
+    "libavutil/reverse.c",
+    "libavutil/reverse.h",
     "libavutil/ripemd.c",
     "libavutil/ripemd.h",
     "libavutil/samplefmt.c",
     "libavutil/samplefmt.h",
+    "libavutil/sfc64.h",
     "libavutil/sha.c",
     "libavutil/sha.h",
     "libavutil/sha512.c",
     "libavutil/sha512.h",
     "libavutil/side_data.c",
+    "libavutil/side_data.h",
+    {
+      "path": "libavutil/slicethread.c",
+      "items": {
+        "excluded": [
+          {
+            "name": "avpriv_slicethread_create",
+            "kind": "symbol"
+          },
+          {
+            "name": "avpriv_slicethread_execute",
+            "kind": "symbol"
+          }
+        ]
+      }
+    },
+    {
+      "path": "libavutil/slicethread.h",
+      "items": {
+        "excluded": [
+          {
+            "name": "avpriv_slicethread_create",
+            "kind": "symbol"
+          },
+          {
+            "name": "avpriv_slicethread_execute",
+            "kind": "symbol"
+          }
+        ]
+      }
+    },
+    "libavutil/softfloat.h",
+    "libavutil/softfloat_tables.h",
     "libavutil/spherical.c",
     "libavutil/spherical.h",
     "libavutil/stereo3d.c",
@@ -2141,12 +5256,17 @@
     "libavutil/tdrdi.h",
     "libavutil/tea.c",
     "libavutil/tea.h",
+    "libavutil/thread.h",
     "libavutil/threadmessage.c",
     "libavutil/threadmessage.h",
     "libavutil/time.c",
     "libavutil/time.h",
+    "libavutil/time_internal.h",
     "libavutil/timecode.c",
     "libavutil/timecode.h",
+    "libavutil/timecode_internal.c",
+    "libavutil/timecode_internal.h",
+    "libavutil/timer.h",
     "libavutil/timestamp.c",
     "libavutil/timestamp.h",
     "libavutil/tree.c",
@@ -2155,7 +5275,11 @@
     "libavutil/twofish.h",
     "libavutil/tx.c",
     "libavutil/tx.h",
+    "libavutil/tx_double.c",
+    "libavutil/tx_float.c",
+    "libavutil/tx_int32.c",
     "libavutil/tx_priv.h",
+    "libavutil/tx_template.c",
     {
       "path": "libavutil/utils.c",
       "items": {
@@ -2170,31 +5294,29 @@
     "libavutil/uuid.c",
     "libavutil/uuid.h",
     "libavutil/version.c",
+    "libavutil/version.h",
     "libavutil/video_enc_params.c",
     "libavutil/video_enc_params.h",
     "libavutil/video_hint.c",
     "libavutil/video_hint.h",
+    "libavutil/x86/aes_init.c",
+    "libavutil/x86/asm.h",
+    "libavutil/x86/bswap.h",
+    "libavutil/x86/cpu.c",
+    "libavutil/x86/cpu.h",
     "libavutil/x86/crc.h",
-    "libavutil/x86/pixelutils.h",
+    "libavutil/x86/fixed_dsp_init.c",
+    "libavutil/x86/float_dsp_init.c",
+    "libavutil/x86/imgutils_init.c",
+    "libavutil/x86/intmath.h",
+    "libavutil/x86/intreadwrite.h",
+    "libavutil/x86/lls_init.c",
+    "libavutil/x86/timer.h",
+    "libavutil/x86/tx_float_init.c",
+    "libavutil/xga_font_data.c",
+    "libavutil/xga_font_data.h",
     "libavutil/xtea.c",
-    "libavutil/xtea.h",
-    "libswresample/options.c",
-    "libswresample/rematrix.c",
-    "libswresample/swresample.c",
-    "libswresample/swresample.h",
-    "libswresample/swresample_frame.c",
-    "libswresample/swresample_internal.h",
-    "libswresample/version.c",
-    "libswscale/format.c",
-    "libswscale/format.h",
-    "libswscale/options.c",
-    "libswscale/swscale.c",
-    "libswscale/swscale.h",
-    "libswscale/swscale_internal.h",
-    "libswscale/swscale_unscaled.c",
-    "libswscale/utils.c",
-    "libswscale/version.c",
-    "libswscale/yuv2rgb.c"
+    "libavutil/xtea.h"
   ],
   "t3_dir": "t3"
 }

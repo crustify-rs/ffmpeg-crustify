@@ -14,12 +14,58 @@
         "patches": "glibc 2.39-0ubuntu8.9"
       },
       "linked_from": "system",
+      "decision": null,
       "wrapper": {
         "repository": "crustify-rs/glibc-bindings",
         "pin": "6180870f2ddbc30a43e5687395eb4f13908b3cbf"
       },
       "rust_equivalent": {
-        "ported": [],
+        "ported": [
+          {
+            "crate": "rustix",
+            "feature_parity": "partial",
+            "license": "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT",
+            "notes": "Linux system calls reimplemented over raw syscalls: covers close, fcntl, fstat, isatty, mmap, munmap, nanosleep, clock_gettime, sched_getaffinity and prctl of the 60 functions the scope calls; no stdio (fdopen, fputs, setvbuf, sscanf, stderr), string and number parsing (strtod, strtol), time formatting (strftime, localtime_r, gmtime_r, mktime), pthread threads, mutexes and condition variables, or the allocator"
+          }
+        ],
+        "bindings": [
+          {
+            "crate": "nix",
+            "sys": "libc",
+            "feature_parity": "partial",
+            "license": "MIT",
+            "notes": "safe wrappers over glibc of the same POSIX calls rustix covers, and mkstemp; no stdio, string, strto*, strftime/localtime_r, pthread mutex, condition or thread, or allocator functions"
+          }
+        ]
+      }
+    },
+    {
+      "name": "libm",
+      "resolved": {
+        "path": "/lib/x86_64-linux-gnu/libm.so.6",
+        "version": "2.39",
+        "package": "libc6 2.39-0ubuntu8.9"
+      },
+      "source": {
+        "repository": "https://sourceware.org/git/glibc.git",
+        "tag": "glibc-2.39",
+        "patches": "glibc 2.39-0ubuntu8.9"
+      },
+      "linked_from": "system",
+      "decision": null,
+      "wrapper": {
+        "repository": "crustify-rs/glibc-bindings",
+        "pin": null
+      },
+      "rust_equivalent": {
+        "ported": [
+          {
+            "crate": "libm",
+            "feature_parity": "partial",
+            "license": "MIT",
+            "notes": "a port of musl's libm with all 33 functions the scope calls (acos to trunc, exp2f, expf, logf, llrint and llrintf included), but its results can differ from glibc 2.39's in the last ulp, so outputs FATE checks bit-exactly may change"
+          }
+        ],
         "bindings": []
       }
     }

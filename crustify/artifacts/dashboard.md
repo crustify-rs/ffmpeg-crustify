@@ -713,7 +713,8 @@ the corrections it made to what earlier runs committed.
 | 7 | 0 | 0 | — | 0 | $3.74 | 9.1M | 13m05s |
 | 8 | 2 | 0 | `configs/wavefront-config.json` (to the current schema: `closure`, 160 `modules`, `schedule_seeds`), `configs/<link-unit>/<index>/wavefront-config.json` (160 removed, folded into `modules`) | 1 | $7.35 | 20.1M | 30m44s |
 | 9 | — | — | — (not promoted: superseded by the libavutil pilot's settings; its commit `52931cc1b80` stays on `crustify/planner/run-9`) | 2 | $10.30 | 29.5M | 29m37s |
-| **Σ** | **191** | **691** | | **22** | **$60.79** | **150.4M** | **260m33s** |
+| 10 | 126 | 5 | `configs/wavefront-config.json` (`closure` the configured build: 1,063 impl files, 119 api headers; 125 `modules`, 38 added, 73 removed; `schedule_seeds` libavutil's 234 files), `t3/chased_casts.csv` (13 rows removed, 18 added) | 2 | `$<n>` | `<n>M` | `<n>m<n>s` |
+| **Σ** | **317** | **696** | | **24** | **$60.79** | **150.4M** | **260m33s** |
 
 ## Notes
 
