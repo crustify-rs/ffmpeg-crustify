@@ -1,8 +1,9 @@
 {
   "_comment": [
     "The campaign's module order and waves (crustify specs/artifacts/schedule.md, schema 6), planner run 10.",
-    "Waves 0-202 with status done are the wrap campaign's, kept as they ran. Waves 203-688 are the libavutil port, from one seeded body-deep wavefront schedule (--with-enums), and its later stages (port/layout, port/memory, port/unexport) after the waves of the modules whose integration frees them.",
-    "Release points are wavefront's: module names are written <link-unit>/<name>, a user's `wave` is wavefront's own numbering of that schedule, and `module: null` names C no module of the plan owns (the libraries the pilot leaves out, fftools), which stays C."
+    "Waves 0-202 with status done are the wrap campaign's, kept as they ran. Waves 203-686 are the libavutil port, from one seeded body-deep wavefront schedule (--with-enums), and its later stages (port/layout, port/memory, port/unexport) after the waves of the modules whose integration frees them.",
+    "Release points are wavefront's: module names are written <link-unit>/<name>, a user's `wave` is wavefront's own numbering of that schedule, and `module: null` names C no module of the plan owns (the libraries the pilot leaves out, fftools), which stays C.",
+    "libavutil/pixelutils.c is configured out: the ingest profile builds it with CONFIG_PIXELUTILS 0, a stub that stays C, so it has no port waves and the release points that named it as a user name it as C no module owns. Its wrap wave 53 is kept as it ran."
   ],
   "schema_version": 6,
   "modules": [
@@ -207,7 +208,7 @@
       "layer": 0,
       "waves": [
         209,
-        667
+        665
       ],
       "depends_on": {
         "scheduled": [],
@@ -577,7 +578,7 @@
         217,
         233,
         241,
-        661
+        659
       ],
       "depends_on": {
         "scheduled": [],
@@ -810,7 +811,7 @@
       "waves": [
         223,
         236,
-        662
+        660
       ],
       "depends_on": {
         "scheduled": [],
@@ -865,7 +866,7 @@
       "layer": 0,
       "waves": [
         224,
-        663
+        661
       ],
       "depends_on": {
         "scheduled": [],
@@ -924,7 +925,7 @@
         298,
         316,
         326,
-        664
+        662
       ],
       "depends_on": {
         "scheduled": [
@@ -1638,7 +1639,7 @@
       "waves": [
         256,
         282,
-        665
+        663
       ],
       "depends_on": {
         "scheduled": [
@@ -1690,7 +1691,7 @@
       "waves": [
         257,
         283,
-        666
+        664
       ],
       "depends_on": {
         "scheduled": [
@@ -1799,7 +1800,7 @@
         306,
         322,
         331,
-        668
+        666
       ],
       "depends_on": {
         "scheduled": [
@@ -1897,7 +1898,7 @@
         261,
         286,
         307,
-        669
+        667
       ],
       "depends_on": {
         "scheduled": [
@@ -2096,7 +2097,7 @@
         263,
         288,
         308,
-        670
+        668
       ],
       "depends_on": {
         "scheduled": [
@@ -2200,7 +2201,7 @@
         265,
         290,
         310,
-        671
+        669
       ],
       "depends_on": {
         "scheduled": [
@@ -2283,7 +2284,7 @@
         291,
         311,
         324,
-        672
+        670
       ],
       "depends_on": {
         "scheduled": [
@@ -2977,9 +2978,9 @@
       "waves": [
         21,
         360,
-        372,
-        382,
-        389
+        371,
+        380,
+        387
       ],
       "depends_on": {
         "scheduled": [
@@ -3195,13 +3196,13 @@
         81,
         108,
         361,
-        383,
-        390,
-        396,
-        400,
+        381,
+        388,
+        394,
+        398,
+        401,
         403,
-        405,
-        406
+        404
       ],
       "depends_on": {
         "scheduled": [
@@ -3361,7 +3362,7 @@
       "waves": [
         32,
         362,
-        373
+        372
       ],
       "depends_on": {
         "scheduled": [
@@ -3465,12 +3466,12 @@
       "waves": [
         33,
         363,
-        374,
-        384,
-        391,
-        397,
-        401,
-        404
+        373,
+        382,
+        389,
+        395,
+        399,
+        402
       ],
       "depends_on": {
         "scheduled": [
@@ -3694,13 +3695,13 @@
       "layer": 3,
       "waves": [
         365,
-        375,
-        385,
-        392,
-        398,
-        402,
-        673,
-        674
+        374,
+        383,
+        390,
+        396,
+        400,
+        671,
+        672
       ],
       "depends_on": {
         "scheduled": [
@@ -3750,7 +3751,7 @@
       "waves": [
         42,
         366,
-        376
+        375
       ],
       "depends_on": {
         "scheduled": [
@@ -3876,9 +3877,9 @@
       "waves": [
         49,
         367,
-        377,
-        386,
-        393
+        376,
+        384,
+        391
       ],
       "depends_on": {
         "scheduled": [
@@ -3946,10 +3947,10 @@
       "waves": [
         117,
         368,
-        378,
-        387,
-        394,
-        399
+        377,
+        385,
+        392,
+        397
       ],
       "depends_on": {
         "scheduled": [
@@ -4055,9 +4056,7 @@
       "foundational": false,
       "layer": 3,
       "waves": [
-        53,
-        369,
-        379
+        53
       ],
       "depends_on": {
         "scheduled": [
@@ -4079,10 +4078,10 @@
       "foundational": false,
       "layer": 3,
       "waves": [
-        370,
-        380,
-        388,
-        395
+        369,
+        378,
+        386,
+        393
       ],
       "depends_on": {
         "scheduled": [
@@ -4145,8 +4144,8 @@
       "layer": 3,
       "waves": [
         119,
-        371,
-        381
+        370,
+        379
       ],
       "depends_on": {
         "scheduled": [
@@ -4187,9 +4186,9 @@
       "foundational": false,
       "layer": 4,
       "waves": [
-        407,
-        418,
-        435
+        405,
+        416,
+        433
       ],
       "depends_on": {
         "scheduled": [
@@ -4226,17 +4225,17 @@
       "layer": 4,
       "waves": [
         20,
-        408,
-        419,
-        436,
-        446,
-        455,
-        460,
-        465,
-        469,
+        406,
+        417,
+        434,
+        444,
+        453,
+        458,
+        463,
+        467,
+        470,
         472,
-        474,
-        675
+        673
       ],
       "depends_on": {
         "scheduled": [
@@ -4407,12 +4406,12 @@
       "waves": [
         35,
         86,
-        420,
-        437,
-        447,
-        456,
-        461,
-        466
+        418,
+        435,
+        445,
+        454,
+        459,
+        464
       ],
       "depends_on": {
         "scheduled": [
@@ -4498,12 +4497,12 @@
       "waves": [
         39,
         88,
-        409,
-        421,
-        438,
-        448,
-        457,
-        462
+        407,
+        419,
+        436,
+        446,
+        455,
+        460
       ],
       "depends_on": {
         "scheduled": [
@@ -4893,9 +4892,9 @@
       "foundational": false,
       "layer": 4,
       "waves": [
-        410,
-        422,
-        676
+        408,
+        420,
+        674
       ],
       "depends_on": {
         "scheduled": [
@@ -5018,10 +5017,10 @@
       "waves": [
         43,
         91,
-        411,
-        423,
-        439,
-        449
+        409,
+        421,
+        437,
+        447
       ],
       "depends_on": {
         "scheduled": [
@@ -5120,9 +5119,9 @@
       "foundational": false,
       "layer": 4,
       "waves": [
-        412,
-        424,
-        440
+        410,
+        422,
+        438
       ],
       "depends_on": {
         "scheduled": [
@@ -5191,15 +5190,15 @@
         52,
         96,
         111,
-        413,
-        425,
-        441,
-        450,
-        458,
-        463,
-        467,
-        470,
-        679
+        411,
+        423,
+        439,
+        448,
+        456,
+        461,
+        465,
+        468,
+        677
       ],
       "depends_on": {
         "scheduled": [
@@ -5360,10 +5359,10 @@
       "foundational": false,
       "layer": 4,
       "waves": [
-        414,
-        426,
-        442,
-        451
+        412,
+        424,
+        440,
+        449
       ],
       "depends_on": {
         "scheduled": [
@@ -5682,10 +5681,10 @@
       "foundational": false,
       "layer": 4,
       "waves": [
-        415,
-        427,
-        443,
-        452
+        413,
+        425,
+        441,
+        450
       ],
       "depends_on": {
         "scheduled": [
@@ -5997,21 +5996,21 @@
       "foundational": false,
       "layer": 4,
       "waves": [
-        416,
-        428,
-        444,
-        453,
-        459,
-        464,
-        468,
+        414,
+        426,
+        442,
+        451,
+        457,
+        462,
+        466,
+        469,
         471,
         473,
-        475,
+        681,
+        682,
         683,
-        684,
         685,
-        687,
-        688
+        686
       ],
       "depends_on": {
         "scheduled": [
@@ -6173,10 +6172,10 @@
       "layer": 4,
       "waves": [
         67,
-        417,
-        429,
-        445,
-        454
+        415,
+        427,
+        443,
+        452
       ],
       "depends_on": {
         "scheduled": [
@@ -6228,7 +6227,7 @@
       "foundational": false,
       "layer": 4,
       "waves": [
-        430
+        428
       ],
       "depends_on": {
         "scheduled": [
@@ -6257,7 +6256,7 @@
       "foundational": false,
       "layer": 4,
       "waves": [
-        431
+        429
       ],
       "depends_on": {
         "scheduled": [
@@ -6286,7 +6285,7 @@
       "foundational": false,
       "layer": 4,
       "waves": [
-        432
+        430
       ],
       "depends_on": {
         "scheduled": [
@@ -6315,8 +6314,8 @@
       "foundational": false,
       "layer": 4,
       "waves": [
-        433,
-        680
+        431,
+        678
       ],
       "depends_on": {
         "scheduled": [
@@ -6338,7 +6337,7 @@
       "foundational": false,
       "layer": 4,
       "waves": [
-        434
+        432
       ],
       "depends_on": {
         "scheduled": [
@@ -6370,14 +6369,14 @@
         114,
         122,
         125,
-        476,
-        484,
-        491,
-        497,
-        502,
-        507,
-        511,
-        514
+        474,
+        482,
+        489,
+        495,
+        500,
+        505,
+        509,
+        512
       ],
       "depends_on": {
         "scheduled": [
@@ -6639,11 +6638,11 @@
         123,
         126,
         127,
-        477,
-        485,
-        492,
-        498,
-        503
+        475,
+        483,
+        490,
+        496,
+        501
       ],
       "depends_on": {
         "scheduled": [
@@ -7127,8 +7126,8 @@
       "foundational": false,
       "layer": 5,
       "waves": [
-        478,
-        486
+        476,
+        484
       ],
       "depends_on": {
         "scheduled": [
@@ -7151,13 +7150,13 @@
       "layer": 5,
       "waves": [
         116,
-        479,
-        487,
-        493,
-        499,
-        504,
-        508,
-        678
+        477,
+        485,
+        491,
+        497,
+        502,
+        506,
+        676
       ],
       "depends_on": {
         "scheduled": [
@@ -7259,9 +7258,9 @@
       "layer": 5,
       "waves": [
         54,
-        480,
-        488,
-        494
+        478,
+        486,
+        492
       ],
       "depends_on": {
         "scheduled": [
@@ -7381,13 +7380,14 @@
       "foundational": false,
       "layer": 5,
       "waves": [
-        481,
-        489,
-        495,
-        500,
-        505,
-        509,
-        512,
+        479,
+        487,
+        493,
+        498,
+        503,
+        507,
+        510,
+        513,
         515,
         517,
         519,
@@ -7398,8 +7398,7 @@
         529,
         531,
         533,
-        535,
-        682
+        680
       ],
       "depends_on": {
         "scheduled": [
@@ -8058,13 +8057,14 @@
       "foundational": false,
       "layer": 5,
       "waves": [
-        482,
-        490,
-        496,
-        501,
-        506,
-        510,
-        513,
+        480,
+        488,
+        494,
+        499,
+        504,
+        508,
+        511,
+        514,
         516,
         518,
         520,
@@ -8075,8 +8075,7 @@
         530,
         532,
         534,
-        536,
-        686
+        684
       ],
       "depends_on": {
         "scheduled": [
@@ -9017,7 +9016,7 @@
       "foundational": false,
       "layer": 5,
       "waves": [
-        483
+        481
       ],
       "depends_on": {
         "scheduled": [
@@ -9113,9 +9112,9 @@
       "waves": [
         18,
         77,
-        537,
-        541,
-        544
+        535,
+        539,
+        542
       ],
       "depends_on": {
         "scheduled": [
@@ -9168,14 +9167,14 @@
         128,
         134,
         136,
-        538,
-        547,
+        536,
+        545,
+        548,
         550,
         552,
         554,
         556,
-        558,
-        677
+        675
       ],
       "depends_on": {
         "scheduled": [
@@ -9368,10 +9367,10 @@
       "layer": 6,
       "waves": [
         189,
-        539,
-        542,
-        545,
-        548
+        537,
+        540,
+        543,
+        546
       ],
       "depends_on": {
         "scheduled": [
@@ -9663,14 +9662,16 @@
       "foundational": false,
       "layer": 6,
       "waves": [
-        540,
-        543,
-        546,
+        538,
+        541,
+        544,
+        547,
         549,
         551,
         553,
         555,
         557,
+        558,
         559,
         560,
         561,
@@ -9679,9 +9680,7 @@
         564,
         565,
         566,
-        567,
-        568,
-        681
+        679
       ],
       "depends_on": {
         "scheduled": [
@@ -10124,10 +10123,10 @@
       "foundational": false,
       "layer": 7,
       "waves": [
-        569,
-        578,
-        587,
-        595
+        567,
+        576,
+        585,
+        593
       ],
       "depends_on": {
         "scheduled": [
@@ -10196,10 +10195,10 @@
       "foundational": false,
       "layer": 7,
       "waves": [
-        570,
-        579,
-        588,
-        596
+        568,
+        577,
+        586,
+        594
       ],
       "depends_on": {
         "scheduled": [
@@ -10268,10 +10267,10 @@
       "foundational": false,
       "layer": 7,
       "waves": [
-        571,
-        580,
-        589,
-        597
+        569,
+        578,
+        587,
+        595
       ],
       "depends_on": {
         "scheduled": [
@@ -10300,9 +10299,9 @@
       "foundational": false,
       "layer": 7,
       "waves": [
-        572,
-        581,
-        590
+        570,
+        579,
+        588
       ],
       "depends_on": {
         "scheduled": [
@@ -10338,11 +10337,11 @@
       "foundational": false,
       "layer": 7,
       "waves": [
-        573,
-        582,
-        591,
-        598,
-        601
+        571,
+        580,
+        589,
+        596,
+        599
       ],
       "depends_on": {
         "scheduled": [
@@ -10380,15 +10379,15 @@
       "waves": [
         187,
         202,
-        574,
-        583,
-        599,
+        572,
+        581,
+        597,
+        600,
         602,
         604,
         606,
         608,
-        610,
-        612
+        610
       ],
       "depends_on": {
         "scheduled": [
@@ -10486,17 +10485,17 @@
         130,
         132,
         137,
-        575,
-        584,
-        592,
-        600,
+        573,
+        582,
+        590,
+        598,
+        601,
         603,
         605,
         607,
         609,
         611,
-        613,
-        614
+        612
       ],
       "depends_on": {
         "scheduled": [
@@ -10932,9 +10931,9 @@
       "foundational": false,
       "layer": 7,
       "waves": [
-        576,
-        585,
-        593
+        574,
+        583,
+        591
       ],
       "depends_on": {
         "scheduled": [
@@ -10971,9 +10970,9 @@
       "layer": 7,
       "waves": [
         151,
-        577,
-        586,
-        594
+        575,
+        584,
+        592
       ],
       "depends_on": {
         "scheduled": [
@@ -11016,17 +11015,17 @@
       "foundational": false,
       "layer": 8,
       "waves": [
-        615,
-        618,
-        621,
-        624,
+        613,
+        616,
+        619,
+        622,
+        625,
+        626,
         627,
         628,
         629,
         630,
-        631,
-        632,
-        633
+        631
       ],
       "depends_on": {
         "scheduled": [
@@ -11120,10 +11119,10 @@
       "foundational": false,
       "layer": 8,
       "waves": [
-        616,
-        619,
-        622,
-        625
+        614,
+        617,
+        620,
+        623
       ],
       "depends_on": {
         "scheduled": [
@@ -11192,10 +11191,10 @@
       "foundational": false,
       "layer": 8,
       "waves": [
-        617,
-        620,
-        623,
-        626
+        615,
+        618,
+        621,
+        624
       ],
       "depends_on": {
         "scheduled": [
@@ -11238,9 +11237,9 @@
       "foundational": false,
       "layer": 9,
       "waves": [
-        634,
-        642,
-        649
+        632,
+        640,
+        647
       ],
       "depends_on": {
         "scheduled": [
@@ -11283,11 +11282,11 @@
       "foundational": false,
       "layer": 9,
       "waves": [
-        635,
-        643,
-        650,
-        655,
-        659
+        633,
+        641,
+        648,
+        653,
+        657
       ],
       "depends_on": {
         "scheduled": [
@@ -11337,10 +11336,10 @@
       "foundational": false,
       "layer": 9,
       "waves": [
-        636,
-        644,
-        651,
-        656
+        634,
+        642,
+        649,
+        654
       ],
       "depends_on": {
         "scheduled": [
@@ -11423,10 +11422,10 @@
       "foundational": false,
       "layer": 9,
       "waves": [
-        637,
-        645,
-        652,
-        657
+        635,
+        643,
+        650,
+        655
       ],
       "depends_on": {
         "scheduled": [
@@ -11469,7 +11468,7 @@
       "foundational": false,
       "layer": 9,
       "waves": [
-        638
+        636
       ],
       "depends_on": {
         "scheduled": [
@@ -11491,9 +11490,9 @@
       "foundational": false,
       "layer": 9,
       "waves": [
-        639,
-        646,
-        653
+        637,
+        644,
+        651
       ],
       "depends_on": {
         "scheduled": [
@@ -11529,11 +11528,11 @@
       "foundational": false,
       "layer": 9,
       "waves": [
-        640,
-        647,
-        654,
-        658,
-        660
+        638,
+        645,
+        652,
+        656,
+        658
       ],
       "depends_on": {
         "scheduled": [
@@ -11617,8 +11616,8 @@
       "foundational": false,
       "layer": 9,
       "waves": [
-        641,
-        648
+        639,
+        646
       ],
       "depends_on": {
         "scheduled": [
@@ -99600,7 +99599,7 @@
       "depends_on": {
         "scheduled": [],
         "cut": [
-          373
+          372
         ]
       },
       "items": [
@@ -101481,7 +101480,7 @@
         ],
         "cut": [
           368,
-          387
+          385
         ]
       },
       "items": [
@@ -103809,7 +103808,7 @@
         ],
         "cut": [
           368,
-          378
+          377
         ]
       },
       "items": [
@@ -109461,7 +109460,7 @@
         ],
         "cut": [
           343,
-          423
+          421
         ]
       },
       "items": [
@@ -109879,7 +109878,7 @@
           95
         ],
         "cut": [
-          423
+          421
         ]
       },
       "items": [
@@ -110396,7 +110395,7 @@
           99
         ],
         "cut": [
-          423
+          421
         ]
       },
       "items": [
@@ -111130,7 +111129,7 @@
         ],
         "cut": [
           343,
-          423
+          421
         ]
       },
       "items": [
@@ -111399,7 +111398,7 @@
         ],
         "cut": [
           343,
-          423
+          421
         ]
       },
       "items": [
@@ -115054,7 +115053,7 @@
           256
         ],
         "cut": [
-          431
+          429
         ]
       },
       "items": [
@@ -115122,7 +115121,7 @@
           257
         ],
         "cut": [
-          432
+          430
         ]
       },
       "items": [
@@ -122703,7 +122702,7 @@
           316
         ],
         "cut": [
-          430
+          428
         ]
       },
       "items": [
@@ -126059,7 +126058,7 @@
         ],
         "cut": [
           130,
-          584
+          582
         ]
       },
       "items": [
@@ -126716,7 +126715,7 @@
           344
         ],
         "cut": [
-          434
+          432
         ]
       },
       "items": [
@@ -128380,8 +128379,7 @@
                   "name": "av_pixelutils_get_sad_fn",
                   "defined_in": "libavutil/pixelutils.c",
                   "kind": "symbol",
-                  "module": "libavutil/libavutil/pixelutils.c",
-                  "wave": 196
+                  "module": null
                 },
                 {
                   "name": "av_tdrdi_get_display",
@@ -129947,7 +129945,6 @@
                 "libavutil/libavutil/hwcontext.c",
                 "libavutil/libavutil/iamf.c",
                 "libavutil/libavutil/lzo.c",
-                "libavutil/libavutil/pixelutils.c",
                 "libavutil/libavutil/slicethread.c",
                 "libavutil/libavutil/tdrdi.c",
                 "libavutil/libavutil/timecode.c",
@@ -129956,7 +129953,7 @@
               ]
             },
             "scheduled": {
-              "users": 91,
+              "users": 90,
               "items": [
                 {
                   "name": "AV_CRC_16_ANSI_LE_init_table_once",
@@ -130064,13 +130061,6 @@
                   "wave": 335
                 },
                 {
-                  "name": "av_pixelutils_get_sad_fn",
-                  "defined_in": "libavutil/pixelutils.c",
-                  "kind": "symbol",
-                  "module": "libavutil/libavutil/pixelutils.c",
-                  "wave": 196
-                },
-                {
                   "name": "av_rescale_delta",
                   "defined_in": "libavutil/mathematics.c",
                   "kind": "symbol",
@@ -130153,7 +130143,6 @@
                 179,
                 193,
                 194,
-                196,
                 213,
                 217,
                 219,
@@ -130177,7 +130166,6 @@
                 "libavutil/libavutil/hwcontext.c",
                 "libavutil/libavutil/iamf.c",
                 "libavutil/libavutil/lzo.c",
-                "libavutil/libavutil/pixelutils.c",
                 "libavutil/libavutil/slicethread.c",
                 "libavutil/libavutil/tdrdi.c",
                 "libavutil/libavutil/timecode.c",
@@ -132182,8 +132170,8 @@
         ],
         "cut": [
           130,
-          575,
-          607
+          573,
+          605
         ]
       },
       "items": [
@@ -133760,36 +133748,6 @@
     {
       "index": 369,
       "link_unit": "libavutil",
-      "module": "libavutil/pixelutils.c",
-      "foundational": false,
-      "layer": 3,
-      "sublayer": 1,
-      "status": "todo",
-      "depends_on": {
-        "scheduled": [
-          53
-        ],
-        "cut": []
-      },
-      "items": [
-        {
-          "name": "av_pixelutils_sad_fn",
-          "defined_in": "libavutil/pixelutils.h",
-          "kind": "callback",
-          "field_users": [],
-          "home": "src/libavutil/libavutil/pixelutils.rs",
-          "objective": "port",
-          "opaque_after": null,
-          "memory_unmanaged_after": null,
-          "unreferenced_after": null
-        }
-      ],
-      "packed_with": null,
-      "batches": []
-    },
-    {
-      "index": 370,
-      "link_unit": "libavutil",
       "module": "libavutil/timecode.c",
       "foundational": false,
       "layer": 3,
@@ -134290,7 +134248,7 @@
       "batches": []
     },
     {
-      "index": 371,
+      "index": 370,
       "link_unit": "libavutil",
       "module": "libavutil/utils.c",
       "foundational": false,
@@ -134517,7 +134475,7 @@
       "batches": []
     },
     {
-      "index": 372,
+      "index": 371,
       "link_unit": "libavutil",
       "module": "libavutil/avstring.c",
       "foundational": false,
@@ -134925,7 +134883,7 @@
       "batches": []
     },
     {
-      "index": 373,
+      "index": 372,
       "link_unit": "libavutil",
       "module": "libavutil/cpu.c",
       "foundational": false,
@@ -135462,7 +135420,7 @@
       "batches": []
     },
     {
-      "index": 374,
+      "index": 373,
       "link_unit": "libavutil",
       "module": "libavutil/crc.c",
       "foundational": false,
@@ -135474,7 +135432,7 @@
           363
         ],
         "cut": [
-          373
+          372
         ]
       },
       "items": [
@@ -135618,7 +135576,7 @@
       "batches": []
     },
     {
-      "index": 375,
+      "index": 374,
       "link_unit": "libavutil",
       "module": "libavutil/fifo.c",
       "foundational": false,
@@ -136146,7 +136104,7 @@
       "batches": []
     },
     {
-      "index": 376,
+      "index": 375,
       "link_unit": "libavutil",
       "module": "libavutil/file.c",
       "foundational": false,
@@ -136160,7 +136118,7 @@
           366
         ],
         "cut": [
-          410
+          408
         ]
       },
       "items": [
@@ -136214,7 +136172,7 @@
       "batches": []
     },
     {
-      "index": 377,
+      "index": 376,
       "link_unit": "libavutil",
       "module": "libavutil/lzo.c",
       "foundational": false,
@@ -136371,7 +136329,7 @@
       "batches": []
     },
     {
-      "index": 378,
+      "index": 377,
       "link_unit": "libavutil",
       "module": "libavutil/mathematics.c",
       "foundational": false,
@@ -136571,72 +136529,7 @@
       "batches": []
     },
     {
-      "index": 379,
-      "link_unit": "libavutil",
-      "module": "libavutil/pixelutils.c",
-      "foundational": false,
-      "layer": 3,
-      "sublayer": 2,
-      "status": "todo",
-      "depends_on": {
-        "scheduled": [
-          357,
-          369
-        ],
-        "cut": []
-      },
-      "items": [
-        {
-          "name": "av_pixelutils_get_sad_fn",
-          "defined_in": "libavutil/pixelutils.c",
-          "kind": "symbol",
-          "field_users": [],
-          "home": "src/libavutil/libavutil/pixelutils.rs",
-          "objective": "port",
-          "opaque_after": null,
-          "memory_unmanaged_after": null,
-          "unreferenced_after": {
-            "closure": {
-              "users": 0,
-              "items": [
-                {
-                  "name": "av_pixelutils_get_sad_fn",
-                  "defined_in": "libavutil/pixelutils.c",
-                  "kind": "symbol",
-                  "module": "libavutil/libavutil/pixelutils.c",
-                  "wave": 196
-                }
-              ],
-              "modules": [
-                "libavutil/libavutil/pixelutils.c"
-              ]
-            },
-            "scheduled": {
-              "users": 0,
-              "items": [
-                {
-                  "name": "av_pixelutils_get_sad_fn",
-                  "defined_in": "libavutil/pixelutils.c",
-                  "kind": "symbol",
-                  "module": "libavutil/libavutil/pixelutils.c",
-                  "wave": 196
-                }
-              ],
-              "waves": [
-                196
-              ],
-              "modules": [
-                "libavutil/libavutil/pixelutils.c"
-              ]
-            }
-          }
-        }
-      ],
-      "packed_with": null,
-      "batches": []
-    },
-    {
-      "index": 380,
+      "index": 378,
       "link_unit": "libavutil",
       "module": "libavutil/timecode.c",
       "foundational": false,
@@ -136647,7 +136540,7 @@
         "scheduled": [
           55,
           357,
-          370
+          369
         ],
         "cut": []
       },
@@ -136901,7 +136794,7 @@
       "batches": []
     },
     {
-      "index": 381,
+      "index": 379,
       "link_unit": "libavutil",
       "module": "libavutil/utils.c",
       "foundational": false,
@@ -136910,7 +136803,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          371
+          370
         ],
         "cut": []
       },
@@ -137134,7 +137027,7 @@
       "batches": []
     },
     {
-      "index": 382,
+      "index": 380,
       "link_unit": "libavutil",
       "module": "libavutil/avstring.c",
       "foundational": false,
@@ -137143,7 +137036,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          372
+          371
         ],
         "cut": []
       },
@@ -137324,7 +137217,7 @@
       "batches": []
     },
     {
-      "index": 383,
+      "index": 381,
       "link_unit": "libavutil",
       "module": "libavutil/buffer.c",
       "foundational": false,
@@ -137338,7 +137231,7 @@
           361
         ],
         "cut": [
-          390
+          388
         ]
       },
       "items": [
@@ -138008,7 +137901,7 @@
       "batches": []
     },
     {
-      "index": 384,
+      "index": 382,
       "link_unit": "libavutil",
       "module": "libavutil/crc.c",
       "foundational": false,
@@ -138019,7 +137912,7 @@
         "scheduled": [
           47,
           363,
-          374
+          373
         ],
         "cut": []
       },
@@ -138214,7 +138107,7 @@
       "batches": []
     },
     {
-      "index": 385,
+      "index": 383,
       "link_unit": "libavutil",
       "module": "libavutil/fifo.c",
       "foundational": false,
@@ -138225,7 +138118,7 @@
         "scheduled": [
           357,
           365,
-          375
+          374
         ],
         "cut": []
       },
@@ -138455,7 +138348,7 @@
       "batches": []
     },
     {
-      "index": 386,
+      "index": 384,
       "link_unit": "libavutil",
       "module": "libavutil/lzo.c",
       "foundational": false,
@@ -138465,7 +138358,7 @@
       "depends_on": {
         "scheduled": [
           367,
-          377
+          376
         ],
         "cut": []
       },
@@ -138520,7 +138413,7 @@
       "batches": []
     },
     {
-      "index": 387,
+      "index": 385,
       "link_unit": "libavutil",
       "module": "libavutil/mathematics.c",
       "foundational": false,
@@ -138531,7 +138424,7 @@
         "scheduled": [
           55,
           368,
-          378
+          377
         ],
         "cut": []
       },
@@ -138952,7 +138845,7 @@
       "batches": []
     },
     {
-      "index": 388,
+      "index": 386,
       "link_unit": "libavutil",
       "module": "libavutil/timecode.c",
       "foundational": false,
@@ -138963,8 +138856,8 @@
         "scheduled": [
           55,
           131,
-          370,
-          380
+          369,
+          378
         ],
         "cut": []
       },
@@ -139063,7 +138956,7 @@
       "batches": []
     },
     {
-      "index": 389,
+      "index": 387,
       "link_unit": "libavutil",
       "module": "libavutil/avstring.c",
       "foundational": false,
@@ -139075,7 +138968,7 @@
           25,
           276,
           317,
-          382
+          380
         ],
         "cut": []
       },
@@ -139141,7 +139034,7 @@
       "batches": []
     },
     {
-      "index": 390,
+      "index": 388,
       "link_unit": "libavutil",
       "module": "libavutil/buffer.c",
       "foundational": false,
@@ -139153,7 +139046,7 @@
           0,
           81,
           361,
-          383
+          381
         ],
         "cut": []
       },
@@ -139900,7 +139793,7 @@
       "batches": []
     },
     {
-      "index": 391,
+      "index": 389,
       "link_unit": "libavutil",
       "module": "libavutil/crc.c",
       "foundational": false,
@@ -139909,10 +139802,10 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          384
+          382
         ],
         "cut": [
-          373
+          372
         ]
       },
       "items": [
@@ -139966,7 +139859,7 @@
       "batches": []
     },
     {
-      "index": 392,
+      "index": 390,
       "link_unit": "libavutil",
       "module": "libavutil/fifo.c",
       "foundational": false,
@@ -139976,8 +139869,8 @@
       "depends_on": {
         "scheduled": [
           365,
-          375,
-          385
+          374,
+          383
         ],
         "cut": []
       },
@@ -140317,7 +140210,7 @@
       "batches": []
     },
     {
-      "index": 393,
+      "index": 391,
       "link_unit": "libavutil",
       "module": "libavutil/lzo.c",
       "foundational": false,
@@ -140327,8 +140220,8 @@
       "depends_on": {
         "scheduled": [
           367,
-          377,
-          386
+          376,
+          384
         ],
         "cut": []
       },
@@ -140382,7 +140275,7 @@
       "batches": []
     },
     {
-      "index": 394,
+      "index": 392,
       "link_unit": "libavutil",
       "module": "libavutil/mathematics.c",
       "foundational": false,
@@ -140393,7 +140286,7 @@
         "scheduled": [
           55,
           368,
-          387
+          385
         ],
         "cut": []
       },
@@ -140778,7 +140671,7 @@
       "batches": []
     },
     {
-      "index": 395,
+      "index": 393,
       "link_unit": "libavutil",
       "module": "libavutil/timecode.c",
       "foundational": false,
@@ -140790,8 +140683,8 @@
           55,
           131,
           357,
-          370,
-          388
+          369,
+          386
         ],
         "cut": []
       },
@@ -140851,7 +140744,7 @@
       "batches": []
     },
     {
-      "index": 396,
+      "index": 394,
       "link_unit": "libavutil",
       "module": "libavutil/buffer.c",
       "foundational": false,
@@ -140864,8 +140757,8 @@
           81,
           357,
           361,
-          383,
-          390
+          381,
+          388
         ],
         "cut": []
       },
@@ -141327,7 +141220,7 @@
       "batches": []
     },
     {
-      "index": 397,
+      "index": 395,
       "link_unit": "libavutil",
       "module": "libavutil/crc.c",
       "foundational": false,
@@ -141337,7 +141230,7 @@
       "depends_on": {
         "scheduled": [
           204,
-          391
+          389
         ],
         "cut": []
       },
@@ -141490,7 +141383,7 @@
       "batches": []
     },
     {
-      "index": 398,
+      "index": 396,
       "link_unit": "libavutil",
       "module": "libavutil/fifo.c",
       "foundational": false,
@@ -141500,7 +141393,7 @@
       "depends_on": {
         "scheduled": [
           365,
-          392
+          390
         ],
         "cut": []
       },
@@ -141569,7 +141462,7 @@
       "batches": []
     },
     {
-      "index": 399,
+      "index": 397,
       "link_unit": "libavutil",
       "module": "libavutil/mathematics.c",
       "foundational": false,
@@ -141583,8 +141476,8 @@
           240,
           357,
           368,
-          387,
-          394
+          385,
+          392
         ],
         "cut": []
       },
@@ -141688,7 +141581,7 @@
       "batches": []
     },
     {
-      "index": 400,
+      "index": 398,
       "link_unit": "libavutil",
       "module": "libavutil/buffer.c",
       "foundational": false,
@@ -141699,8 +141592,8 @@
         "scheduled": [
           0,
           81,
-          383,
-          396
+          381,
+          394
         ],
         "cut": []
       },
@@ -141976,7 +141869,7 @@
       "batches": []
     },
     {
-      "index": 401,
+      "index": 399,
       "link_unit": "libavutil",
       "module": "libavutil/crc.c",
       "foundational": false,
@@ -141987,7 +141880,7 @@
         "scheduled": [
           357,
           363,
-          397
+          395
         ],
         "cut": []
       },
@@ -142357,7 +142250,7 @@
       "batches": []
     },
     {
-      "index": 402,
+      "index": 400,
       "link_unit": "libavutil",
       "module": "libavutil/fifo.c",
       "foundational": false,
@@ -142367,7 +142260,7 @@
       "depends_on": {
         "scheduled": [
           365,
-          398
+          396
         ],
         "cut": []
       },
@@ -142518,7 +142411,7 @@
       "batches": []
     },
     {
-      "index": 403,
+      "index": 401,
       "link_unit": "libavutil",
       "module": "libavutil/buffer.c",
       "foundational": false,
@@ -142527,10 +142420,10 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          383,
-          390,
-          396,
-          400
+          381,
+          388,
+          394,
+          398
         ],
         "cut": []
       },
@@ -142648,7 +142541,7 @@
       "batches": []
     },
     {
-      "index": 404,
+      "index": 402,
       "link_unit": "libavutil",
       "module": "libavutil/crc.c",
       "foundational": false,
@@ -142658,8 +142551,8 @@
       "depends_on": {
         "scheduled": [
           363,
-          374,
-          401
+          373,
+          399
         ],
         "cut": []
       },
@@ -142809,7 +142702,7 @@
       "batches": []
     },
     {
-      "index": 405,
+      "index": 403,
       "link_unit": "libavutil",
       "module": "libavutil/buffer.c",
       "foundational": false,
@@ -142822,9 +142715,9 @@
           81,
           357,
           361,
-          383,
-          390,
-          403
+          381,
+          388,
+          401
         ],
         "cut": []
       },
@@ -142879,7 +142772,7 @@
       "batches": []
     },
     {
-      "index": 406,
+      "index": 404,
       "link_unit": "libavutil",
       "module": "libavutil/buffer.c",
       "foundational": false,
@@ -142890,10 +142783,10 @@
         "scheduled": [
           81,
           361,
-          383,
-          390,
-          403,
-          405
+          381,
+          388,
+          401,
+          403
         ],
         "cut": []
       },
@@ -142971,7 +142864,7 @@
       "batches": []
     },
     {
-      "index": 407,
+      "index": 405,
       "link_unit": "libavutil",
       "module": "libavutil/audio_fifo.c",
       "foundational": false,
@@ -143120,7 +143013,7 @@
       "batches": []
     },
     {
-      "index": 408,
+      "index": 406,
       "link_unit": "libavutil",
       "module": "libavutil/avsscanf.c",
       "foundational": false,
@@ -143363,7 +143256,7 @@
       "batches": []
     },
     {
-      "index": 409,
+      "index": 407,
       "link_unit": "libavutil",
       "module": "libavutil/eval.c",
       "foundational": false,
@@ -143864,7 +143757,7 @@
       "batches": []
     },
     {
-      "index": 410,
+      "index": 408,
       "link_unit": "libavutil",
       "module": "libavutil/file_open.c",
       "foundational": false,
@@ -144097,7 +143990,7 @@
       "batches": []
     },
     {
-      "index": 411,
+      "index": 409,
       "link_unit": "libavutil",
       "module": "libavutil/hash.c",
       "foundational": false,
@@ -144207,7 +144100,7 @@
       "batches": []
     },
     {
-      "index": 412,
+      "index": 410,
       "link_unit": "libavutil",
       "module": "libavutil/lfg.c",
       "foundational": false,
@@ -144340,7 +144233,7 @@
       "batches": []
     },
     {
-      "index": 413,
+      "index": 411,
       "link_unit": "libavutil",
       "module": "libavutil/pixdesc.c",
       "foundational": false,
@@ -144908,7 +144801,7 @@
       "batches": []
     },
     {
-      "index": 414,
+      "index": 412,
       "link_unit": "libavutil",
       "module": "libavutil/slicethread.c",
       "foundational": false,
@@ -144918,7 +144811,7 @@
       "depends_on": {
         "scheduled": [],
         "cut": [
-          426
+          424
         ]
       },
       "items": [
@@ -145030,7 +144923,7 @@
       "batches": []
     },
     {
-      "index": 415,
+      "index": 413,
       "link_unit": "libavutil",
       "module": "libavutil/threadmessage.c",
       "foundational": false,
@@ -145204,7 +145097,7 @@
       "batches": []
     },
     {
-      "index": 416,
+      "index": 414,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -145218,7 +145111,7 @@
           357
         ],
         "cut": [
-          428
+          426
         ]
       },
       "items": [
@@ -146835,7 +146728,7 @@
       "batches": []
     },
     {
-      "index": 417,
+      "index": 415,
       "link_unit": "libavutil",
       "module": "libavutil/uuid.c",
       "foundational": false,
@@ -147079,7 +146972,7 @@
       "batches": []
     },
     {
-      "index": 418,
+      "index": 416,
       "link_unit": "libavutil",
       "module": "libavutil/audio_fifo.c",
       "foundational": false,
@@ -147091,10 +146984,10 @@
           0,
           332,
           365,
-          375,
-          385,
-          392,
-          407
+          374,
+          383,
+          390,
+          405
         ],
         "cut": []
       },
@@ -147473,7 +147366,7 @@
       "batches": []
     },
     {
-      "index": 419,
+      "index": 417,
       "link_unit": "libavutil",
       "module": "libavutil/avsscanf.c",
       "foundational": false,
@@ -147482,7 +147375,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          408
+          406
         ],
         "cut": []
       },
@@ -147627,7 +147520,7 @@
       "batches": []
     },
     {
-      "index": 420,
+      "index": 418,
       "link_unit": "libavutil",
       "module": "libavutil/dict.c",
       "foundational": false,
@@ -147748,7 +147641,7 @@
       "batches": []
     },
     {
-      "index": 421,
+      "index": 419,
       "link_unit": "libavutil",
       "module": "libavutil/eval.c",
       "foundational": false,
@@ -147766,7 +147659,7 @@
           241,
           357,
           368,
-          409
+          407
         ],
         "cut": []
       },
@@ -148130,7 +148023,7 @@
       "batches": []
     },
     {
-      "index": 422,
+      "index": 420,
       "link_unit": "libavutil",
       "module": "libavutil/file_open.c",
       "foundational": false,
@@ -148142,7 +148035,7 @@
           0,
           357,
           366,
-          410
+          408
         ],
         "cut": []
       },
@@ -148242,7 +148135,7 @@
       "batches": []
     },
     {
-      "index": 423,
+      "index": 421,
       "link_unit": "libavutil",
       "module": "libavutil/hash.c",
       "foundational": false,
@@ -148251,7 +148144,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          411
+          409
         ],
         "cut": []
       },
@@ -148487,7 +148380,7 @@
       "batches": []
     },
     {
-      "index": 424,
+      "index": 422,
       "link_unit": "libavutil",
       "module": "libavutil/lfg.c",
       "foundational": false,
@@ -148499,9 +148392,9 @@
           47,
           331,
           363,
-          384,
-          404,
-          412
+          382,
+          402,
+          410
         ],
         "cut": []
       },
@@ -148696,7 +148589,7 @@
       "batches": []
     },
     {
-      "index": 425,
+      "index": 423,
       "link_unit": "libavutil",
       "module": "libavutil/pixdesc.c",
       "foundational": false,
@@ -148706,7 +148599,7 @@
       "depends_on": {
         "scheduled": [
           52,
-          413
+          411
         ],
         "cut": []
       },
@@ -149526,7 +149419,7 @@
       "batches": []
     },
     {
-      "index": 426,
+      "index": 424,
       "link_unit": "libavutil",
       "module": "libavutil/slicethread.c",
       "foundational": false,
@@ -149535,7 +149428,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          414
+          412
         ],
         "cut": []
       },
@@ -149784,7 +149677,7 @@
       "batches": []
     },
     {
-      "index": 427,
+      "index": 425,
       "link_unit": "libavutil",
       "module": "libavutil/threadmessage.c",
       "foundational": false,
@@ -149795,11 +149688,11 @@
         "scheduled": [
           0,
           365,
-          375,
-          385,
-          392,
-          402,
-          415
+          374,
+          383,
+          390,
+          400,
+          413
         ],
         "cut": []
       },
@@ -150167,7 +150060,7 @@
       "batches": []
     },
     {
-      "index": 428,
+      "index": 426,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -150178,10 +150071,10 @@
         "scheduled": [
           25,
           327,
-          416
+          414
         ],
         "cut": [
-          444
+          442
         ]
       },
       "items": [
@@ -151530,7 +151423,7 @@
       "batches": []
     },
     {
-      "index": 429,
+      "index": 427,
       "link_unit": "libavutil",
       "module": "libavutil/uuid.c",
       "foundational": false,
@@ -151539,7 +151432,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          417
+          415
         ],
         "cut": []
       },
@@ -151639,7 +151532,7 @@
       "batches": []
     },
     {
-      "index": 430,
+      "index": 428,
       "link_unit": "libavutil",
       "module": "libavutil/x86/aes_init.c",
       "foundational": false,
@@ -151649,7 +151542,7 @@
       "depends_on": {
         "scheduled": [
           17,
-          373
+          372
         ],
         "cut": []
       },
@@ -151719,7 +151612,7 @@
       "batches": []
     },
     {
-      "index": 431,
+      "index": 429,
       "link_unit": "libavutil",
       "module": "libavutil/x86/fixed_dsp_init.c",
       "foundational": false,
@@ -151729,7 +151622,7 @@
       "depends_on": {
         "scheduled": [
           256,
-          373
+          372
         ],
         "cut": []
       },
@@ -151799,7 +151692,7 @@
       "batches": []
     },
     {
-      "index": 432,
+      "index": 430,
       "link_unit": "libavutil",
       "module": "libavutil/x86/float_dsp_init.c",
       "foundational": false,
@@ -151809,7 +151702,7 @@
       "depends_on": {
         "scheduled": [
           257,
-          373
+          372
         ],
         "cut": []
       },
@@ -151879,7 +151772,7 @@
       "batches": []
     },
     {
-      "index": 433,
+      "index": 431,
       "link_unit": "libavutil",
       "module": "libavutil/x86/imgutils_init.c",
       "foundational": false,
@@ -151888,7 +151781,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          373
+          372
         ],
         "cut": []
       },
@@ -151943,7 +151836,7 @@
       "batches": []
     },
     {
-      "index": 434,
+      "index": 432,
       "link_unit": "libavutil",
       "module": "libavutil/x86/lls_init.c",
       "foundational": false,
@@ -151953,7 +151846,7 @@
       "depends_on": {
         "scheduled": [
           340,
-          373
+          372
         ],
         "cut": []
       },
@@ -152023,7 +151916,7 @@
       "batches": []
     },
     {
-      "index": 435,
+      "index": 433,
       "link_unit": "libavutil",
       "module": "libavutil/audio_fifo.c",
       "foundational": false,
@@ -152037,10 +151930,10 @@
           323,
           332,
           365,
-          375,
-          402,
-          407,
-          418
+          374,
+          400,
+          405,
+          416
         ],
         "cut": []
       },
@@ -152183,7 +152076,7 @@
       "batches": []
     },
     {
-      "index": 436,
+      "index": 434,
       "link_unit": "libavutil",
       "module": "libavutil/avsscanf.c",
       "foundational": false,
@@ -152192,8 +152085,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          408,
-          419
+          406,
+          417
         ],
         "cut": []
       },
@@ -152248,7 +152141,7 @@
       "batches": []
     },
     {
-      "index": 437,
+      "index": 435,
       "link_unit": "libavutil",
       "module": "libavutil/dict.c",
       "foundational": false,
@@ -152259,7 +152152,7 @@
         "scheduled": [
           0,
           35,
-          420
+          418
         ],
         "cut": []
       },
@@ -152780,7 +152673,7 @@
       "batches": []
     },
     {
-      "index": 438,
+      "index": 436,
       "link_unit": "libavutil",
       "module": "libavutil/eval.c",
       "foundational": false,
@@ -152790,8 +152683,8 @@
       "depends_on": {
         "scheduled": [
           0,
-          409,
-          421
+          407,
+          419
         ],
         "cut": []
       },
@@ -153113,7 +153006,7 @@
       "batches": []
     },
     {
-      "index": 439,
+      "index": 437,
       "link_unit": "libavutil",
       "module": "libavutil/hash.c",
       "foundational": false,
@@ -153144,11 +153037,11 @@
           322,
           324,
           363,
-          372,
-          384,
-          404,
-          411,
-          423
+          371,
+          382,
+          402,
+          409,
+          421
         ],
         "cut": []
       },
@@ -153590,7 +153483,7 @@
       "batches": []
     },
     {
-      "index": 440,
+      "index": 438,
       "link_unit": "libavutil",
       "module": "libavutil/lfg.c",
       "foundational": false,
@@ -153599,8 +153492,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          412,
-          424
+          410,
+          422
         ],
         "cut": []
       },
@@ -153655,7 +153548,7 @@
       "batches": []
     },
     {
-      "index": 441,
+      "index": 439,
       "link_unit": "libavutil",
       "module": "libavutil/pixdesc.c",
       "foundational": false,
@@ -153669,8 +153562,8 @@
           96,
           204,
           360,
-          413,
-          425
+          411,
+          423
         ],
         "cut": []
       },
@@ -154095,7 +153988,7 @@
       "batches": []
     },
     {
-      "index": 442,
+      "index": 440,
       "link_unit": "libavutil",
       "module": "libavutil/slicethread.c",
       "foundational": false,
@@ -154106,8 +153999,8 @@
         "scheduled": [
           0,
           357,
-          414,
-          426
+          412,
+          424
         ],
         "cut": []
       },
@@ -154316,7 +154209,7 @@
       "batches": []
     },
     {
-      "index": 443,
+      "index": 441,
       "link_unit": "libavutil",
       "module": "libavutil/threadmessage.c",
       "foundational": false,
@@ -154326,10 +154219,10 @@
       "depends_on": {
         "scheduled": [
           365,
-          375,
-          392,
-          415,
-          427
+          374,
+          390,
+          413,
+          425
         ],
         "cut": []
       },
@@ -154472,7 +154365,7 @@
       "batches": []
     },
     {
-      "index": 444,
+      "index": 442,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -154484,8 +154377,8 @@
           0,
           357,
           368,
-          416,
-          428
+          414,
+          426
         ],
         "cut": []
       },
@@ -156384,7 +156277,7 @@
       "batches": []
     },
     {
-      "index": 445,
+      "index": 443,
       "link_unit": "libavutil",
       "module": "libavutil/uuid.c",
       "foundational": false,
@@ -156393,7 +156286,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          429
+          427
         ],
         "cut": []
       },
@@ -156448,7 +156341,7 @@
       "batches": []
     },
     {
-      "index": 446,
+      "index": 444,
       "link_unit": "libavutil",
       "module": "libavutil/avsscanf.c",
       "foundational": false,
@@ -156457,8 +156350,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          408,
-          436
+          406,
+          434
         ],
         "cut": []
       },
@@ -156513,7 +156406,7 @@
       "batches": []
     },
     {
-      "index": 447,
+      "index": 445,
       "link_unit": "libavutil",
       "module": "libavutil/dict.c",
       "foundational": false,
@@ -156529,8 +156422,8 @@
           317,
           333,
           360,
-          420,
-          437
+          418,
+          435
         ],
         "cut": []
       },
@@ -156803,7 +156696,7 @@
       "batches": []
     },
     {
-      "index": 448,
+      "index": 446,
       "link_unit": "libavutil",
       "module": "libavutil/eval.c",
       "foundational": false,
@@ -156814,13 +156707,13 @@
         "scheduled": [
           0,
           357,
-          409,
-          421,
-          438
+          407,
+          419,
+          436
         ],
         "cut": [
-          457,
-          462
+          455,
+          460
         ]
       },
       "items": [
@@ -157030,7 +156923,7 @@
       "batches": []
     },
     {
-      "index": 449,
+      "index": 447,
       "link_unit": "libavutil",
       "module": "libavutil/hash.c",
       "foundational": false,
@@ -157040,8 +156933,8 @@
       "depends_on": {
         "scheduled": [
           248,
-          423,
-          439
+          421,
+          437
         ],
         "cut": []
       },
@@ -157203,7 +157096,7 @@
       "batches": []
     },
     {
-      "index": 450,
+      "index": 448,
       "link_unit": "libavutil",
       "module": "libavutil/pixdesc.c",
       "foundational": false,
@@ -157213,9 +157106,9 @@
       "depends_on": {
         "scheduled": [
           96,
-          382,
-          413,
-          441
+          380,
+          411,
+          439
         ],
         "cut": []
       },
@@ -158138,7 +158031,7 @@
       "batches": []
     },
     {
-      "index": 451,
+      "index": 449,
       "link_unit": "libavutil",
       "module": "libavutil/slicethread.c",
       "foundational": false,
@@ -158149,10 +158042,10 @@
         "scheduled": [
           0,
           357,
-          373,
-          414,
-          426,
-          442
+          372,
+          412,
+          424,
+          440
         ],
         "cut": []
       },
@@ -158236,7 +158129,7 @@
       "batches": []
     },
     {
-      "index": 452,
+      "index": 450,
       "link_unit": "libavutil",
       "module": "libavutil/threadmessage.c",
       "foundational": false,
@@ -158246,9 +158139,9 @@
       "depends_on": {
         "scheduled": [
           0,
-          375,
-          415,
-          443
+          374,
+          413,
+          441
         ],
         "cut": []
       },
@@ -158302,7 +158195,7 @@
       "batches": []
     },
     {
-      "index": 453,
+      "index": 451,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -158316,9 +158209,9 @@
           317,
           327,
           357,
-          416,
-          428,
-          444
+          414,
+          426,
+          442
         ],
         "cut": []
       },
@@ -158754,7 +158647,7 @@
       "batches": []
     },
     {
-      "index": 454,
+      "index": 452,
       "link_unit": "libavutil",
       "module": "libavutil/uuid.c",
       "foundational": false,
@@ -158763,8 +158656,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          382,
-          445
+          380,
+          443
         ],
         "cut": []
       },
@@ -158819,7 +158712,7 @@
       "batches": []
     },
     {
-      "index": 455,
+      "index": 453,
       "link_unit": "libavutil",
       "module": "libavutil/avsscanf.c",
       "foundational": false,
@@ -158829,9 +158722,9 @@
       "depends_on": {
         "scheduled": [
           360,
-          408,
-          419,
-          446
+          406,
+          417,
+          444
         ],
         "cut": []
       },
@@ -158945,7 +158838,7 @@
       "batches": []
     },
     {
-      "index": 456,
+      "index": 454,
       "link_unit": "libavutil",
       "module": "libavutil/dict.c",
       "foundational": false,
@@ -158956,8 +158849,8 @@
         "scheduled": [
           0,
           35,
-          420,
-          447
+          418,
+          445
         ],
         "cut": []
       },
@@ -159330,7 +159223,7 @@
       "batches": []
     },
     {
-      "index": 457,
+      "index": 455,
       "link_unit": "libavutil",
       "module": "libavutil/eval.c",
       "foundational": false,
@@ -159344,10 +159237,10 @@
           217,
           357,
           360,
-          409,
-          421,
-          438,
-          448
+          407,
+          419,
+          436,
+          446
         ],
         "cut": []
       },
@@ -159540,7 +159433,7 @@
       "batches": []
     },
     {
-      "index": 458,
+      "index": 456,
       "link_unit": "libavutil",
       "module": "libavutil/pixdesc.c",
       "foundational": false,
@@ -159552,8 +159445,8 @@
           1,
           52,
           96,
-          413,
-          450
+          411,
+          448
         ],
         "cut": []
       },
@@ -159899,7 +159792,7 @@
       "batches": []
     },
     {
-      "index": 459,
+      "index": 457,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -159910,9 +159803,9 @@
         "scheduled": [
           0,
           357,
-          428,
-          444,
-          453
+          426,
+          442,
+          451
         ],
         "cut": []
       },
@@ -160239,7 +160132,7 @@
       "batches": []
     },
     {
-      "index": 460,
+      "index": 458,
       "link_unit": "libavutil",
       "module": "libavutil/avsscanf.c",
       "foundational": false,
@@ -160248,10 +160141,10 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          408,
-          419,
-          446,
-          455
+          406,
+          417,
+          444,
+          453
         ],
         "cut": []
       },
@@ -160351,7 +160244,7 @@
       "batches": []
     },
     {
-      "index": 461,
+      "index": 459,
       "link_unit": "libavutil",
       "module": "libavutil/dict.c",
       "foundational": false,
@@ -160363,9 +160256,9 @@
           0,
           1,
           35,
-          420,
-          437,
-          456
+          418,
+          435,
+          454
         ],
         "cut": []
       },
@@ -160658,7 +160551,7 @@
       "batches": []
     },
     {
-      "index": 462,
+      "index": 460,
       "link_unit": "libavutil",
       "module": "libavutil/eval.c",
       "foundational": false,
@@ -160667,10 +160560,10 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          409,
-          438,
-          448,
-          457
+          407,
+          436,
+          446,
+          455
         ],
         "cut": []
       },
@@ -160802,7 +160695,7 @@
       "batches": []
     },
     {
-      "index": 463,
+      "index": 461,
       "link_unit": "libavutil",
       "module": "libavutil/pixdesc.c",
       "foundational": false,
@@ -160813,10 +160706,10 @@
         "scheduled": [
           52,
           96,
-          413,
-          441,
-          450,
-          458
+          411,
+          439,
+          448,
+          456
         ],
         "cut": []
       },
@@ -160871,7 +160764,7 @@
       "batches": []
     },
     {
-      "index": 464,
+      "index": 462,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -160880,8 +160773,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          444,
-          459
+          442,
+          457
         ],
         "cut": []
       },
@@ -160936,7 +160829,7 @@
       "batches": []
     },
     {
-      "index": 465,
+      "index": 463,
       "link_unit": "libavutil",
       "module": "libavutil/avsscanf.c",
       "foundational": false,
@@ -160946,10 +160839,10 @@
       "depends_on": {
         "scheduled": [
           360,
-          408,
-          419,
-          446,
-          460
+          406,
+          417,
+          444,
+          458
         ],
         "cut": []
       },
@@ -161004,7 +160897,7 @@
       "batches": []
     },
     {
-      "index": 466,
+      "index": 464,
       "link_unit": "libavutil",
       "module": "libavutil/dict.c",
       "foundational": false,
@@ -161013,8 +160906,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          420,
-          461
+          418,
+          459
         ],
         "cut": []
       },
@@ -161092,7 +160985,7 @@
       "batches": []
     },
     {
-      "index": 467,
+      "index": 465,
       "link_unit": "libavutil",
       "module": "libavutil/pixdesc.c",
       "foundational": false,
@@ -161101,8 +160994,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          413,
-          463
+          411,
+          461
         ],
         "cut": []
       },
@@ -161157,7 +161050,7 @@
       "batches": []
     },
     {
-      "index": 468,
+      "index": 466,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -161166,14 +161059,14 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          444,
-          464
+          442,
+          462
         ],
         "cut": [
-          483,
-          535,
-          536,
-          568
+          481,
+          533,
+          534,
+          566
         ]
       },
       "items": [
@@ -161241,7 +161134,7 @@
       "batches": []
     },
     {
-      "index": 469,
+      "index": 467,
       "link_unit": "libavutil",
       "module": "libavutil/avsscanf.c",
       "foundational": false,
@@ -161251,11 +161144,11 @@
       "depends_on": {
         "scheduled": [
           360,
-          408,
-          419,
-          446,
-          455,
-          465
+          406,
+          417,
+          444,
+          453,
+          463
         ],
         "cut": []
       },
@@ -161310,7 +161203,7 @@
       "batches": []
     },
     {
-      "index": 470,
+      "index": 468,
       "link_unit": "libavutil",
       "module": "libavutil/pixdesc.c",
       "foundational": false,
@@ -161320,11 +161213,11 @@
       "depends_on": {
         "scheduled": [
           96,
-          413,
-          441,
-          450,
-          463,
-          467
+          411,
+          439,
+          448,
+          461,
+          465
         ],
         "cut": []
       },
@@ -161390,7 +161283,7 @@
       "batches": []
     },
     {
-      "index": 471,
+      "index": 469,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -161399,7 +161292,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          468
+          466
         ],
         "cut": []
       },
@@ -161468,7 +161361,7 @@
       "batches": []
     },
     {
-      "index": 472,
+      "index": 470,
       "link_unit": "libavutil",
       "module": "libavutil/avsscanf.c",
       "foundational": false,
@@ -161477,9 +161370,9 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          408,
-          419,
-          469
+          406,
+          417,
+          467
         ],
         "cut": []
       },
@@ -161534,7 +161427,7 @@
       "batches": []
     },
     {
-      "index": 473,
+      "index": 471,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -161549,14 +161442,14 @@
           327,
           357,
           368,
-          373,
-          416,
-          428,
-          444,
-          453,
-          459,
-          468,
-          471
+          372,
+          414,
+          426,
+          442,
+          451,
+          457,
+          466,
+          469
         ],
         "cut": []
       },
@@ -161893,7 +161786,7 @@
       "batches": []
     },
     {
-      "index": 474,
+      "index": 472,
       "link_unit": "libavutil",
       "module": "libavutil/avsscanf.c",
       "foundational": false,
@@ -161902,7 +161795,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          472
+          470
         ],
         "cut": []
       },
@@ -161957,7 +161850,7 @@
       "batches": []
     },
     {
-      "index": 475,
+      "index": 473,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -161967,10 +161860,10 @@
       "depends_on": {
         "scheduled": [
           357,
-          416,
-          428,
-          459,
-          473
+          414,
+          426,
+          457,
+          471
         ],
         "cut": []
       },
@@ -162042,7 +161935,7 @@
       "batches": []
     },
     {
-      "index": 476,
+      "index": 474,
       "link_unit": "libavutil",
       "module": "libavutil/channel_layout.c",
       "foundational": false,
@@ -162204,7 +162097,7 @@
       "batches": []
     },
     {
-      "index": 477,
+      "index": 475,
       "link_unit": "libavutil",
       "module": "libavutil/csp.c",
       "foundational": false,
@@ -164112,7 +164005,7 @@
       "batches": []
     },
     {
-      "index": 478,
+      "index": 476,
       "link_unit": "libavutil",
       "module": "libavutil/hwcontext_stub.c",
       "foundational": false,
@@ -164219,7 +164112,7 @@
       "batches": []
     },
     {
-      "index": 479,
+      "index": 477,
       "link_unit": "libavutil",
       "module": "libavutil/imgutils.c",
       "foundational": false,
@@ -164237,9 +164130,9 @@
           349,
           357,
           368,
-          378,
-          413,
-          450
+          377,
+          411,
+          448
         ],
         "cut": []
       },
@@ -164802,7 +164695,7 @@
       "batches": []
     },
     {
-      "index": 480,
+      "index": 478,
       "link_unit": "libavutil",
       "module": "libavutil/random_seed.c",
       "foundational": false,
@@ -164819,7 +164712,7 @@
           290,
           310,
           357,
-          422
+          420
         ],
         "cut": []
       },
@@ -164919,7 +164812,7 @@
       "batches": []
     },
     {
-      "index": 481,
+      "index": 479,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -164929,16 +164822,16 @@
       "depends_on": {
         "scheduled": [
           0,
-          416,
-          428,
-          444,
-          459,
-          473
+          414,
+          426,
+          442,
+          457,
+          471
         ],
         "cut": [
-          540,
-          543,
-          546
+          538,
+          541,
+          544
         ]
       },
       "items": [
@@ -168448,7 +168341,7 @@
       "batches": []
     },
     {
-      "index": 482,
+      "index": 480,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -168459,16 +168352,16 @@
         "scheduled": [
           0,
           206,
-          416,
-          428,
-          444,
-          459,
-          473
+          414,
+          426,
+          442,
+          457,
+          471
         ],
         "cut": [
-          540,
-          543,
-          546
+          538,
+          541,
+          544
         ]
       },
       "items": [
@@ -171978,7 +171871,7 @@
       "batches": []
     },
     {
-      "index": 483,
+      "index": 481,
       "link_unit": "libavutil",
       "module": "libavutil/x86/tx_float_init.c",
       "foundational": false,
@@ -171988,14 +171881,14 @@
       "depends_on": {
         "scheduled": [
           0,
-          416,
-          428,
-          444,
-          473
+          414,
+          426,
+          442,
+          471
         ],
         "cut": [
-          540,
-          549
+          538,
+          547
         ]
       },
       "items": [
@@ -172281,7 +172174,7 @@
       "batches": []
     },
     {
-      "index": 484,
+      "index": 482,
       "link_unit": "libavutil",
       "module": "libavutil/channel_layout.c",
       "foundational": false,
@@ -172290,7 +172183,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          476
+          474
         ],
         "cut": []
       },
@@ -172373,7 +172266,7 @@
       "batches": []
     },
     {
-      "index": 485,
+      "index": 483,
       "link_unit": "libavutil",
       "module": "libavutil/csp.c",
       "foundational": false,
@@ -172383,8 +172276,8 @@
       "depends_on": {
         "scheduled": [
           115,
-          413,
-          477
+          411,
+          475
         ],
         "cut": []
       },
@@ -173164,7 +173057,7 @@
       "batches": []
     },
     {
-      "index": 486,
+      "index": 484,
       "link_unit": "libavutil",
       "module": "libavutil/hwcontext_stub.c",
       "foundational": false,
@@ -173173,8 +173066,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          413,
-          478
+          411,
+          476
         ],
         "cut": []
       },
@@ -173274,7 +173167,7 @@
       "batches": []
     },
     {
-      "index": 487,
+      "index": 485,
       "link_unit": "libavutil",
       "module": "libavutil/imgutils.c",
       "foundational": false,
@@ -173284,10 +173177,10 @@
       "depends_on": {
         "scheduled": [
           96,
-          413,
-          433,
-          450,
-          479
+          411,
+          431,
+          448,
+          477
         ],
         "cut": []
       },
@@ -173627,7 +173520,7 @@
       "batches": []
     },
     {
-      "index": 488,
+      "index": 486,
       "link_unit": "libavutil",
       "module": "libavutil/random_seed.c",
       "foundational": false,
@@ -173636,7 +173529,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          480
+          478
         ],
         "cut": []
       },
@@ -173697,7 +173590,7 @@
       "batches": []
     },
     {
-      "index": 489,
+      "index": 487,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -173707,11 +173600,11 @@
       "depends_on": {
         "scheduled": [
           0,
-          416,
-          428,
-          444,
-          473,
-          481
+          414,
+          426,
+          442,
+          471,
+          479
         ],
         "cut": []
       },
@@ -176027,7 +175920,7 @@
       "batches": []
     },
     {
-      "index": 490,
+      "index": 488,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -176038,11 +175931,11 @@
         "scheduled": [
           0,
           206,
-          416,
-          428,
-          444,
-          473,
-          482
+          414,
+          426,
+          442,
+          471,
+          480
         ],
         "cut": []
       },
@@ -178358,7 +178251,7 @@
       "batches": []
     },
     {
-      "index": 491,
+      "index": 489,
       "link_unit": "libavutil",
       "module": "libavutil/channel_layout.c",
       "foundational": false,
@@ -178370,8 +178263,8 @@
           25,
           114,
           327,
-          476,
-          484
+          474,
+          482
         ],
         "cut": []
       },
@@ -178530,7 +178423,7 @@
       "batches": []
     },
     {
-      "index": 492,
+      "index": 490,
       "link_unit": "libavutil",
       "module": "libavutil/csp.c",
       "foundational": false,
@@ -178542,9 +178435,9 @@
           55,
           115,
           123,
-          413,
-          477,
-          485
+          411,
+          475,
+          483
         ],
         "cut": []
       },
@@ -178976,7 +178869,7 @@
       "batches": []
     },
     {
-      "index": 493,
+      "index": 491,
       "link_unit": "libavutil",
       "module": "libavutil/imgutils.c",
       "foundational": false,
@@ -178988,12 +178881,12 @@
           52,
           96,
           357,
-          413,
-          441,
-          450,
-          458,
-          479,
-          487
+          411,
+          439,
+          448,
+          456,
+          477,
+          485
         ],
         "cut": []
       },
@@ -179188,7 +179081,7 @@
       "batches": []
     },
     {
-      "index": 494,
+      "index": 492,
       "link_unit": "libavutil",
       "module": "libavutil/random_seed.c",
       "foundational": false,
@@ -179197,8 +179090,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          480,
-          488
+          478,
+          486
         ],
         "cut": []
       },
@@ -179276,7 +179169,7 @@
       "batches": []
     },
     {
-      "index": 495,
+      "index": 493,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -179285,11 +179178,11 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489
+          414,
+          426,
+          442,
+          479,
+          487
         ],
         "cut": []
       },
@@ -180476,7 +180369,7 @@
       "batches": []
     },
     {
-      "index": 496,
+      "index": 494,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -180485,11 +180378,11 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490
+          414,
+          426,
+          442,
+          480,
+          488
         ],
         "cut": []
       },
@@ -181676,7 +181569,7 @@
       "batches": []
     },
     {
-      "index": 497,
+      "index": 495,
       "link_unit": "libavutil",
       "module": "libavutil/channel_layout.c",
       "foundational": false,
@@ -181692,8 +181585,8 @@
           227,
           327,
           357,
-          476,
-          491
+          474,
+          489
         ],
         "cut": []
       },
@@ -182700,7 +182593,7 @@
       "batches": []
     },
     {
-      "index": 498,
+      "index": 496,
       "link_unit": "libavutil",
       "module": "libavutil/csp.c",
       "foundational": false,
@@ -182710,9 +182603,9 @@
       "depends_on": {
         "scheduled": [
           126,
-          477,
-          485,
-          492
+          475,
+          483,
+          490
         ],
         "cut": []
       },
@@ -182916,7 +182809,7 @@
       "batches": []
     },
     {
-      "index": 499,
+      "index": 497,
       "link_unit": "libavutil",
       "module": "libavutil/imgutils.c",
       "foundational": false,
@@ -182927,12 +182820,12 @@
         "scheduled": [
           52,
           96,
-          413,
-          450,
-          458,
-          479,
-          487,
-          493
+          411,
+          448,
+          456,
+          477,
+          485,
+          491
         ],
         "cut": []
       },
@@ -183172,7 +183065,7 @@
       "batches": []
     },
     {
-      "index": 500,
+      "index": 498,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -183181,12 +183074,12 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489,
-          495
+          414,
+          426,
+          442,
+          479,
+          487,
+          493
         ],
         "cut": []
       },
@@ -183293,7 +183186,7 @@
       "batches": []
     },
     {
-      "index": 501,
+      "index": 499,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -183302,12 +183195,12 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490,
-          496
+          414,
+          426,
+          442,
+          480,
+          488,
+          494
         ],
         "cut": []
       },
@@ -183414,7 +183307,7 @@
       "batches": []
     },
     {
-      "index": 502,
+      "index": 500,
       "link_unit": "libavutil",
       "module": "libavutil/channel_layout.c",
       "foundational": false,
@@ -183427,9 +183320,9 @@
           1,
           114,
           122,
-          476,
-          491,
-          497
+          474,
+          489,
+          495
         ],
         "cut": []
       },
@@ -183935,7 +183828,7 @@
       "batches": []
     },
     {
-      "index": 503,
+      "index": 501,
       "link_unit": "libavutil",
       "module": "libavutil/csp.c",
       "foundational": false,
@@ -183950,9 +183843,9 @@
           126,
           232,
           240,
-          413,
-          477,
-          498
+          411,
+          475,
+          496
         ],
         "cut": []
       },
@@ -184168,7 +184061,7 @@
       "batches": []
     },
     {
-      "index": 504,
+      "index": 502,
       "link_unit": "libavutil",
       "module": "libavutil/imgutils.c",
       "foundational": false,
@@ -184180,11 +184073,11 @@
           0,
           96,
           357,
-          413,
-          450,
-          479,
-          487,
-          499
+          411,
+          448,
+          477,
+          485,
+          497
         ],
         "cut": []
       },
@@ -184378,7 +184271,7 @@
       "batches": []
     },
     {
-      "index": 505,
+      "index": 503,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -184387,13 +184280,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489,
-          495,
-          500
+          414,
+          426,
+          442,
+          479,
+          487,
+          493,
+          498
         ],
         "cut": []
       },
@@ -184500,7 +184393,7 @@
       "batches": []
     },
     {
-      "index": 506,
+      "index": 504,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -184509,13 +184402,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490,
-          496,
-          501
+          414,
+          426,
+          442,
+          480,
+          488,
+          494,
+          499
         ],
         "cut": []
       },
@@ -184622,7 +184515,7 @@
       "batches": []
     },
     {
-      "index": 507,
+      "index": 505,
       "link_unit": "libavutil",
       "module": "libavutil/channel_layout.c",
       "foundational": false,
@@ -184636,13 +184529,13 @@
           122,
           227,
           327,
-          476,
-          491,
-          497,
-          502
+          474,
+          489,
+          495,
+          500
         ],
         "cut": [
-          511
+          509
         ]
       },
       "items": [
@@ -184972,7 +184865,7 @@
       "batches": []
     },
     {
-      "index": 508,
+      "index": 506,
       "link_unit": "libavutil",
       "module": "libavutil/imgutils.c",
       "foundational": false,
@@ -184985,10 +184878,10 @@
           52,
           96,
           357,
-          413,
-          450,
-          487,
-          504
+          411,
+          448,
+          485,
+          502
         ],
         "cut": []
       },
@@ -185042,7 +184935,7 @@
       "batches": []
     },
     {
-      "index": 509,
+      "index": 507,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -185051,13 +184944,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489,
-          500,
-          505
+          414,
+          426,
+          442,
+          479,
+          487,
+          498,
+          503
         ],
         "cut": []
       },
@@ -185164,7 +185057,7 @@
       "batches": []
     },
     {
-      "index": 510,
+      "index": 508,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -185173,13 +185066,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490,
-          501,
-          506
+          414,
+          426,
+          442,
+          480,
+          488,
+          499,
+          504
         ],
         "cut": []
       },
@@ -185286,7 +185179,7 @@
       "batches": []
     },
     {
-      "index": 511,
+      "index": 509,
       "link_unit": "libavutil",
       "module": "libavutil/channel_layout.c",
       "foundational": false,
@@ -185304,13 +185197,13 @@
           317,
           327,
           357,
-          476,
-          491,
-          497,
-          507
+          474,
+          489,
+          495,
+          505
         ],
         "cut": [
-          592
+          590
         ]
       },
       "items": [
@@ -185531,7 +185424,7 @@
       "batches": []
     },
     {
-      "index": 512,
+      "index": 510,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -185540,13 +185433,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489,
-          505,
-          509
+          414,
+          426,
+          442,
+          479,
+          487,
+          503,
+          507
         ],
         "cut": []
       },
@@ -185653,7 +185546,7 @@
       "batches": []
     },
     {
-      "index": 513,
+      "index": 511,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -185662,13 +185555,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490,
-          506,
-          510
+          414,
+          426,
+          442,
+          480,
+          488,
+          504,
+          508
         ],
         "cut": []
       },
@@ -185775,7 +185668,7 @@
       "batches": []
     },
     {
-      "index": 514,
+      "index": 512,
       "link_unit": "libavutil",
       "module": "libavutil/channel_layout.c",
       "foundational": false,
@@ -185788,12 +185681,12 @@
           1,
           114,
           122,
+          472,
           474,
-          476,
-          497,
-          502,
-          507,
-          511
+          495,
+          500,
+          505,
+          509
         ],
         "cut": []
       },
@@ -185872,7 +185765,7 @@
       "batches": []
     },
     {
-      "index": 515,
+      "index": 513,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -185881,13 +185774,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489,
-          509,
-          512
+          414,
+          426,
+          442,
+          479,
+          487,
+          507,
+          510
         ],
         "cut": []
       },
@@ -185994,7 +185887,7 @@
       "batches": []
     },
     {
-      "index": 516,
+      "index": 514,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -186003,13 +185896,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490,
-          510,
-          513
+          414,
+          426,
+          442,
+          480,
+          488,
+          508,
+          511
         ],
         "cut": []
       },
@@ -186116,7 +186009,7 @@
       "batches": []
     },
     {
-      "index": 517,
+      "index": 515,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -186125,13 +186018,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489,
-          512,
-          515
+          414,
+          426,
+          442,
+          479,
+          487,
+          510,
+          513
         ],
         "cut": []
       },
@@ -186238,7 +186131,7 @@
       "batches": []
     },
     {
-      "index": 518,
+      "index": 516,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -186247,13 +186140,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490,
-          513,
-          516
+          414,
+          426,
+          442,
+          480,
+          488,
+          511,
+          514
         ],
         "cut": []
       },
@@ -186360,7 +186253,7 @@
       "batches": []
     },
     {
-      "index": 519,
+      "index": 517,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -186369,13 +186262,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489,
-          515,
-          517
+          414,
+          426,
+          442,
+          479,
+          487,
+          513,
+          515
         ],
         "cut": []
       },
@@ -186482,7 +186375,7 @@
       "batches": []
     },
     {
-      "index": 520,
+      "index": 518,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -186491,13 +186384,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490,
-          516,
-          518
+          414,
+          426,
+          442,
+          480,
+          488,
+          514,
+          516
         ],
         "cut": []
       },
@@ -186604,7 +186497,7 @@
       "batches": []
     },
     {
-      "index": 521,
+      "index": 519,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -186613,13 +186506,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489,
-          517,
-          519
+          414,
+          426,
+          442,
+          479,
+          487,
+          515,
+          517
         ],
         "cut": []
       },
@@ -186726,7 +186619,7 @@
       "batches": []
     },
     {
-      "index": 522,
+      "index": 520,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -186735,13 +186628,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490,
-          518,
-          520
+          414,
+          426,
+          442,
+          480,
+          488,
+          516,
+          518
         ],
         "cut": []
       },
@@ -186848,7 +186741,7 @@
       "batches": []
     },
     {
-      "index": 523,
+      "index": 521,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -186857,13 +186750,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489,
-          519,
-          521
+          414,
+          426,
+          442,
+          479,
+          487,
+          517,
+          519
         ],
         "cut": []
       },
@@ -186970,7 +186863,7 @@
       "batches": []
     },
     {
-      "index": 524,
+      "index": 522,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -186979,13 +186872,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490,
-          520,
-          522
+          414,
+          426,
+          442,
+          480,
+          488,
+          518,
+          520
         ],
         "cut": []
       },
@@ -187092,7 +186985,7 @@
       "batches": []
     },
     {
-      "index": 525,
+      "index": 523,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -187101,13 +186994,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489,
-          521,
-          523
+          414,
+          426,
+          442,
+          479,
+          487,
+          519,
+          521
         ],
         "cut": []
       },
@@ -187214,7 +187107,7 @@
       "batches": []
     },
     {
-      "index": 526,
+      "index": 524,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -187223,13 +187116,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490,
-          522,
-          524
+          414,
+          426,
+          442,
+          480,
+          488,
+          520,
+          522
         ],
         "cut": []
       },
@@ -187336,7 +187229,7 @@
       "batches": []
     },
     {
-      "index": 527,
+      "index": 525,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -187345,13 +187238,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489,
-          523,
-          525
+          414,
+          426,
+          442,
+          479,
+          487,
+          521,
+          523
         ],
         "cut": []
       },
@@ -187458,7 +187351,7 @@
       "batches": []
     },
     {
-      "index": 528,
+      "index": 526,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -187467,13 +187360,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490,
-          524,
-          526
+          414,
+          426,
+          442,
+          480,
+          488,
+          522,
+          524
         ],
         "cut": []
       },
@@ -187580,7 +187473,7 @@
       "batches": []
     },
     {
-      "index": 529,
+      "index": 527,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -187589,13 +187482,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489,
-          525,
-          527
+          414,
+          426,
+          442,
+          479,
+          487,
+          523,
+          525
         ],
         "cut": []
       },
@@ -187709,7 +187602,7 @@
       "batches": []
     },
     {
-      "index": 530,
+      "index": 528,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -187718,13 +187611,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490,
-          526,
-          528
+          414,
+          426,
+          442,
+          480,
+          488,
+          524,
+          526
         ],
         "cut": []
       },
@@ -187838,7 +187731,7 @@
       "batches": []
     },
     {
-      "index": 531,
+      "index": 529,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -187847,13 +187740,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          481,
-          489,
-          527,
-          529
+          414,
+          426,
+          442,
+          479,
+          487,
+          525,
+          527
         ],
         "cut": []
       },
@@ -187953,7 +187846,7 @@
       "batches": []
     },
     {
-      "index": 532,
+      "index": 530,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -187962,13 +187855,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          482,
-          490,
-          528,
-          530
+          414,
+          426,
+          442,
+          480,
+          488,
+          526,
+          528
         ],
         "cut": []
       },
@@ -188068,7 +187961,7 @@
       "batches": []
     },
     {
-      "index": 533,
+      "index": 531,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -188077,9 +187970,9 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          444,
-          489,
-          531
+          442,
+          487,
+          529
         ],
         "cut": []
       },
@@ -188134,7 +188027,7 @@
       "batches": []
     },
     {
-      "index": 534,
+      "index": 532,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -188143,9 +188036,9 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          444,
-          490,
-          532
+          442,
+          488,
+          530
         ],
         "cut": []
       },
@@ -188200,7 +188093,7 @@
       "batches": []
     },
     {
-      "index": 535,
+      "index": 533,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -188209,13 +188102,14 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          444,
-          489,
-          495,
-          500,
-          505,
-          509,
-          512,
+          442,
+          487,
+          493,
+          498,
+          503,
+          507,
+          510,
+          513,
           515,
           517,
           519,
@@ -188224,8 +188118,7 @@
           525,
           527,
           529,
-          531,
-          533
+          531
         ],
         "cut": []
       },
@@ -188280,7 +188173,7 @@
       "batches": []
     },
     {
-      "index": 536,
+      "index": 534,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -188289,13 +188182,14 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          444,
-          490,
-          496,
-          501,
-          506,
-          510,
-          513,
+          442,
+          488,
+          494,
+          499,
+          504,
+          508,
+          511,
+          514,
           516,
           518,
           520,
@@ -188304,8 +188198,7 @@
           526,
           528,
           530,
-          532,
-          534
+          532
         ],
         "cut": []
       },
@@ -188360,7 +188253,7 @@
       "batches": []
     },
     {
-      "index": 537,
+      "index": 535,
       "link_unit": "libavutil",
       "module": "libavutil/aes_ctr.c",
       "foundational": false,
@@ -188623,7 +188516,7 @@
       "batches": []
     },
     {
-      "index": 538,
+      "index": 536,
       "link_unit": "libavutil",
       "module": "libavutil/frame.c",
       "foundational": false,
@@ -188755,7 +188648,7 @@
       "batches": []
     },
     {
-      "index": 539,
+      "index": 537,
       "link_unit": "libavutil",
       "module": "libavutil/parseutils.c",
       "foundational": false,
@@ -188769,7 +188662,7 @@
           232,
           240,
           360,
-          462
+          460
         ],
         "cut": []
       },
@@ -189264,7 +189157,7 @@
       "batches": []
     },
     {
-      "index": 540,
+      "index": 538,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -189274,11 +189167,11 @@
       "depends_on": {
         "scheduled": [
           0,
-          416,
-          428,
-          444,
-          459,
-          473
+          414,
+          426,
+          442,
+          457,
+          471
         ],
         "cut": []
       },
@@ -192199,7 +192092,7 @@
       "batches": []
     },
     {
-      "index": 541,
+      "index": 539,
       "link_unit": "libavutil",
       "module": "libavutil/aes_ctr.c",
       "foundational": false,
@@ -192212,7 +192105,7 @@
           47,
           298,
           326,
-          537
+          535
         ],
         "cut": []
       },
@@ -192623,7 +192516,7 @@
       "batches": []
     },
     {
-      "index": 542,
+      "index": 540,
       "link_unit": "libavutil",
       "module": "libavutil/parseutils.c",
       "foundational": false,
@@ -192632,8 +192525,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          372,
-          539
+          371,
+          537
         ],
         "cut": []
       },
@@ -192882,7 +192775,7 @@
       "batches": []
     },
     {
-      "index": 543,
+      "index": 541,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -192892,13 +192785,13 @@
       "depends_on": {
         "scheduled": [
           0,
-          416,
-          428,
-          444,
-          473,
-          481,
-          482,
-          540
+          414,
+          426,
+          442,
+          471,
+          479,
+          480,
+          538
         ],
         "cut": []
       },
@@ -195338,7 +195231,7 @@
       "batches": []
     },
     {
-      "index": 544,
+      "index": 542,
       "link_unit": "libavutil",
       "module": "libavutil/aes_ctr.c",
       "foundational": false,
@@ -195347,9 +195240,9 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          494,
-          537,
-          541
+          492,
+          535,
+          539
         ],
         "cut": []
       },
@@ -195403,7 +195296,7 @@
       "batches": []
     },
     {
-      "index": 545,
+      "index": 543,
       "link_unit": "libavutil",
       "module": "libavutil/parseutils.c",
       "foundational": false,
@@ -195417,10 +195310,10 @@
           131,
           357,
           360,
-          372,
-          494,
-          539,
-          542
+          371,
+          492,
+          537,
+          540
         ],
         "cut": []
       },
@@ -195707,7 +195600,7 @@
       "batches": []
     },
     {
-      "index": 546,
+      "index": 544,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -195716,13 +195609,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          489,
-          490,
-          540,
-          543
+          414,
+          426,
+          442,
+          487,
+          488,
+          538,
+          541
         ],
         "cut": []
       },
@@ -196748,7 +196641,7 @@
       "batches": []
     },
     {
-      "index": 547,
+      "index": 545,
       "link_unit": "libavutil",
       "module": "libavutil/frame.c",
       "foundational": false,
@@ -196766,16 +196659,16 @@
           264,
           323,
           332,
-          383,
-          413,
-          458,
+          381,
+          411,
+          456,
+          500,
           502,
-          504,
-          538
+          536
         ],
         "cut": [
-          586,
-          604
+          584,
+          602
         ]
       },
       "items": [
@@ -197438,7 +197331,7 @@
       "batches": []
     },
     {
-      "index": 548,
+      "index": 546,
       "link_unit": "libavutil",
       "module": "libavutil/parseutils.c",
       "foundational": false,
@@ -197449,9 +197342,9 @@
         "scheduled": [
           220,
           360,
-          372,
-          539,
-          545
+          371,
+          537,
+          543
         ],
         "cut": []
       },
@@ -197553,7 +197446,7 @@
       "batches": []
     },
     {
-      "index": 549,
+      "index": 547,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -197562,11 +197455,11 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          540,
-          543,
-          546
+          414,
+          426,
+          538,
+          541,
+          544
         ],
         "cut": []
       },
@@ -197902,7 +197795,7 @@
       "batches": []
     },
     {
-      "index": 550,
+      "index": 548,
       "link_unit": "libavutil",
       "module": "libavutil/frame.c",
       "foundational": false,
@@ -197918,17 +197811,17 @@
           122,
           128,
           134,
-          390,
-          396,
-          413,
-          437,
-          450,
-          497,
-          538,
-          547
+          388,
+          394,
+          411,
+          435,
+          448,
+          495,
+          536,
+          545
         ],
         "cut": [
-          586
+          584
         ]
       },
       "items": [
@@ -198710,7 +198603,7 @@
       "batches": []
     },
     {
-      "index": 551,
+      "index": 549,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -198720,13 +198613,13 @@
       "depends_on": {
         "scheduled": [
           0,
-          416,
-          428,
-          444,
-          473,
-          540,
-          546,
-          549
+          414,
+          426,
+          442,
+          471,
+          538,
+          544,
+          547
         ],
         "cut": []
       },
@@ -199273,7 +199166,7 @@
       "batches": []
     },
     {
-      "index": 552,
+      "index": 550,
       "link_unit": "libavutil",
       "module": "libavutil/frame.c",
       "foundational": false,
@@ -199292,21 +199185,21 @@
           264,
           323,
           332,
-          383,
-          390,
-          396,
-          413,
-          420,
-          450,
-          461,
-          479,
-          487,
-          499,
-          547,
-          550
+          381,
+          388,
+          394,
+          411,
+          418,
+          448,
+          459,
+          477,
+          485,
+          497,
+          545,
+          548
         ],
         "cut": [
-          586
+          584
         ]
       },
       "items": [
@@ -199731,7 +199624,7 @@
       "batches": []
     },
     {
-      "index": 553,
+      "index": 551,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -199740,14 +199633,14 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          540,
-          543,
-          546,
-          549,
-          551
+          414,
+          426,
+          442,
+          538,
+          541,
+          544,
+          547,
+          549
         ],
         "cut": []
       },
@@ -200934,7 +200827,7 @@
       "batches": []
     },
     {
-      "index": 554,
+      "index": 552,
       "link_unit": "libavutil",
       "module": "libavutil/frame.c",
       "foundational": false,
@@ -200945,8 +200838,8 @@
         "scheduled": [
           122,
           134,
-          497,
-          552
+          495,
+          550
         ],
         "cut": []
       },
@@ -201179,7 +201072,7 @@
       "batches": []
     },
     {
-      "index": 555,
+      "index": 553,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -201188,12 +201081,12 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          540,
-          551,
-          553
+          414,
+          426,
+          442,
+          538,
+          549,
+          551
         ],
         "cut": []
       },
@@ -201300,7 +201193,7 @@
       "batches": []
     },
     {
-      "index": 556,
+      "index": 554,
       "link_unit": "libavutil",
       "module": "libavutil/frame.c",
       "foundational": false,
@@ -201313,15 +201206,15 @@
           81,
           122,
           134,
-          383,
-          502,
-          547,
+          381,
+          500,
+          545,
+          548,
           550,
-          552,
-          554
+          552
         ],
         "cut": [
-          606
+          604
         ]
       },
       "items": [
@@ -201528,7 +201421,7 @@
       "batches": []
     },
     {
-      "index": 557,
+      "index": 555,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -201537,13 +201430,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          540,
+          414,
+          426,
+          442,
+          538,
+          549,
           551,
-          553,
-          555
+          553
         ],
         "cut": []
       },
@@ -201650,7 +201543,7 @@
       "batches": []
     },
     {
-      "index": 558,
+      "index": 556,
       "link_unit": "libavutil",
       "module": "libavutil/frame.c",
       "foundational": false,
@@ -201663,16 +201556,16 @@
           81,
           122,
           134,
-          390,
-          396,
-          437,
-          502,
+          388,
+          394,
+          435,
+          500,
+          548,
           550,
-          552,
-          556
+          554
         ],
         "cut": [
-          586
+          584
         ]
       },
       "items": [
@@ -201801,7 +201694,7 @@
       "batches": []
     },
     {
-      "index": 559,
+      "index": 557,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -201810,13 +201703,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          540,
-          551,
-          555,
-          557
+          414,
+          426,
+          442,
+          538,
+          549,
+          553,
+          555
         ],
         "cut": []
       },
@@ -201923,7 +201816,7 @@
       "batches": []
     },
     {
-      "index": 560,
+      "index": 558,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -201932,13 +201825,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          540,
-          551,
-          557,
-          559
+          414,
+          426,
+          442,
+          538,
+          549,
+          555,
+          557
         ],
         "cut": []
       },
@@ -202045,7 +201938,7 @@
       "batches": []
     },
     {
-      "index": 561,
+      "index": 559,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -202054,13 +201947,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          540,
-          551,
-          559,
-          560
+          414,
+          426,
+          442,
+          538,
+          549,
+          557,
+          558
         ],
         "cut": []
       },
@@ -202167,7 +202060,7 @@
       "batches": []
     },
     {
-      "index": 562,
+      "index": 560,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -202176,13 +202069,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          540,
-          551,
-          560,
-          561
+          414,
+          426,
+          442,
+          538,
+          549,
+          558,
+          559
         ],
         "cut": []
       },
@@ -202289,7 +202182,7 @@
       "batches": []
     },
     {
-      "index": 563,
+      "index": 561,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -202298,13 +202191,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          540,
-          551,
-          561,
-          562
+          414,
+          426,
+          442,
+          538,
+          549,
+          559,
+          560
         ],
         "cut": []
       },
@@ -202411,7 +202304,7 @@
       "batches": []
     },
     {
-      "index": 564,
+      "index": 562,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -202420,13 +202313,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          540,
-          551,
-          562,
-          563
+          414,
+          426,
+          442,
+          538,
+          549,
+          560,
+          561
         ],
         "cut": []
       },
@@ -202533,7 +202426,7 @@
       "batches": []
     },
     {
-      "index": 565,
+      "index": 563,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -202542,13 +202435,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          540,
-          551,
-          563,
-          564
+          414,
+          426,
+          442,
+          538,
+          549,
+          561,
+          562
         ],
         "cut": []
       },
@@ -202662,7 +202555,7 @@
       "batches": []
     },
     {
-      "index": 566,
+      "index": 564,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -202671,13 +202564,13 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          416,
-          428,
-          444,
-          540,
-          551,
-          564,
-          565
+          414,
+          426,
+          442,
+          538,
+          549,
+          562,
+          563
         ],
         "cut": []
       },
@@ -202777,7 +202670,7 @@
       "batches": []
     },
     {
-      "index": 567,
+      "index": 565,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -202786,9 +202679,9 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          444,
-          551,
-          566
+          442,
+          549,
+          564
         ],
         "cut": []
       },
@@ -202843,7 +202736,7 @@
       "batches": []
     },
     {
-      "index": 568,
+      "index": 566,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -202852,21 +202745,21 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          444,
-          543,
-          546,
+          442,
+          541,
+          544,
+          551,
           553,
           555,
           557,
+          558,
           559,
           560,
           561,
           562,
           563,
           564,
-          565,
-          566,
-          567
+          565
         ],
         "cut": []
       },
@@ -202921,7 +202814,7 @@
       "batches": []
     },
     {
-      "index": 569,
+      "index": 567,
       "link_unit": "libavutil",
       "module": "libavutil/container_fifo.c",
       "foundational": false,
@@ -202933,9 +202826,9 @@
           2,
           134,
           365,
+          548,
           550,
-          552,
-          556
+          554
         ],
         "cut": []
       },
@@ -203258,7 +203151,7 @@
       "batches": []
     },
     {
-      "index": 570,
+      "index": 568,
       "link_unit": "libavutil",
       "module": "libavutil/detection_bbox.c",
       "foundational": false,
@@ -203446,7 +203339,7 @@
       "batches": []
     },
     {
-      "index": 571,
+      "index": 569,
       "link_unit": "libavutil",
       "module": "libavutil/downmix_info.c",
       "foundational": false,
@@ -203519,7 +203412,7 @@
       "batches": []
     },
     {
-      "index": 572,
+      "index": 570,
       "link_unit": "libavutil",
       "module": "libavutil/film_grain_params.c",
       "foundational": false,
@@ -203794,7 +203687,7 @@
       "batches": []
     },
     {
-      "index": 573,
+      "index": 571,
       "link_unit": "libavutil",
       "module": "libavutil/hdr_dynamic_vivid_metadata.c",
       "foundational": false,
@@ -203925,7 +203818,7 @@
       "batches": []
     },
     {
-      "index": 574,
+      "index": 572,
       "link_unit": "libavutil",
       "module": "libavutil/hwcontext.c",
       "foundational": false,
@@ -203937,7 +203830,7 @@
           131,
           202,
           349,
-          413
+          411
         ],
         "cut": []
       },
@@ -204789,7 +204682,7 @@
       "batches": []
     },
     {
-      "index": 575,
+      "index": 573,
       "link_unit": "libavutil",
       "module": "libavutil/opt.c",
       "foundational": false,
@@ -204804,7 +204697,7 @@
           240,
           323,
           357,
-          458
+          456
         ],
         "cut": []
       },
@@ -205614,7 +205507,7 @@
       "batches": []
     },
     {
-      "index": 576,
+      "index": 574,
       "link_unit": "libavutil",
       "module": "libavutil/raw_color_params.c",
       "foundational": false,
@@ -205737,7 +205630,7 @@
       "batches": []
     },
     {
-      "index": 577,
+      "index": 575,
       "link_unit": "libavutil",
       "module": "libavutil/side_data.c",
       "foundational": false,
@@ -205750,9 +205643,9 @@
           81,
           128,
           151,
-          390,
-          437,
-          538
+          388,
+          435,
+          536
         ],
         "cut": []
       },
@@ -206029,7 +205922,7 @@
       "batches": []
     },
     {
-      "index": 578,
+      "index": 576,
       "link_unit": "libavutil",
       "module": "libavutil/container_fifo.c",
       "foundational": false,
@@ -206043,10 +205936,10 @@
           3,
           357,
           365,
-          375,
-          392,
-          402,
-          569
+          374,
+          390,
+          400,
+          567
         ],
         "cut": []
       },
@@ -206576,7 +206469,7 @@
       "batches": []
     },
     {
-      "index": 579,
+      "index": 577,
       "link_unit": "libavutil",
       "module": "libavutil/detection_bbox.c",
       "foundational": false,
@@ -206586,7 +206479,7 @@
       "depends_on": {
         "scheduled": [
           357,
-          570
+          568
         ],
         "cut": []
       },
@@ -206722,7 +206615,7 @@
       "batches": []
     },
     {
-      "index": 580,
+      "index": 578,
       "link_unit": "libavutil",
       "module": "libavutil/downmix_info.c",
       "foundational": false,
@@ -206732,7 +206625,7 @@
       "depends_on": {
         "scheduled": [
           128,
-          571
+          569
         ],
         "cut": []
       },
@@ -206961,7 +206854,7 @@
       "batches": []
     },
     {
-      "index": 581,
+      "index": 579,
       "link_unit": "libavutil",
       "module": "libavutil/film_grain_params.c",
       "foundational": false,
@@ -206971,8 +206864,8 @@
       "depends_on": {
         "scheduled": [
           128,
-          413,
-          572
+          411,
+          570
         ],
         "cut": []
       },
@@ -207107,7 +207000,7 @@
       "batches": []
     },
     {
-      "index": 582,
+      "index": 580,
       "link_unit": "libavutil",
       "module": "libavutil/hdr_dynamic_vivid_metadata.c",
       "foundational": false,
@@ -207117,7 +207010,7 @@
       "depends_on": {
         "scheduled": [
           55,
-          573
+          571
         ],
         "cut": []
       },
@@ -207248,7 +207141,7 @@
       "batches": []
     },
     {
-      "index": 583,
+      "index": 581,
       "link_unit": "libavutil",
       "module": "libavutil/hwcontext.c",
       "foundational": false,
@@ -207260,7 +207153,7 @@
           0,
           81,
           131,
-          574
+          572
         ],
         "cut": []
       },
@@ -207463,7 +207356,7 @@
       "batches": []
     },
     {
-      "index": 584,
+      "index": 582,
       "link_unit": "libavutil",
       "module": "libavutil/opt.c",
       "foundational": false,
@@ -207476,10 +207369,10 @@
           55,
           122,
           129,
-          420,
-          437,
-          497,
-          575
+          418,
+          435,
+          495,
+          573
         ],
         "cut": []
       },
@@ -207728,7 +207621,7 @@
       "batches": []
     },
     {
-      "index": 585,
+      "index": 583,
       "link_unit": "libavutil",
       "module": "libavutil/raw_color_params.c",
       "foundational": false,
@@ -207739,7 +207632,7 @@
         "scheduled": [
           55,
           128,
-          576
+          574
         ],
         "cut": []
       },
@@ -207842,7 +207735,7 @@
       "batches": []
     },
     {
-      "index": 586,
+      "index": 584,
       "link_unit": "libavutil",
       "module": "libavutil/side_data.c",
       "foundational": false,
@@ -207854,8 +207747,8 @@
           0,
           81,
           128,
-          538,
-          577
+          536,
+          575
         ],
         "cut": []
       },
@@ -208373,7 +208266,7 @@
       "batches": []
     },
     {
-      "index": 587,
+      "index": 585,
       "link_unit": "libavutil",
       "module": "libavutil/container_fifo.c",
       "foundational": false,
@@ -208385,9 +208278,9 @@
           0,
           2,
           3,
-          375,
-          569,
-          578
+          374,
+          567,
+          576
         ],
         "cut": []
       },
@@ -208448,7 +208341,7 @@
       "batches": []
     },
     {
-      "index": 588,
+      "index": 586,
       "link_unit": "libavutil",
       "module": "libavutil/detection_bbox.c",
       "foundational": false,
@@ -208458,8 +208351,8 @@
       "depends_on": {
         "scheduled": [
           0,
-          570,
-          579
+          568,
+          577
         ],
         "cut": []
       },
@@ -208514,7 +208407,7 @@
       "batches": []
     },
     {
-      "index": 589,
+      "index": 587,
       "link_unit": "libavutil",
       "module": "libavutil/downmix_info.c",
       "foundational": false,
@@ -208525,10 +208418,10 @@
         "scheduled": [
           128,
           134,
-          538,
-          547,
-          550,
-          580
+          536,
+          545,
+          548,
+          578
         ],
         "cut": []
       },
@@ -208709,7 +208602,7 @@
       "batches": []
     },
     {
-      "index": 590,
+      "index": 588,
       "link_unit": "libavutil",
       "module": "libavutil/film_grain_params.c",
       "foundational": false,
@@ -208723,12 +208616,12 @@
           96,
           128,
           134,
-          413,
-          450,
-          538,
-          550,
-          572,
-          581
+          411,
+          448,
+          536,
+          548,
+          570,
+          579
         ],
         "cut": []
       },
@@ -208876,7 +208769,7 @@
       "batches": []
     },
     {
-      "index": 591,
+      "index": 589,
       "link_unit": "libavutil",
       "module": "libavutil/hdr_dynamic_vivid_metadata.c",
       "foundational": false,
@@ -208886,7 +208779,7 @@
       "depends_on": {
         "scheduled": [
           55,
-          582
+          580
         ],
         "cut": []
       },
@@ -209012,7 +208905,7 @@
       "batches": []
     },
     {
-      "index": 592,
+      "index": 590,
       "link_unit": "libavutil",
       "module": "libavutil/opt.c",
       "foundational": false,
@@ -209032,21 +208925,21 @@
           264,
           323,
           357,
-          382,
-          413,
-          420,
-          437,
-          447,
-          450,
-          461,
-          466,
-          497,
-          502,
-          511,
-          514,
-          545,
-          575,
-          584
+          380,
+          411,
+          418,
+          435,
+          445,
+          448,
+          459,
+          464,
+          495,
+          500,
+          509,
+          512,
+          543,
+          573,
+          582
         ],
         "cut": []
       },
@@ -210093,7 +209986,7 @@
       "batches": []
     },
     {
-      "index": 593,
+      "index": 591,
       "link_unit": "libavutil",
       "module": "libavutil/raw_color_params.c",
       "foundational": false,
@@ -210105,9 +209998,9 @@
           0,
           128,
           134,
-          538,
-          550,
-          585
+          536,
+          548,
+          583
         ],
         "cut": []
       },
@@ -210207,7 +210100,7 @@
       "batches": []
     },
     {
-      "index": 594,
+      "index": 592,
       "link_unit": "libavutil",
       "module": "libavutil/side_data.c",
       "foundational": false,
@@ -210218,15 +210111,15 @@
         "scheduled": [
           81,
           128,
-          383,
-          390,
-          396,
-          420,
-          437,
-          461,
-          538,
-          577,
-          586
+          381,
+          388,
+          394,
+          418,
+          435,
+          459,
+          536,
+          575,
+          584
         ],
         "cut": []
       },
@@ -210522,7 +210415,7 @@
       "batches": []
     },
     {
-      "index": 595,
+      "index": 593,
       "link_unit": "libavutil",
       "module": "libavutil/container_fifo.c",
       "foundational": false,
@@ -210531,8 +210424,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          569,
-          587
+          567,
+          585
         ],
         "cut": []
       },
@@ -210598,7 +210491,7 @@
       "batches": []
     },
     {
-      "index": 596,
+      "index": 594,
       "link_unit": "libavutil",
       "module": "libavutil/detection_bbox.c",
       "foundational": false,
@@ -210610,11 +210503,11 @@
           0,
           81,
           134,
-          390,
-          538,
-          547,
-          570,
-          588
+          388,
+          536,
+          545,
+          568,
+          586
         ],
         "cut": []
       },
@@ -210669,7 +210562,7 @@
       "batches": []
     },
     {
-      "index": 597,
+      "index": 595,
       "link_unit": "libavutil",
       "module": "libavutil/downmix_info.c",
       "foundational": false,
@@ -210679,9 +210572,9 @@
       "depends_on": {
         "scheduled": [
           0,
-          571,
-          580,
-          589
+          569,
+          578,
+          587
         ],
         "cut": []
       },
@@ -210736,7 +210629,7 @@
       "batches": []
     },
     {
-      "index": 598,
+      "index": 596,
       "link_unit": "libavutil",
       "module": "libavutil/hdr_dynamic_vivid_metadata.c",
       "foundational": false,
@@ -210746,7 +210639,7 @@
       "depends_on": {
         "scheduled": [
           128,
-          591
+          589
         ],
         "cut": []
       },
@@ -210864,7 +210757,7 @@
       "batches": []
     },
     {
-      "index": 599,
+      "index": 597,
       "link_unit": "libavutil",
       "module": "libavutil/hwcontext.c",
       "foundational": false,
@@ -210877,10 +210770,10 @@
           134,
           187,
           202,
-          413,
-          420,
-          574,
-          583
+          411,
+          418,
+          572,
+          581
         ],
         "cut": []
       },
@@ -211166,7 +211059,7 @@
       "batches": []
     },
     {
-      "index": 600,
+      "index": 598,
       "link_unit": "libavutil",
       "module": "libavutil/opt.c",
       "foundational": false,
@@ -211179,9 +211072,9 @@
           130,
           131,
           360,
-          575,
-          584,
-          592
+          573,
+          582,
+          590
         ],
         "cut": []
       },
@@ -211610,7 +211503,7 @@
       "batches": []
     },
     {
-      "index": 601,
+      "index": 599,
       "link_unit": "libavutil",
       "module": "libavutil/hdr_dynamic_vivid_metadata.c",
       "foundational": false,
@@ -211622,9 +211515,9 @@
           0,
           128,
           134,
-          538,
-          550,
-          598
+          536,
+          548,
+          596
         ],
         "cut": []
       },
@@ -211723,7 +211616,7 @@
       "batches": []
     },
     {
-      "index": 602,
+      "index": 600,
       "link_unit": "libavutil",
       "module": "libavutil/hwcontext.c",
       "foundational": false,
@@ -211737,11 +211630,11 @@
           134,
           187,
           202,
-          383,
-          390,
-          552,
-          558,
-          599
+          381,
+          388,
+          550,
+          556,
+          597
         ],
         "cut": []
       },
@@ -212117,7 +212010,7 @@
       "batches": []
     },
     {
-      "index": 603,
+      "index": 601,
       "link_unit": "libavutil",
       "module": "libavutil/opt.c",
       "foundational": false,
@@ -212139,21 +212032,21 @@
           264,
           323,
           357,
-          413,
-          420,
-          437,
-          450,
-          461,
-          466,
-          476,
-          497,
-          502,
-          514,
-          545,
-          575,
-          584,
-          592,
-          600
+          411,
+          418,
+          435,
+          448,
+          459,
+          464,
+          474,
+          495,
+          500,
+          512,
+          543,
+          573,
+          582,
+          590,
+          598
         ],
         "cut": []
       },
@@ -213014,7 +212907,7 @@
       "batches": []
     },
     {
-      "index": 604,
+      "index": 602,
       "link_unit": "libavutil",
       "module": "libavutil/hwcontext.c",
       "foundational": false,
@@ -213029,21 +212922,21 @@
           187,
           202,
           357,
-          383,
-          390,
-          403,
-          413,
+          381,
+          388,
+          401,
+          411,
+          548,
           550,
-          552,
+          554,
           556,
-          558,
-          574,
-          583,
-          599,
-          602
+          572,
+          581,
+          597,
+          600
         ],
         "cut": [
-          606
+          604
         ]
       },
       "items": [
@@ -213630,7 +213523,7 @@
       "batches": []
     },
     {
-      "index": 605,
+      "index": 603,
       "link_unit": "libavutil",
       "module": "libavutil/opt.c",
       "foundational": false,
@@ -213651,17 +213544,17 @@
           333,
           357,
           360,
-          413,
-          420,
-          437,
-          461,
-          462,
-          502,
-          575,
-          584,
-          592,
-          600,
-          603
+          411,
+          418,
+          435,
+          459,
+          460,
+          500,
+          573,
+          582,
+          590,
+          598,
+          601
         ],
         "cut": []
       },
@@ -214610,7 +214503,7 @@
       "batches": []
     },
     {
-      "index": 606,
+      "index": 604,
       "link_unit": "libavutil",
       "module": "libavutil/hwcontext.c",
       "foundational": false,
@@ -214625,16 +214518,16 @@
           134,
           202,
           357,
-          383,
-          390,
-          413,
+          381,
+          388,
+          411,
+          548,
           550,
           552,
-          554,
-          574,
-          599,
-          602,
-          604
+          572,
+          597,
+          600,
+          602
         ],
         "cut": []
       },
@@ -214849,7 +214742,7 @@
       "batches": []
     },
     {
-      "index": 607,
+      "index": 605,
       "link_unit": "libavutil",
       "module": "libavutil/opt.c",
       "foundational": false,
@@ -214866,14 +214759,14 @@
           276,
           317,
           357,
-          413,
-          548,
-          575,
-          584,
-          592,
-          600,
-          603,
-          605
+          411,
+          546,
+          573,
+          582,
+          590,
+          598,
+          601,
+          603
         ],
         "cut": []
       },
@@ -215776,7 +215669,7 @@
       "batches": []
     },
     {
-      "index": 608,
+      "index": 606,
       "link_unit": "libavutil",
       "module": "libavutil/hwcontext.c",
       "foundational": false,
@@ -215790,16 +215683,16 @@
           134,
           187,
           202,
-          383,
-          390,
-          413,
+          381,
+          388,
+          411,
+          548,
           550,
-          552,
-          574,
-          599,
+          572,
+          597,
+          600,
           602,
-          604,
-          606
+          604
         ],
         "cut": []
       },
@@ -215958,7 +215851,7 @@
       "batches": []
     },
     {
-      "index": 609,
+      "index": 607,
       "link_unit": "libavutil",
       "module": "libavutil/opt.c",
       "foundational": false,
@@ -215973,12 +215866,12 @@
           130,
           131,
           357,
-          575,
-          584,
-          592,
-          600,
-          603,
-          607
+          573,
+          582,
+          590,
+          598,
+          601,
+          605
         ],
         "cut": []
       },
@@ -216136,7 +216029,7 @@
       "batches": []
     },
     {
-      "index": 610,
+      "index": 608,
       "link_unit": "libavutil",
       "module": "libavutil/hwcontext.c",
       "foundational": false,
@@ -216149,17 +216042,17 @@
           187,
           202,
           357,
-          383,
-          390,
-          413,
-          420,
-          450,
-          499,
-          574,
-          599,
+          381,
+          388,
+          411,
+          418,
+          448,
+          497,
+          572,
+          597,
+          600,
           602,
-          604,
-          608
+          606
         ],
         "cut": []
       },
@@ -216308,7 +216201,7 @@
       "batches": []
     },
     {
-      "index": 611,
+      "index": 609,
       "link_unit": "libavutil",
       "module": "libavutil/opt.c",
       "foundational": false,
@@ -216323,11 +216216,11 @@
           131,
           240,
           357,
-          575,
-          592,
-          603,
-          607,
-          609
+          573,
+          590,
+          601,
+          605,
+          607
         ],
         "cut": []
       },
@@ -216567,7 +216460,7 @@
       "batches": []
     },
     {
-      "index": 612,
+      "index": 610,
       "link_unit": "libavutil",
       "module": "libavutil/hwcontext.c",
       "foundational": false,
@@ -216577,9 +216470,9 @@
       "depends_on": {
         "scheduled": [
           81,
-          420,
-          574,
-          610
+          418,
+          572,
+          608
         ],
         "cut": []
       },
@@ -216633,7 +216526,7 @@
       "batches": []
     },
     {
-      "index": 613,
+      "index": 611,
       "link_unit": "libavutil",
       "module": "libavutil/opt.c",
       "foundational": false,
@@ -216648,11 +216541,11 @@
           131,
           350,
           357,
-          420,
-          437,
-          456,
-          592,
-          611
+          418,
+          435,
+          454,
+          590,
+          609
         ],
         "cut": []
       },
@@ -217000,7 +216893,7 @@
       "batches": []
     },
     {
-      "index": 614,
+      "index": 612,
       "link_unit": "libavutil",
       "module": "libavutil/opt.c",
       "foundational": false,
@@ -217010,8 +216903,8 @@
       "depends_on": {
         "scheduled": [
           131,
-          420,
-          613
+          418,
+          611
         ],
         "cut": []
       },
@@ -217151,7 +217044,7 @@
       "batches": []
     },
     {
-      "index": 615,
+      "index": 613,
       "link_unit": "libavutil",
       "module": "libavutil/iamf.c",
       "foundational": false,
@@ -217900,7 +217793,7 @@
       "batches": []
     },
     {
-      "index": 616,
+      "index": 614,
       "link_unit": "libavutil",
       "module": "libavutil/video_enc_params.c",
       "foundational": false,
@@ -218032,7 +217925,7 @@
       "batches": []
     },
     {
-      "index": 617,
+      "index": 615,
       "link_unit": "libavutil",
       "module": "libavutil/video_hint.c",
       "foundational": false,
@@ -218153,7 +218046,7 @@
       "batches": []
     },
     {
-      "index": 618,
+      "index": 616,
       "link_unit": "libavutil",
       "module": "libavutil/iamf.c",
       "foundational": false,
@@ -218168,7 +218061,7 @@
           130,
           131,
           349,
-          615
+          613
         ],
         "cut": []
       },
@@ -218935,7 +218828,7 @@
       "batches": []
     },
     {
-      "index": 619,
+      "index": 617,
       "link_unit": "libavutil",
       "module": "libavutil/video_enc_params.c",
       "foundational": false,
@@ -218944,7 +218837,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          616
+          614
         ],
         "cut": []
       },
@@ -219066,7 +218959,7 @@
       "batches": []
     },
     {
-      "index": 620,
+      "index": 618,
       "link_unit": "libavutil",
       "module": "libavutil/video_hint.c",
       "foundational": false,
@@ -219075,7 +218968,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          617
+          615
         ],
         "cut": []
       },
@@ -219210,7 +219103,7 @@
       "batches": []
     },
     {
-      "index": 621,
+      "index": 619,
       "link_unit": "libavutil",
       "module": "libavutil/iamf.c",
       "foundational": false,
@@ -219223,9 +219116,9 @@
           131,
           349,
           357,
-          420,
-          615,
-          618
+          418,
+          613,
+          616
         ],
         "cut": []
       },
@@ -219931,7 +219824,7 @@
       "batches": []
     },
     {
-      "index": 622,
+      "index": 620,
       "link_unit": "libavutil",
       "module": "libavutil/video_enc_params.c",
       "foundational": false,
@@ -219942,9 +219835,9 @@
         "scheduled": [
           0,
           357,
-          589,
-          616,
-          619
+          587,
+          614,
+          617
         ],
         "cut": []
       },
@@ -220144,7 +220037,7 @@
       "batches": []
     },
     {
-      "index": 623,
+      "index": 621,
       "link_unit": "libavutil",
       "module": "libavutil/video_hint.c",
       "foundational": false,
@@ -220154,9 +220047,9 @@
       "depends_on": {
         "scheduled": [
           0,
-          589,
-          617,
-          620
+          587,
+          615,
+          618
         ],
         "cut": []
       },
@@ -220396,7 +220289,7 @@
       "batches": []
     },
     {
-      "index": 624,
+      "index": 622,
       "link_unit": "libavutil",
       "module": "libavutil/iamf.c",
       "foundational": false,
@@ -220409,11 +220302,11 @@
           55,
           131,
           349,
-          603,
+          601,
+          611,
           613,
-          615,
-          618,
-          621
+          616,
+          619
         ],
         "cut": []
       },
@@ -220801,7 +220694,7 @@
       "batches": []
     },
     {
-      "index": 625,
+      "index": 623,
       "link_unit": "libavutil",
       "module": "libavutil/video_enc_params.c",
       "foundational": false,
@@ -220813,12 +220706,12 @@
           0,
           81,
           134,
-          390,
-          538,
-          547,
-          616,
-          619,
-          622
+          388,
+          536,
+          545,
+          614,
+          617,
+          620
         ],
         "cut": []
       },
@@ -220878,7 +220771,7 @@
       "batches": []
     },
     {
-      "index": 626,
+      "index": 624,
       "link_unit": "libavutil",
       "module": "libavutil/video_hint.c",
       "foundational": false,
@@ -220890,11 +220783,11 @@
           0,
           81,
           134,
-          390,
-          538,
-          547,
-          620,
-          623
+          388,
+          536,
+          545,
+          618,
+          621
         ],
         "cut": []
       },
@@ -220949,7 +220842,7 @@
       "batches": []
     },
     {
-      "index": 627,
+      "index": 625,
       "link_unit": "libavutil",
       "module": "libavutil/iamf.c",
       "foundational": false,
@@ -220962,12 +220855,12 @@
           131,
           349,
           357,
-          420,
+          418,
+          611,
           613,
-          615,
-          618,
-          621,
-          624
+          616,
+          619,
+          622
         ],
         "cut": []
       },
@@ -221403,7 +221296,7 @@
       "batches": []
     },
     {
-      "index": 628,
+      "index": 626,
       "link_unit": "libavutil",
       "module": "libavutil/iamf.c",
       "foundational": false,
@@ -221415,13 +221308,13 @@
           0,
           131,
           349,
-          603,
+          601,
+          611,
           613,
-          615,
-          618,
-          621,
-          624,
-          627
+          616,
+          619,
+          622,
+          625
         ],
         "cut": []
       },
@@ -221628,7 +221521,7 @@
       "batches": []
     },
     {
-      "index": 629,
+      "index": 627,
       "link_unit": "libavutil",
       "module": "libavutil/iamf.c",
       "foundational": false,
@@ -221639,11 +221532,11 @@
         "scheduled": [
           0,
           131,
-          613,
-          618,
-          621,
-          624,
-          628
+          611,
+          616,
+          619,
+          622,
+          626
         ],
         "cut": []
       },
@@ -221748,7 +221641,7 @@
       "batches": []
     },
     {
-      "index": 630,
+      "index": 628,
       "link_unit": "libavutil",
       "module": "libavutil/iamf.c",
       "foundational": false,
@@ -221759,9 +221652,9 @@
         "scheduled": [
           131,
           349,
-          615,
-          627,
-          629
+          613,
+          625,
+          627
         ],
         "cut": []
       },
@@ -221830,7 +221723,7 @@
       "batches": []
     },
     {
-      "index": 631,
+      "index": 629,
       "link_unit": "libavutil",
       "module": "libavutil/iamf.c",
       "foundational": false,
@@ -221841,10 +221734,10 @@
         "scheduled": [
           0,
           131,
-          613,
-          624,
-          627,
-          630
+          611,
+          622,
+          625,
+          628
         ],
         "cut": []
       },
@@ -221949,7 +221842,7 @@
       "batches": []
     },
     {
-      "index": 632,
+      "index": 630,
       "link_unit": "libavutil",
       "module": "libavutil/iamf.c",
       "foundational": false,
@@ -221960,8 +221853,8 @@
         "scheduled": [
           131,
           349,
-          615,
-          631
+          613,
+          629
         ],
         "cut": []
       },
@@ -222030,7 +221923,7 @@
       "batches": []
     },
     {
-      "index": 633,
+      "index": 631,
       "link_unit": "libavutil",
       "module": "libavutil/iamf.c",
       "foundational": false,
@@ -222041,9 +221934,9 @@
         "scheduled": [
           0,
           131,
-          613,
-          627,
-          632
+          611,
+          625,
+          630
         ],
         "cut": []
       },
@@ -222147,7 +222040,7 @@
       "batches": []
     },
     {
-      "index": 634,
+      "index": 632,
       "link_unit": "libavutil",
       "module": "libavutil/ambient_viewing_environment.c",
       "foundational": false,
@@ -222292,7 +222185,7 @@
       "batches": []
     },
     {
-      "index": 635,
+      "index": 633,
       "link_unit": "libavutil",
       "module": "libavutil/dovi_meta.c",
       "foundational": false,
@@ -224046,7 +223939,7 @@
       "batches": []
     },
     {
-      "index": 636,
+      "index": 634,
       "link_unit": "libavutil",
       "module": "libavutil/hdr_dynamic_metadata.c",
       "foundational": false,
@@ -224780,7 +224673,7 @@
       "batches": []
     },
     {
-      "index": 637,
+      "index": 635,
       "link_unit": "libavutil",
       "module": "libavutil/mastering_display_metadata.c",
       "foundational": false,
@@ -225164,7 +225057,7 @@
       "batches": []
     },
     {
-      "index": 638,
+      "index": 636,
       "link_unit": "libavutil",
       "module": "libavutil/replaygain.h",
       "foundational": false,
@@ -225270,7 +225163,7 @@
       "batches": []
     },
     {
-      "index": 639,
+      "index": 637,
       "link_unit": "libavutil",
       "module": "libavutil/spherical.c",
       "foundational": false,
@@ -225357,7 +225250,7 @@
       "batches": []
     },
     {
-      "index": 640,
+      "index": 638,
       "link_unit": "libavutil",
       "module": "libavutil/stereo3d.c",
       "foundational": false,
@@ -225584,7 +225477,7 @@
       "batches": []
     },
     {
-      "index": 641,
+      "index": 639,
       "link_unit": "libavutil",
       "module": "libavutil/tdrdi.c",
       "foundational": false,
@@ -225813,7 +225706,7 @@
       "batches": []
     },
     {
-      "index": 642,
+      "index": 640,
       "link_unit": "libavutil",
       "module": "libavutil/ambient_viewing_environment.c",
       "foundational": false,
@@ -225822,7 +225715,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          634
+          632
         ],
         "cut": []
       },
@@ -225891,7 +225784,7 @@
       "batches": []
     },
     {
-      "index": 643,
+      "index": 641,
       "link_unit": "libavutil",
       "module": "libavutil/dovi_meta.c",
       "foundational": false,
@@ -225901,7 +225794,7 @@
       "depends_on": {
         "scheduled": [
           0,
-          635
+          633
         ],
         "cut": []
       },
@@ -226265,7 +226158,7 @@
       "batches": []
     },
     {
-      "index": 644,
+      "index": 642,
       "link_unit": "libavutil",
       "module": "libavutil/hdr_dynamic_metadata.c",
       "foundational": false,
@@ -226278,9 +226171,9 @@
           55,
           128,
           134,
-          538,
-          550,
-          636
+          536,
+          548,
+          634
         ],
         "cut": []
       },
@@ -226636,7 +226529,7 @@
       "batches": []
     },
     {
-      "index": 645,
+      "index": 643,
       "link_unit": "libavutil",
       "module": "libavutil/mastering_display_metadata.c",
       "foundational": false,
@@ -226648,9 +226541,9 @@
           0,
           128,
           134,
-          538,
-          550,
-          637
+          536,
+          548,
+          635
         ],
         "cut": []
       },
@@ -226831,7 +226724,7 @@
       "batches": []
     },
     {
-      "index": 646,
+      "index": 644,
       "link_unit": "libavutil",
       "module": "libavutil/spherical.c",
       "foundational": false,
@@ -226841,7 +226734,7 @@
       "depends_on": {
         "scheduled": [
           360,
-          639
+          637
         ],
         "cut": []
       },
@@ -227094,7 +226987,7 @@
       "batches": []
     },
     {
-      "index": 647,
+      "index": 645,
       "link_unit": "libavutil",
       "module": "libavutil/stereo3d.c",
       "foundational": false,
@@ -227105,7 +226998,7 @@
         "scheduled": [
           55,
           128,
-          640
+          638
         ],
         "cut": []
       },
@@ -227618,7 +227511,7 @@
       "batches": []
     },
     {
-      "index": 648,
+      "index": 646,
       "link_unit": "libavutil",
       "module": "libavutil/tdrdi.c",
       "foundational": false,
@@ -227629,8 +227522,8 @@
         "scheduled": [
           0,
           357,
-          589,
-          641
+          587,
+          639
         ],
         "cut": []
       },
@@ -227823,7 +227716,7 @@
       "batches": []
     },
     {
-      "index": 649,
+      "index": 647,
       "link_unit": "libavutil",
       "module": "libavutil/ambient_viewing_environment.c",
       "foundational": false,
@@ -227835,10 +227728,10 @@
           0,
           128,
           134,
-          538,
-          550,
-          634,
-          642
+          536,
+          548,
+          632,
+          640
         ],
         "cut": []
       },
@@ -227943,7 +227836,7 @@
       "batches": []
     },
     {
-      "index": 650,
+      "index": 648,
       "link_unit": "libavutil",
       "module": "libavutil/dovi_meta.c",
       "foundational": false,
@@ -227952,8 +227845,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          635,
-          643
+          633,
+          641
         ],
         "cut": []
       },
@@ -228119,7 +228012,7 @@
       "batches": []
     },
     {
-      "index": 651,
+      "index": 649,
       "link_unit": "libavutil",
       "module": "libavutil/hdr_dynamic_metadata.c",
       "foundational": false,
@@ -228130,7 +228023,7 @@
         "scheduled": [
           55,
           128,
-          644
+          642
         ],
         "cut": []
       },
@@ -228291,7 +228184,7 @@
       "batches": []
     },
     {
-      "index": 652,
+      "index": 650,
       "link_unit": "libavutil",
       "module": "libavutil/mastering_display_metadata.c",
       "foundational": false,
@@ -228303,10 +228196,10 @@
           0,
           128,
           134,
-          538,
-          550,
-          637,
-          645
+          536,
+          548,
+          635,
+          643
         ],
         "cut": []
       },
@@ -228435,7 +228328,7 @@
       "batches": []
     },
     {
-      "index": 653,
+      "index": 651,
       "link_unit": "libavutil",
       "module": "libavutil/spherical.c",
       "foundational": false,
@@ -228445,8 +228338,8 @@
       "depends_on": {
         "scheduled": [
           0,
-          639,
-          646
+          637,
+          644
         ],
         "cut": []
       },
@@ -228568,7 +228461,7 @@
       "batches": []
     },
     {
-      "index": 654,
+      "index": 652,
       "link_unit": "libavutil",
       "module": "libavutil/stereo3d.c",
       "foundational": false,
@@ -228577,7 +228470,7 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          647
+          645
         ],
         "cut": []
       },
@@ -228646,7 +228539,7 @@
       "batches": []
     },
     {
-      "index": 655,
+      "index": 653,
       "link_unit": "libavutil",
       "module": "libavutil/dovi_meta.c",
       "foundational": false,
@@ -228655,9 +228548,9 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          635,
-          643,
-          650
+          633,
+          641,
+          648
         ],
         "cut": []
       },
@@ -228847,7 +228740,7 @@
       "batches": []
     },
     {
-      "index": 656,
+      "index": 654,
       "link_unit": "libavutil",
       "module": "libavutil/hdr_dynamic_metadata.c",
       "foundational": false,
@@ -228861,11 +228754,11 @@
           128,
           134,
           357,
-          538,
-          550,
-          636,
-          644,
-          651
+          536,
+          548,
+          634,
+          642,
+          649
         ],
         "cut": []
       },
@@ -229064,7 +228957,7 @@
       "batches": []
     },
     {
-      "index": 657,
+      "index": 655,
       "link_unit": "libavutil",
       "module": "libavutil/mastering_display_metadata.c",
       "foundational": false,
@@ -229073,8 +228966,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          637,
-          652
+          635,
+          650
         ],
         "cut": []
       },
@@ -229129,7 +229022,7 @@
       "batches": []
     },
     {
-      "index": 658,
+      "index": 656,
       "link_unit": "libavutil",
       "module": "libavutil/stereo3d.c",
       "foundational": false,
@@ -229141,10 +229034,10 @@
           0,
           128,
           134,
-          538,
-          550,
-          647,
-          654
+          536,
+          548,
+          645,
+          652
         ],
         "cut": []
       },
@@ -229297,7 +229190,7 @@
       "batches": []
     },
     {
-      "index": 659,
+      "index": 657,
       "link_unit": "libavutil",
       "module": "libavutil/dovi_meta.c",
       "foundational": false,
@@ -229307,9 +229200,9 @@
       "depends_on": {
         "scheduled": [
           0,
-          635,
-          643,
-          655
+          633,
+          641,
+          653
         ],
         "cut": []
       },
@@ -229363,7 +229256,7 @@
       "batches": []
     },
     {
-      "index": 660,
+      "index": 658,
       "link_unit": "libavutil",
       "module": "libavutil/stereo3d.c",
       "foundational": false,
@@ -229372,8 +229265,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          647,
-          658
+          645,
+          656
         ],
         "cut": []
       },
@@ -229427,7 +229320,7 @@
       "batches": []
     },
     {
-      "index": 661,
+      "index": 659,
       "link_unit": "libavutil",
       "module": "libavutil/sfc64.h",
       "foundational": false,
@@ -229437,7 +229330,7 @@
       "depends_on": {
         "scheduled": [
           241,
-          462
+          460
         ],
         "cut": []
       },
@@ -229733,7 +229626,7 @@
       "batches": []
     },
     {
-      "index": 662,
+      "index": 660,
       "link_unit": "libavutil",
       "module": "libavutil/x86/cpu.c",
       "foundational": false,
@@ -229743,7 +229636,7 @@
       "depends_on": {
         "scheduled": [
           236,
-          373
+          372
         ],
         "cut": []
       },
@@ -229843,7 +229736,7 @@
       "batches": []
     },
     {
-      "index": 663,
+      "index": 661,
       "link_unit": "libavutil",
       "module": "libavutil/x86/timer.h",
       "foundational": false,
@@ -229853,7 +229746,7 @@
       "depends_on": {
         "scheduled": [
           224,
-          494
+          492
         ],
         "cut": []
       },
@@ -229908,7 +229801,7 @@
       "batches": []
     },
     {
-      "index": 664,
+      "index": 662,
       "link_unit": "libavutil",
       "module": "libavutil/aes.c",
       "foundational": false,
@@ -229918,8 +229811,8 @@
       "depends_on": {
         "scheduled": [
           326,
-          430,
-          544
+          428,
+          542
         ],
         "cut": []
       },
@@ -230332,7 +230225,7 @@
       "batches": []
     },
     {
-      "index": 665,
+      "index": 663,
       "link_unit": "libavutil",
       "module": "libavutil/fixed_dsp.c",
       "foundational": false,
@@ -230342,7 +230235,7 @@
       "depends_on": {
         "scheduled": [
           282,
-          431
+          429
         ],
         "cut": []
       },
@@ -230460,7 +230353,7 @@
       "batches": []
     },
     {
-      "index": 666,
+      "index": 664,
       "link_unit": "libavutil",
       "module": "libavutil/float_dsp.c",
       "foundational": false,
@@ -230540,7 +230433,7 @@
       "batches": []
     },
     {
-      "index": 667,
+      "index": 665,
       "link_unit": "libavutil",
       "module": "libavutil/float_scalarproduct.c",
       "foundational": false,
@@ -230550,7 +230443,7 @@
       "depends_on": {
         "scheduled": [
           209,
-          666
+          664
         ],
         "cut": []
       },
@@ -230605,7 +230498,7 @@
       "batches": []
     },
     {
-      "index": 668,
+      "index": 666,
       "link_unit": "libavutil",
       "module": "libavutil/md5.c",
       "foundational": false,
@@ -230615,7 +230508,7 @@
       "depends_on": {
         "scheduled": [
           331,
-          440
+          438
         ],
         "cut": []
       },
@@ -230670,7 +230563,7 @@
       "batches": []
     },
     {
-      "index": 669,
+      "index": 667,
       "link_unit": "libavutil",
       "module": "libavutil/murmur3.c",
       "foundational": false,
@@ -230680,7 +230573,7 @@
       "depends_on": {
         "scheduled": [
           307,
-          449
+          447
         ],
         "cut": []
       },
@@ -230870,7 +230763,7 @@
       "batches": []
     },
     {
-      "index": 670,
+      "index": 668,
       "link_unit": "libavutil",
       "module": "libavutil/ripemd.c",
       "foundational": false,
@@ -230880,7 +230773,7 @@
       "depends_on": {
         "scheduled": [
           308,
-          449
+          447
         ],
         "cut": []
       },
@@ -231077,7 +230970,7 @@
       "batches": []
     },
     {
-      "index": 671,
+      "index": 669,
       "link_unit": "libavutil",
       "module": "libavutil/sha.c",
       "foundational": false,
@@ -231087,7 +230980,7 @@
       "depends_on": {
         "scheduled": [
           310,
-          494
+          492
         ],
         "cut": []
       },
@@ -231142,7 +231035,7 @@
       "batches": []
     },
     {
-      "index": 672,
+      "index": 670,
       "link_unit": "libavutil",
       "module": "libavutil/sha512.c",
       "foundational": false,
@@ -231153,7 +231046,7 @@
         "scheduled": [
           324,
           351,
-          449
+          447
         ],
         "cut": []
       },
@@ -231432,7 +231325,7 @@
       "batches": []
     },
     {
-      "index": 673,
+      "index": 671,
       "link_unit": "libavutil",
       "module": "libavutil/fifo.c",
       "foundational": false,
@@ -231441,8 +231334,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          402,
-          435
+          400,
+          433
         ],
         "cut": []
       },
@@ -231556,7 +231449,7 @@
       "batches": []
     },
     {
-      "index": 674,
+      "index": 672,
       "link_unit": "libavutil",
       "module": "libavutil/fifo.c",
       "foundational": false,
@@ -231565,8 +231458,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          452,
-          673
+          450,
+          671
         ],
         "cut": []
       },
@@ -231621,7 +231514,7 @@
       "batches": []
     },
     {
-      "index": 675,
+      "index": 673,
       "link_unit": "libavutil",
       "module": "libavutil/avsscanf.c",
       "foundational": false,
@@ -231630,8 +231523,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          474,
-          514
+          472,
+          512
         ],
         "cut": []
       },
@@ -231686,7 +231579,7 @@
       "batches": []
     },
     {
-      "index": 676,
+      "index": 674,
       "link_unit": "libavutil",
       "module": "libavutil/file_open.c",
       "foundational": false,
@@ -231695,8 +231588,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          422,
-          494
+          420,
+          492
         ],
         "cut": []
       },
@@ -231751,7 +231644,7 @@
       "batches": []
     },
     {
-      "index": 677,
+      "index": 675,
       "link_unit": "libavutil",
       "module": "libavutil/frame.c",
       "foundational": false,
@@ -231760,8 +231653,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          558,
-          594
+          556,
+          592
         ],
         "cut": []
       },
@@ -232187,7 +232080,7 @@
       "batches": []
     },
     {
-      "index": 678,
+      "index": 676,
       "link_unit": "libavutil",
       "module": "libavutil/imgutils.c",
       "foundational": false,
@@ -232196,8 +232089,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          508,
-          677
+          506,
+          675
         ],
         "cut": []
       },
@@ -232266,7 +232159,7 @@
       "batches": []
     },
     {
-      "index": 679,
+      "index": 677,
       "link_unit": "libavutil",
       "module": "libavutil/pixdesc.c",
       "foundational": false,
@@ -232275,8 +232168,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          470,
-          678
+          468,
+          676
         ],
         "cut": []
       },
@@ -232338,7 +232231,7 @@
       "batches": []
     },
     {
-      "index": 680,
+      "index": 678,
       "link_unit": "libavutil",
       "module": "libavutil/x86/imgutils_init.c",
       "foundational": false,
@@ -232347,8 +232240,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          433,
-          678
+          431,
+          676
         ],
         "cut": []
       },
@@ -232403,7 +232296,7 @@
       "batches": []
     },
     {
-      "index": 681,
+      "index": 679,
       "link_unit": "libavutil",
       "module": "libavutil/tx_float.c",
       "foundational": false,
@@ -232412,8 +232305,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          483,
-          568
+          481,
+          566
         ],
         "cut": []
       },
@@ -232624,7 +232517,7 @@
       "batches": []
     },
     {
-      "index": 682,
+      "index": 680,
       "link_unit": "libavutil",
       "module": "libavutil/tx_double.c",
       "foundational": false,
@@ -232633,8 +232526,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          535,
-          681
+          533,
+          679
         ],
         "cut": []
       },
@@ -232880,7 +232773,7 @@
       "batches": []
     },
     {
-      "index": 683,
+      "index": 681,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -232889,8 +232782,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          475,
-          682
+          473,
+          680
         ],
         "cut": []
       },
@@ -233326,7 +233219,7 @@
       "batches": []
     },
     {
-      "index": 684,
+      "index": 682,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -233335,8 +233228,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          681,
-          683
+          679,
+          681
         ],
         "cut": []
       },
@@ -234416,7 +234309,7 @@
       "batches": []
     },
     {
-      "index": 685,
+      "index": 683,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -234425,9 +234318,9 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          483,
-          681,
-          684
+          481,
+          679,
+          682
         ],
         "cut": []
       },
@@ -238483,7 +238376,7 @@
       "batches": []
     },
     {
-      "index": 686,
+      "index": 684,
       "link_unit": "libavutil",
       "module": "libavutil/tx_int32.c",
       "foundational": false,
@@ -238492,8 +238385,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          536,
-          681
+          534,
+          679
         ],
         "cut": []
       },
@@ -238739,7 +238632,7 @@
       "batches": []
     },
     {
-      "index": 687,
+      "index": 685,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -238748,8 +238641,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          685,
-          686
+          683,
+          684
         ],
         "cut": []
       },
@@ -239178,7 +239071,7 @@
       "batches": []
     },
     {
-      "index": 688,
+      "index": 686,
       "link_unit": "libavutil",
       "module": "libavutil/tx.c",
       "foundational": false,
@@ -239187,8 +239080,8 @@
       "status": "todo",
       "depends_on": {
         "scheduled": [
-          483,
-          687
+          481,
+          685
         ],
         "cut": []
       },

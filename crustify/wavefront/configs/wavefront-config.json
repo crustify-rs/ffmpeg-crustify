@@ -1714,13 +1714,6 @@
       ]
     },
     {
-      "name": "libavutil/libavutil/pixelutils.c",
-      "files": [
-        "libavutil/pixelutils.c",
-        "libavutil/pixelutils.h"
-      ]
-    },
-    {
       "name": "libavutil/libavutil/random_seed.c",
       "files": [
         "libavutil/random_seed.c",
@@ -5187,8 +5180,6 @@
     "libavutil/parseutils.h",
     "libavutil/pixdesc.c",
     "libavutil/pixdesc.h",
-    "libavutil/pixelutils.c",
-    "libavutil/pixelutils.h",
     "libavutil/pixfmt.h",
     "libavutil/ppc/cpu.h",
     "libavutil/qsort.h",
