@@ -58,7 +58,7 @@ members = [
 version = "0.1.0"
 edition = "2024"
 rust-version = "1.99"
-repository = "https://github.com/crustify-rs/ffmpeg-bindings"
+repository = "https://github.com/crustify-rs/ffmpeg-crustify"
 license = "LGPL-2.1-or-later"
 publish = false
 
