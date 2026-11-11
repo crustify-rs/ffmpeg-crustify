@@ -13,7 +13,6 @@ fn main() {
         "AVCODEC",
         "AVFORMAT",
         "AVFILTER",
-        "AVDEVICE",
     ] {
         if let Ok(dir) = std::env::var(format!("DEP_{lib}_LIB_DIR")) {
             println!("cargo:rustc-link-arg=-Wl,-rpath,{dir}");

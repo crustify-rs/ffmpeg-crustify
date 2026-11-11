@@ -2,8 +2,6 @@
 
 #[cfg(feature = "libavcodec")]
 pub mod libavcodec;
-#[cfg(feature = "libavdevice")]
-pub mod libavdevice;
 #[cfg(feature = "libavfilter")]
 pub mod libavfilter;
 #[cfg(feature = "libavformat")]

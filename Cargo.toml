@@ -10,14 +10,13 @@ repository.workspace = true
 publish.workspace = true
 
 [features]
-default = ["libavutil", "libswresample", "libswscale", "libavcodec", "libavformat", "libavfilter", "libavdevice"]
+default = ["libavutil", "libswresample", "libswscale", "libavcodec", "libavformat", "libavfilter"]
 libavutil = ["dep:libavutil-sys", "dep:glibc-bindings"]
 libswresample = ["dep:libswresample-sys", "libavutil"]
 libswscale = ["dep:libswscale-sys", "libavutil"]
 libavcodec = ["dep:libavcodec-sys", "libswresample", "libavutil"]
 libavformat = ["dep:libavformat-sys", "libavcodec", "libavutil"]
 libavfilter = ["dep:libavfilter-sys", "libswscale", "libavformat", "libavcodec", "libswresample", "libavutil"]
-libavdevice = ["dep:libavdevice-sys", "libavfilter", "libavformat", "libavcodec", "libavutil"]
 
 [dependencies]
 ffibox.workspace = true
@@ -28,7 +27,6 @@ libswscale-sys = { workspace = true, optional = true }
 libavcodec-sys = { workspace = true, optional = true }
 libavformat-sys = { workspace = true, optional = true }
 libavfilter-sys = { workspace = true, optional = true }
-libavdevice-sys = { workspace = true, optional = true }
 
 [dev-dependencies]
 trybuild.workspace = true
@@ -40,7 +38,6 @@ libswscale-sys = { workspace = true, features = ["bindgen"] }
 libavcodec-sys = { workspace = true, features = ["bindgen"] }
 libavformat-sys = { workspace = true, features = ["bindgen"] }
 libavfilter-sys = { workspace = true, features = ["bindgen"] }
-libavdevice-sys = { workspace = true, features = ["bindgen"] }
 
 [lints]
 workspace = true
@@ -55,7 +52,6 @@ members = [
     "libavcodec-sys",
     "libavformat-sys",
     "libavfilter-sys",
-    "libavdevice-sys",
 ]
 
 [workspace.package]
@@ -80,7 +76,6 @@ libswscale-sys = { version = "0.1.0", path = "libswscale-sys" }
 libavcodec-sys = { version = "0.1.0", path = "libavcodec-sys" }
 libavformat-sys = { version = "0.1.0", path = "libavformat-sys" }
 libavfilter-sys = { version = "0.1.0", path = "libavfilter-sys" }
-libavdevice-sys = { version = "0.1.0", path = "libavdevice-sys" }
 # Wrappers of the out-of-tree libraries, each pinned to its side campaign's working branch
 # (`wrapper.pin` in crustify/artifacts/dependencies.json), and patched below to its clone
 # beside this repository while the campaign extends it, by absolute path, which the batch

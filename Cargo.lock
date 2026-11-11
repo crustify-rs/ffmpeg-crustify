@@ -106,7 +106,6 @@ dependencies = [
  "ffibox",
  "glibc-bindings",
  "libavcodec-sys",
- "libavdevice-sys",
  "libavfilter-sys",
  "libavformat-sys",
  "libavutil-sys",
@@ -165,20 +164,6 @@ dependencies = [
  "cc",
  "libavutil-sys",
  "libswresample-sys",
- "pkg-config",
- "serde_json",
-]
-
-[[package]]
-name = "libavdevice-sys"
-version = "0.1.0"
-dependencies = [
- "bindgen",
- "cc",
- "libavcodec-sys",
- "libavfilter-sys",
- "libavformat-sys",
- "libavutil-sys",
  "pkg-config",
  "serde_json",
 ]
