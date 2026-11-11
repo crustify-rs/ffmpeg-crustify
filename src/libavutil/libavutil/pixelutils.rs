@@ -93,8 +93,10 @@ impl SadFn {
     /// bytes). C compares square blocks only, so one size stands for both
     /// sides.
     ///
-    /// C's log context is used only by a libavutil built without
-    /// pixelutils, which logs that it is missing; this passes none.
+    /// `None` for every size when libavutil is built without pixelutils
+    /// (`CONFIG_PIXELUTILS` 0), as the campaign's ingest profile builds it:
+    /// C then only logs that pixelutils is missing, to its log context, of
+    /// which this passes none.
     #[doc(alias = "av_pixelutils_get_sad_fn")]
     #[must_use]
     pub fn new(log2_size: u32, alignment: SadAlignment) -> Option<Self> {
@@ -206,12 +208,58 @@ mod unit_tests {
         (SadAlignment::Both, 2),
     ];
 
-    /// The function C selects for `log2_size` and `alignment`.
-    fn sad_fn(log2_size: u8, alignment: SadAlignment) -> SadFn {
-        SadFn::new(log2_size.into(), alignment).expect("a supported block size")
+    /// C's plain `sad_wxh` for `N` x `N` blocks, the function a libavutil built
+    /// with pixelutils selects without SIMD. The configured build has none
+    /// (`CONFIG_PIXELUTILS` 0), so the tests of [`SadFn::call`] call this.
+    ///
+    /// # Safety
+    ///
+    /// `N` bytes are readable at `src1 + r * stride1` and `src2 + r * stride2`
+    /// for every `r` in `0..N`.
+    unsafe extern "C" fn sad_wxh<const N: usize>(
+        src1: *const u8,
+        stride1: isize,
+        src2: *const u8,
+        stride2: isize,
+    ) -> c_int {
+        let mut sum = 0;
+        for r in 0..N as isize {
+            for x in 0..N {
+                let (p1, p2) = (
+                    src1.wrapping_offset(r * stride1).wrapping_add(x),
+                    src2.wrapping_offset(r * stride2).wrapping_add(x),
+                );
+                // SAFETY: byte `x` of row `r` of the first block, readable by
+                // the caller's contract.
+                let a = unsafe { *p1 };
+                // SAFETY: byte `x` of row `r` of the second block, likewise.
+                let b = unsafe { *p2 };
+                sum += c_int::from(a.abs_diff(b));
+            }
+        }
+        sum
     }
 
-    /// Every function C selects, by block size and alignment.
+    /// The function a libavutil built with pixelutils selects for
+    /// `log2_size` and `alignment`, as C's plain [`sad_wxh`].
+    fn sad_fn(log2_size: u8, alignment: SadAlignment) -> SadFn {
+        let sad: unsafe extern "C" fn(*const u8, isize, *const u8, isize) -> c_int = match log2_size
+        {
+            1 => sad_wxh::<2>,
+            2 => sad_wxh::<4>,
+            3 => sad_wxh::<8>,
+            4 => sad_wxh::<16>,
+            5 => sad_wxh::<32>,
+            _ => unreachable!("C has no function for {log2_size}"),
+        };
+        SadFn {
+            sad,
+            log2_size,
+            alignment,
+        }
+    }
+
+    /// Every function, by block size and alignment.
     fn all() -> impl Iterator<Item = SadFn> {
         (1..=5).flat_map(|bits| ALIGNMENTS.map(|a| sad_fn(bits, a.0)))
     }
@@ -259,14 +307,9 @@ mod unit_tests {
 
     #[test]
     #[cfg_attr(miri, ignore = "calls C")]
-    fn new_selects_exactly_the_supported_sizes() {
+    fn new_selects_nothing_without_pixelutils() {
         for (a, _) in ALIGNMENTS {
-            for bits in 1..=5u32 {
-                let f = SadFn::new(bits, a).unwrap();
-                assert_eq!((f.size(), f.alignment()), (1 << bits, a));
-                assert_eq!(u32::from(f.log2_size), bits);
-            }
-            for bits in [0, 6, 7, 31, 32, 255, 256, u32::MAX] {
+            for bits in [0, 1, 2, 3, 4, 5, 6, 7, 31, 32, 255, 256, u32::MAX] {
                 assert!(SadFn::new(bits, a).is_none(), "{bits} {a:?}");
             }
         }
@@ -277,11 +320,12 @@ mod unit_tests {
     fn new_returns_the_function_c_selects() {
         for (a, c) in ALIGNMENTS {
             for bits in 1..=5 {
-                // SAFETY: a NULL log context; C only selects a function.
+                // SAFETY: a NULL log context; C only selects a function, or
+                // logs that pixelutils is missing.
                 let raw =
                     unsafe { ffi::av_pixelutils_get_sad_fn(bits, bits, c, core::ptr::null_mut()) };
-                let f = SadFn::new(bits as u32, a).unwrap();
-                assert_eq!(raw.map(|p| p as usize), Some(f.sad as usize));
+                let f = SadFn::new(bits as u32, a);
+                assert_eq!(raw.map(|p| p as usize), f.map(|f| f.sad as usize));
             }
         }
     }
@@ -293,7 +337,6 @@ mod unit_tests {
     }
 
     #[test]
-    #[cfg_attr(miri, ignore = "calls C")]
     fn size_and_alignment_report_the_selection() {
         for f in all() {
             assert!([2, 4, 8, 16, 32].contains(&f.size()));
@@ -306,8 +349,7 @@ mod unit_tests {
     }
 
     #[test]
-    #[cfg_attr(miri, ignore = "calls C")]
-    fn sums_match_the_reference_and_c() {
+    fn sums_match_the_reference() {
         let (a, b) = (noise(7), noise(0x9E37_79B9));
         for f in all() {
             let n = f.size();
@@ -330,20 +372,11 @@ mod unit_tests {
                     reference(n, l1, at1, s1, l2, at2, s2),
                     "{f:?} {s1} {s2}"
                 );
-                // SAFETY: as the comment below states, for this part of the operation.
-                let as_ptr_add = unsafe { l1.as_ptr().add(at1) };
-                // SAFETY: as the comment below states, for this part of the operation.
-                let as_ptr_add_2 = unsafe { l2.as_ptr().add(at2) };
-                // SAFETY: both blocks lie inside the slices, at aligned rows
-                // (64-byte aligned buffers, strides multiples of 32).
-                let c = unsafe { (f.sad)(as_ptr_add, s1, as_ptr_add_2, s2) };
-                assert_eq!(sum, c as u32);
             }
         }
     }
 
     #[test]
-    #[cfg_attr(miri, ignore = "calls C")]
     fn extreme_blocks_sum_to_the_maximum() {
         let (zeros, ones) = (Aligned([0u8; 2048]), Aligned([0xFFu8; 2048]));
         for f in all() {
@@ -355,7 +388,6 @@ mod unit_tests {
     }
 
     #[test]
-    #[cfg_attr(miri, ignore = "calls C")]
     fn short_blocks_are_rejected() {
         let a = noise(3);
         for f in all() {
@@ -378,7 +410,6 @@ mod unit_tests {
     }
 
     #[test]
-    #[cfg_attr(miri, ignore = "calls C")]
     fn misaligned_blocks_are_rejected_as_assumed() {
         let a = noise(5);
         for f in all() {
@@ -410,7 +441,6 @@ mod unit_tests {
     }
 
     #[test]
-    #[cfg_attr(miri, ignore = "calls C")]
     fn unaligned_functions_take_any_offset() {
         let (a, b) = (noise(11), noise(13));
         for bits in 1..=5u8 {
@@ -441,7 +471,6 @@ mod unit_tests {
     }
 
     #[test]
-    #[cfg_attr(miri, ignore = "calls C")]
     fn handles_cross_threads() {
         let (a, b) = (noise(17), noise(19));
         let fns: Vec<SadFn> = all().collect();
@@ -458,54 +487,5 @@ mod unit_tests {
                 });
             }
         });
-    }
-
-    /// Runs the test `name` alone in a child process, where it may force the
-    /// process-wide CPU flags; true in that child.
-    fn isolated(name: &str) -> bool {
-        const KEY: &str = "CRUSTIFY_UNIT_PIXELUTILS_ISOLATED";
-        if std::env::var_os(KEY).is_some() {
-            return true;
-        }
-        let status = std::process::Command::new(std::env::current_exe().unwrap())
-            .args(["--exact", name, "--test-threads=1"])
-            .env(KEY, "1")
-            .status()
-            .unwrap();
-        assert!(status.success(), "isolated run failed: {status}");
-        false
-    }
-
-    /// C's plain functions (no SIMD), and the SSE2 ones without AVX2, sum
-    /// as the reference does.
-    #[test]
-    #[cfg_attr(miri, ignore = "calls C")]
-    fn every_cpu_tier_sums_alike() {
-        if !isolated("libavutil::pixelutils::unit_tests::every_cpu_tier_sums_alike") {
-            return;
-        }
-        // SAFETY: `av_get_cpu_flags` takes no arguments.
-        let detected = unsafe { ffi::av_get_cpu_flags() };
-        let sse2 = (ffi::AV_CPU_FLAG_MMX
-            | ffi::AV_CPU_FLAG_MMXEXT
-            | ffi::AV_CPU_FLAG_SSE
-            | ffi::AV_CPU_FLAG_SSE2) as c_int;
-        let (a, b) = (noise(23), noise(29));
-        for mask in [0, detected & sse2, -1] {
-            // SAFETY: a subset of the detected flags (or detection again), in
-            // a process running only this test, which selects every function
-            // after the change.
-            unsafe { ffi::av_force_cpu_flags(mask) };
-            for f in all() {
-                let n = f.size();
-                for (s1, s2) in [(64isize, 96isize), (-64, 32)] {
-                    let need = |s: isize| (n - 1) * s.unsigned_abs() + n;
-                    let (l1, l2) = (&a.0[..need(s1)], &b.0[..need(s2)]);
-                    let at = |l: &[u8], s| plane_origin(l.len(), s, n, n).unwrap();
-                    let expect = reference(n, l1, at(l1, s1), s1, l2, at(l2, s2), s2);
-                    assert_eq!(f.call(l1, s1, l2, s2), Ok(expect), "{mask:#x} {f:?}");
-                }
-            }
-        }
     }
 }
